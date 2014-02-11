@@ -692,3 +692,86 @@ REQUEST_URI=/lovingrape.com/index.php?r=Home/default/rating
 in E:\xampp\htdocs\lovingrape.com\protected\models\Rating.php (96)
 in E:\xampp\htdocs\lovingrape.com\protected\modules\Home\controllers\DefaultController.php (46)
 in E:\xampp\htdocs\lovingrape.com\index.php (17)
+2014/02/11 12:21:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'lovingrape'' in C:\xampp\htdocs\giaingoaihang\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\giaingoaihang\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\giaingoaihang\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 C:\xampp\htdocs\giaingoaihang\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 C:\xampp\htdocs\giaingoaihang\framework\db\ar\CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\giaingoaihang\framework\db\ar\CActiveRecord.php(1595): CActiveRecord->getCommandBuilder()
+#7 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(10): CActiveRecord->count(Object(CDbCriteria))
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#9 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#16 {main}
+REQUEST_URI=/giaingoaihang/
+---
+2014/02/11 12:22:14 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'type' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `articles` `t` WHERE type != "S".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php (10)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/02/11 12:22:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'type' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `articles` `t` WHERE type != "S"' in C:\xampp\htdocs\giaingoaihang\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\giaingoaihang\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(10): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#4 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#9 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/giaingoaihang/
+---
+2014/02/11 12:59:23 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'type' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `articles` `t` WHERE type != "S".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php (10)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/02/11 12:59:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'type' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `articles` `t` WHERE type != "S"' in C:\xampp\htdocs\giaingoaihang\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\giaingoaihang\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(10): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#4 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#9 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/giaingoaihang/
+---
+2014/02/11 13:00:36 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\slidershow.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\CWidget.php(244): SliderShow->renderFile()
+#1 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\SliderShow.php(5): SliderShow->render()
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(147): SliderShow->init()
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(172): DefaultController->createWidget()
+#4 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\views\default\index.php(3): DefaultController->widget()
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): DefaultController->renderInternal()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(869): DefaultController->renderFile()
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(782): DefaultController->renderPartial()
+#9 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(16): DefaultController->render()
+#10 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#11 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): DefaultController->runAction()
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#14 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): DefaultController->run()
+#15 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\giaingoaihang\index.php(17): CWebApplication->run()
+REQUEST_URI=/giaingoaihang/
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\slidershow.php (9)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\SliderShow.php (5)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\views\default\index.php (3)
