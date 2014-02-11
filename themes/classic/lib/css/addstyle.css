@@ -1,0 +1,16 @@
+.download{ float: left; width: 45%;}
+.text-download{ color: red; }
+p.rating_article{float: left;width: 40%;}
+p.rating_article img{float: left;margin-top: 7px;}
+.text-rating{
+    float: left;font-family: 'Oswald',sans-serif;
+    color: black;
+}
+#stating{
+    float: left;
+    margin-left: 20px;
+    width: 200px;
+}
+p#stating img{
+    float: left;
+}
