@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html dir="ltr">
 <!--HEAD-->
 <?php $this->widget('application.components.Head');?>

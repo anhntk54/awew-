@@ -22,6 +22,7 @@ return array(
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		'Home',
+		'Articles',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
