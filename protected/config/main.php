@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Loving rape',
+	'name'=>'Giai ngoai hang',
     'theme'=>'classic',
     'defaultController' => 'Home/default/index',
 	// preloading 'log' component

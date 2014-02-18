@@ -14,7 +14,12 @@
             <?php $this->widget('application.components.Container');?>
             
             <!-- Main content -->
-            <?php echo $content;?>
+            <div class="container"> <!-- Primary content -->
+                <?php echo $content;?>
+                <!-- Sidebar -->
+                <?php $this->widget('application.components.Sidebar');?>
+                <!-- End Sidebar-->
+            </div>
             
             <!-- Footer -->
             <?php $this->widget('application.components.Footer');?>

@@ -1,3 +1,4 @@
+<!-- Header group -->
 <div class="container">
     <!-- Top menu -->
     <ul class="top-menu">
@@ -12,21 +13,11 @@
         	<h1 class="site-title"><a href="index-2.html"><span>M</span>adidus</a></h1>
             <h2 class="site-description">Magazine Template</h2>
         </div>
-        <div class="banner-top">
-            <!--<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner.jpg" alt="Themeforest">-->
-            <div class="search-form" style="overflow: inherit;">
-        	   <input type="text" placeholder="Search..." style="float: left; width: 284px; padding-right: 42px;"/>
-        	   <input type="submit" id="_search" style="float: left;"/>
-            </div>
-        </div>
+        <div class="banner-top"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner.jpg" alt="Themeforest"></div>
     </div>    
     <!-- Primary navigation -->
     <ul id="menu">
-    	<li>   
-            <a href="index-2.html" class="current">
-                <i class="icon-home" ></i>
-            </a>
-        </li>
+    	<li><a href="index-2.html" class="current"><i class="icon-home"></i></a></li>
     	<li><a href="index-2.html">Home</a>
         	<ul>
             	<li><a href="index-2.html">2 Columns posts</a></li>

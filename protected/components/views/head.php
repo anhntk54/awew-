@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Title -->
-<title>Madidus | Magazine Theme</title>
+<title>Giai ngoai hang, cap nhat ket qua tran dau</title>
 <!-- Favicons -->
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -30,7 +30,7 @@
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/lib/css/wide-layout.css" rel="alternate stylesheet" type="text/css" title="styles2"/>
 <!-- Styleswitcher DELETE -->
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/lib/css/styleswitcher.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/lib/js/jquery-1.8.2.min.js"></script>
+<?php Yii::app()->clientScript->registerCoreScript('jquery');?>
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <p class="chrome_frame">You are using old web browser. Please upgrade your browser. <a href="http://www.google.com/chrome/">Download Google Chrome</a> to improve web experience.</p>

@@ -775,3 +775,113 @@ REQUEST_URI=/giaingoaihang/
 in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\slidershow.php (9)
 in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\SliderShow.php (5)
 in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\views\default\index.php (3)
+2014/02/18 12:07:44 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CAssetManager.php:138
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(510): CAssetManager->publish('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(547): CClientScript->getCoreScriptUrl()
+#4 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(348): CClientScript->getPackageBaseUrl('jquery')
+#5 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(208): CClientScript->renderCoreScripts()
+#6 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(351): CClientScript->render('<!DOCTYPE html>...')
+#7 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(788): CController->processOutput('<!DOCTYPE html>...')
+#8 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#10 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#14 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\index.php(17): CApplication->run()
+#17 {main}
+REQUEST_URI=/giaingoaihang.com/giaingoaihang/
+---
+2014/02/18 12:08:17 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CAssetManager.php:138
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(510): CAssetManager->publish('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(547): CClientScript->getCoreScriptUrl()
+#4 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(348): CClientScript->getPackageBaseUrl('jquery')
+#5 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CClientScript.php(208): CClientScript->renderCoreScripts()
+#6 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(351): CClientScript->render('<!DOCTYPE html>...')
+#7 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(788): CController->processOutput('<!DOCTYPE html>...')
+#8 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#10 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#14 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\index.php(17): CApplication->run()
+#17 {main}
+REQUEST_URI=/giaingoaihang.com/giaingoaihang/
+---
+2014/02/18 12:21:28 [error] [exception.CException] exception 'CException' with message 'Alias "Home.components.Sidebar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWidgetFactory.php(146): YiiBase::import('Home.components...', true)
+#1 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DefaultController), 'Home.components...', Array)
+#2 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Home.components...', Array)
+#3 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\views\default\index.php(174): CBaseController->widget('Home.components...')
+#4 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#10 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#14 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\index.php(17): CApplication->run()
+#17 {main}
+REQUEST_URI=/giaingoaihang.com/giaingoaihang/
+---
+2014/02/18 12:24:10 [error] [exception.CException] exception 'CException' with message 'Alias "Home.components.Sidebar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWidgetFactory.php(146): YiiBase::import('Home.components...', true)
+#1 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DefaultController), 'Home.components...', Array)
+#2 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Home.components...', Array)
+#3 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\views\default\index.php(174): CBaseController->widget('Home.components...')
+#4 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#10 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#14 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\index.php(17): CApplication->run()
+#17 {main}
+REQUEST_URI=/giaingoaihang.com/giaingoaihang/
+---
+2014/02/18 12:25:28 [error] [exception.CException] exception 'CException' with message 'Alias "Home.components.Sidebar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWidgetFactory.php(146): YiiBase::import('Home.components...', true)
+#1 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DefaultController), 'Home.components...', Array)
+#2 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Home.components...', Array)
+#3 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\views\default\index.php(174): CBaseController->widget('Home.components...')
+#4 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#10 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#14 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\giaingoaihang.com\giaingoaihang\index.php(17): CApplication->run()
+#17 {main}
+REQUEST_URI=/giaingoaihang.com/giaingoaihang/
+---
