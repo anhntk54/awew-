@@ -3243,3 +3243,27 @@ REQUEST_URI=/giaingoaihang/backend/index.php?r=Articles/default/admin
 2014/02/11 12:34:44 [warning] [application] Failed to set unsafe attribute "alt" of "Slideshow".
 in C:\xampp\htdocs\giaingoaihang\backend\protected\modules\Slide\controllers\SlideshowController.php (191)
 in C:\xampp\htdocs\giaingoaihang\backend\index.php (23)
+2014/02/12 12:23:44 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in C:\xampp\htdocs\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (222)
+in C:\xampp\htdocs\giaingoaihang\backend\index.php (23)
+2014/02/12 12:23:44 [warning] [application] Failed to set unsafe attribute "category" of "Articles".
+in C:\xampp\htdocs\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (222)
+in C:\xampp\htdocs\giaingoaihang\backend\index.php (23)
+2014/02/12 12:33:33 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in C:\xampp\htdocs\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in C:\xampp\htdocs\giaingoaihang\backend\index.php (23)
+2014/02/12 12:33:33 [warning] [application] Failed to set unsafe attribute "hot" of "Articles".
+in C:\xampp\htdocs\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in C:\xampp\htdocs\giaingoaihang\backend\index.php (23)
+2014/02/12 12:33:33 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
+in C:\xampp\htdocs\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in C:\xampp\htdocs\giaingoaihang\backend\index.php (23)
+2014/02/12 12:37:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Articles/Articlefile/admin".' in C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Articles/Articl...')
+#1 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\giaingoaihang\backend\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/giaingoaihang/backend/index.php?r=Articles/Articlefile/admin&id=5
+HTTP_REFERER=http://localhost/giaingoaihang/backend/index.php?r=Articles/default/admin
+---
