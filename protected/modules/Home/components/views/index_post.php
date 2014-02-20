@@ -1,22 +1,24 @@
 <div class="row">
+    <?php foreach($model as $row):?>
     <article class="category-post-alt1">            
         <div class="entry-thumb hover-image-alt1 picture">
-            <a rel="prettyPhoto" href="<?php echo Yii::app()->theme->baseUrl; ?>/images/post4.jpg"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/post4.jpg" alt="Post thumb"></a>
+            <?php echo Articles::model()->getThumIndex($row);?>
         </div>
         <h3 class="entry-title">
-            <a href="post.html">Integer convallis lorem in odio posuere rhoncus donec</a>
+            <a href="<?php echo Articles::model()->getTitleURL($row);?>"><?php echo $row->title;?></a>
         </h3>
         <ul class="entry-meta">
-            <li class="posted-date">October 23, 2013</li>
+            <li class="posted-date"><?php echo Articles::model()->getDate($row);?></li>
             <li class="posted-comments"><a href="post.html">23 Comments</a></li>
         </ul>
         <div class="entry-content">
-            <p>Proin enim felis, auctor nec venenatis quis, bibendum iaculis enim. Aenean sit amet leo in nisi lobortis accumsan nec eget ante.</p>
+            <p><?php $row->short_description;?></p>
             <a href="post.html" class="more-link">Read more</a>
         </div>
     </article>        
+    <?php endforeach;?>
     <!-- Post -->
-    <article class="category-post-alt1">            
+    <!--<article class="category-post-alt1">            
         <div class="entry-thumb hover-image-alt1 video">
             <a rel="prettyPhoto" href="<?php echo Yii::app()->theme->baseUrl; ?>/images/post5.jpg"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/post5.jpg" alt="Post thumb"></a>
         </div>
@@ -31,9 +33,9 @@
             <p>Proin enim felis, auctor nec venenatis quis, bibendum iaculis enim. Aenean sit amet leo in nisi lobortis accumsan nec eget ante. Proin enim felis, auctor nec venenatis quis, bibendum iaculis enim. Aenean sit amet leo in nisi lobortis accumsan nec eget ante.</p>
             <a href="post.html" class="more-link">Read more</a>
         </div>
-    </article>
+    </article>-->
 </div>
-<div class="row">
+<!--<div class="row">
     <article class="category-post-alt1">            
         <div class="entry-thumb embeded-container">
             <iframe src="http://player.vimeo.com/video/8118831?title=0&amp;byline=0&amp;portrait=0&amp;color=cb383d" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -50,7 +52,6 @@
             <a href="post.html" class="more-link">Read more</a>
         </div>
     </article>        
-    <!-- Post -->
     <article class="category-post-alt1">            
         <h3 class="entry-title">
             <a href="post.html">Aenean sit amet leo in nisi lobortis</a>
@@ -64,4 +65,4 @@
             <a href="post.html" class="more-link">Read more</a>
         </div>
     </article>
-</div>
+</div>-->
