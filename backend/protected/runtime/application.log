@@ -3267,3 +3267,67 @@ Stack trace:
 REQUEST_URI=/giaingoaihang/backend/index.php?r=Articles/Articlefile/admin&id=5
 HTTP_REFERER=http://localhost/giaingoaihang/backend/index.php?r=Articles/default/admin
 ---
+2014/02/20 16:18:18 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:18:18 [warning] [application] Failed to set unsafe attribute "hot" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:18:18 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:18:19 [error] [php] copy(images/content/news-content-370972308.jpg): failed to open stream: No such file or directory (E:\xampp\htdocs\giaingoaihang.com\backend\protected\config\globals.php:169)
+Stack trace:
+#0 E:\xampp\htdocs\giaingoaihang.com\framework\web\actions\CInlineAction.php(49): DefaultController->actionCreate()
+#1 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\xampp\htdocs\giaingoaihang.com\framework\web\filters\CFilterChain.php(133): DefaultController->runAction()
+#3 E:\xampp\htdocs\giaingoaihang.com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 E:\xampp\htdocs\giaingoaihang.com\framework\web\filters\CInlineFilter.php(58): DefaultController->filterAccessControl()
+#6 E:\xampp\htdocs\giaingoaihang.com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(291): CFilterChain->run()
+#8 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#9 E:\xampp\htdocs\giaingoaihang.com\framework\web\CWebApplication.php(282): DefaultController->run()
+#10 E:\xampp\htdocs\giaingoaihang.com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\xampp\htdocs\giaingoaihang.com\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\xampp\htdocs\giaingoaihang.com\backend\index.php(23): CWebApplication->run()
+REQUEST_URI=/giaingoaihang.com/backend/index.php?r=Articles/default/create
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\config\globals.php (169)
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (73)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:23:35 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:23:35 [warning] [application] Failed to set unsafe attribute "hot" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:23:35 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:23:50 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (129)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:23:50 [warning] [application] Failed to set unsafe attribute "hot" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (129)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:23:50 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (129)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:42:24 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:42:24 [warning] [application] Failed to set unsafe attribute "hot" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:42:24 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (72)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:48:33 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (135)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:48:33 [warning] [application] Failed to set unsafe attribute "hot" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (135)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/02/20 16:48:33 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
+in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (135)
+in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
