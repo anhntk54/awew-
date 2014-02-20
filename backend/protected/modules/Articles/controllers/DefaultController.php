@@ -102,6 +102,12 @@ class DefaultController extends Controller
 					$tags = explode(",", $_POST['tags']);
 					Tags::model()->saveTags($tags,$model);
 				}
+                
+                $temp_image = Yii::app()->basePath .'/../'.TEMP_IMAGE.$model->image;
+                if (file_exists($temp_image)){
+                    unlink($temp_image);
+                }
+                
 				$this->redirect(array('admin'));
 			}
 		}
@@ -159,6 +165,12 @@ class DefaultController extends Controller
 					$tags = explode(",", $_POST['tags']);
 					Tags::model()->saveTags($tags,$model);
 				}
+                
+                $temp_image = Yii::app()->basePath .'/../'.TEMP_IMAGE.$model->image;
+                if (file_exists($temp_image)){
+                    unlink($temp_image);
+                }
+                
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}

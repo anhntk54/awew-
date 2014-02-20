@@ -37,7 +37,7 @@
     </div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textArea($model,'title',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
     
@@ -48,7 +48,7 @@
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'short_description'); ?>
-		<?php echo $form->textField($model,'short_description',array('size'=>60,'maxlength'=>500)); ?>
+		<?php echo $form->textArea($model,'short_description',array('rows'=>6, 'cols'=>50,'maxlength'=>500)); ?>
 		<?php echo $form->error($model,'short_description'); ?>
 	</div>
 
