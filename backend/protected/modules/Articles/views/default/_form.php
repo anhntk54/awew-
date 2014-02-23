@@ -46,6 +46,39 @@
 		<?php echo $form->dropDownList($model,'hot',array('0'=>"Bình thường",'1'=>"Hot")); ?>
 		<?php echo $form->error($model,'hot'); ?>
 	</div>
+    
+    <div class="row">
+        <?php echo $form->labelEx($model,'End Hot Date'); ?>
+        <?php 
+	        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+	            //'name'=>'endhot_date',
+                'model'=>$model,
+	            'attribute'=>'endhot_date',
+	            'language'=>Yii::app()->language=='vi' ? 'vi' : null,
+	            'options'=>array(
+	                'showAnim'=>'fold', // 'show' (the default), 'slideDown', 'fadeIn', 'fold'
+	                'showOn'=>'focus', // 'focus', 'button', 'both'
+	                //'buttonText'=>'Chọn ngày tháng',
+	                //'buttonImage'=>Yii::app()->theme->baseUrl.'/img/icon/calendar.png',
+	                'buttonImageOnly'=>false,
+	                'showAnim'=>'clip',
+	                'changeMonth'=>true,
+	                'changeYear'=>true,
+	                'showButtonPanel'=>true,
+	                'dateFormat' => "yy-mm-dd",
+	                'buttonImageOnly'=>true,
+	                //'minDate'=>'-0',
+	                'yearRange' => "2013:2020",
+	            ),
+	            'htmlOptions'=>array(
+	                //'style'=>'width:80px;vertical-align:top;margin-left: 10px;',
+	                'placeholder'=>"Ngày kết thức tin hót",
+	            ),
+	        ));
+	     ?>
+         <?php echo $form->error($model,'endhot_date'); ?>
+    
+    </div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'short_description'); ?>
 		<?php echo $form->textArea($model,'short_description',array('rows'=>6, 'cols'=>50,'maxlength'=>500)); ?>

@@ -76,6 +76,7 @@ class DefaultController extends Controller
             
 			$model->create_date=new CDbExpression('NOW()');
 			$model->update_date =new CDbExpression('NOW()');
+            $model->endhot_date = $_POST['Articles']['endhot_date'];
 			$model->user_id = Yii::app()->user->id;
 			$model->image=CUploadedFile::getInstance($model,'image');
 			 if($model->validate()){
@@ -102,10 +103,11 @@ class DefaultController extends Controller
 					$tags = explode(",", $_POST['tags']);
 					Tags::model()->saveTags($tags,$model);
 				}
-                
-                $temp_image = Yii::app()->basePath .'/../'.TEMP_IMAGE.$model->image;
-                if (file_exists($temp_image)){
-                    unlink($temp_image);
+                if($model->image != ''){
+                    $temp_image = Yii::app()->basePath .'/../'.TEMP_IMAGE.$model->image;
+                    if (file_exists($temp_image)){
+                        unlink($temp_image);
+                    }
                 }
                 
 				$this->redirect(array('admin'));
@@ -137,6 +139,7 @@ class DefaultController extends Controller
             $model->hot = $_POST['Articles']['hot'];
 			$model->url = toSlug(stripVietnamese($model->title));
 			$model->update_date =new CDbExpression('NOW()');
+            $model->endhot_date = $_POST['Articles']['endhot_date'];
 			$model->image=CUploadedFile::getInstance($model,'image');
 			 if($model->validate()){
                 if($model->image != null){
@@ -165,10 +168,11 @@ class DefaultController extends Controller
 					$tags = explode(",", $_POST['tags']);
 					Tags::model()->saveTags($tags,$model);
 				}
-                
-                $temp_image = Yii::app()->basePath .'/../'.TEMP_IMAGE.$model->image;
-                if (file_exists($temp_image)){
-                    unlink($temp_image);
+                if($model->image != ''){
+                    $temp_image = Yii::app()->basePath .'/../'.TEMP_IMAGE.$model->image;
+                    if (file_exists($temp_image)){
+                        unlink($temp_image);
+                    }
                 }
                 
 				$this->redirect(array('view','id'=>$model->id));

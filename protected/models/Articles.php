@@ -127,14 +127,30 @@ class Articles extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-    public function getTitle($id){
-        $model = Articles::model()->findByPk($id);
+    public function getTitle($model){
         if($model == null){
             return "Không có";
         }else{
             return $model->title;
         }
     }
+    
+    public function getThumIndex($model){
+        if($model->image != ""){
+            return '<a rel="prettyPhoto" href="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'"><img src="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'" alt="'.$model->title.'"/></a>';
+        }
+    }
+    public function getTitleURL($model){
+        if($model != null){
+            return Yii::app()->createUrl('Home/default/view',array('id'=>$model->id));
+        }
+    }
+    public function getDate($model){
+        if($model->create_date != ''){
+            return date('F j, Y, g:i a', strtotime ($model->create_date));
+        }
+    }
+    
     public function getActive($status){
         if($status == 1){
             return "Không sử dụng";
@@ -154,22 +170,17 @@ class Articles extends CActiveRecord
         }
     }
     
-    public function getImage($model){
-        if($model->image != '' and $model->path != ''){
-            return CHtml::image(Yii::app()->request->baseUrl.'/'.$model->path.$model->image,'',array('style'=>'width:100px'));
+    public function getImageForSlideShow($model){
+        $model_image = ArticleImage::model()->findByAttributes(array('article_id'=>$model->id));
+        if($model_image['image'] != '' and $model_image['path'] != ''){
+             return CHtml::image(Yii::app()->request->baseUrl.'/'.formatPath($model_image['path']).$model_image['image'],$model_image['alt'],array('style'=>'width:640px','title'=>'#htmlcaption'.$model_image['article_id']));
         }else{
-            return "Không có";
+            if($model->image != '' and $model->path != ''){
+                return CHtml::image(Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image,$model->url,array('style'=>'width:640px','title'=>'#htmlcaption'.$model->id));
+            }
         }
     }
-    public function getImage2($id){
-        $model = Articles::model()->findByPk($id);
-        if($model->image != '' and $model->path != ''){
-            $image =  CHtml::image(Yii::app()->request->baseUrl.'/'.$model->path.$model->image,'',array('style'=>'width:100px'));
-            return CHtml::link($image, array('/Articles/default/view', 'id'=>$id));
-        }else{
-            return "Không có";
-        }
-    }
+    
     public function getCategory($model){
         $string = '';
         if($model->categories != null){
@@ -181,21 +192,7 @@ class Articles extends CActiveRecord
         return $string;
     }
     
-    public function getThumIndex($model){
-        if($model->image != ""){
-            return '<a rel="prettyPhoto" href="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'"><img src="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'" alt="'.$model->title.'"/></a>';
-        }
-    }
-    public function getTitleURL($model){
-        if($model != null){
-            return Yii::app()->createUrl('Home/default/view',array('id'=>$model->id));
-        }
-    }
-    public function getDate($model){
-        if($model->create_date != ''){
-            return date('F j, Y, g:i a', strtotime ($model->create_date));
-        }
-    }
+    
     
     
 }
