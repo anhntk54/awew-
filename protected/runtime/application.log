@@ -927,3 +927,39 @@ Stack trace:
 REQUEST_URI=/giaingoaihang/index.php?r=Home/default/view&id=6
 HTTP_REFERER=http://localhost/giaingoaihang/
 ---
+2014/02/24 04:15:54 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\giaingoaihang\protected\models\Articles.php:175)
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): Index_Slideshow->renderInternal()
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\CWidget.php(244): Index_Slideshow->renderFile()
+#2 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\Index_Slideshow.php(11): Index_Slideshow->render()
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(147): Index_Slideshow->init()
+#4 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(172): DefaultController->createWidget()
+#5 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\views\default\index.php(3): DefaultController->widget()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(126): require()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): DefaultController->renderInternal()
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(869): DefaultController->renderFile()
+#9 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(782): DefaultController->renderPartial()
+#10 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(7): DefaultController->render()
+#11 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): DefaultController->runAction()
+#14 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#15 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): DefaultController->run()
+#16 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\giaingoaihang\index.php(17): CWebApplication->run()
+REQUEST_URI=/giaingoaihang/
+in C:\xampp\htdocs\giaingoaihang\protected\models\Articles.php (175)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\index_slideshow.php (4)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\Index_Slideshow.php (11)
+2014/02/24 04:28:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Home/default/vi...')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Home/default/view&id=7
+HTTP_REFERER=http://localhost/giaingoaihang/
+---
