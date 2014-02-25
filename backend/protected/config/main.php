@@ -25,6 +25,7 @@ return array(
         'Articles',
         'Slide',
         'Services',
+        'Menu', 
 		// uncomment the following to enable the Gii tool
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',

@@ -173,6 +173,8 @@ class Categories extends CActiveRecord
             $this->subDropDown($child->children,$space.'---');
         }
     }
+    
+    
     public function getName($id){
         $model = Categories::model()->findByPk($id);
         if($model===null){
