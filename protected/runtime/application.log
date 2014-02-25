@@ -885,6 +885,7 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/giaingoaihang.com/giaingoaihang/
 ---
+<<<<<<< HEAD
 2014/02/25 05:19:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'giaingoaihang'' in C:\xampp\htdocs\thu\giaingoaihang\framework\db\CDbConnection.php:382
 Stack trace:
 #0 C:\xampp\htdocs\thu\giaingoaihang\framework\db\CDbConnection.php(330): CDbConnection->open()
@@ -913,4 +914,47 @@ Stack trace:
 #23 C:\xampp\htdocs\thu\giaingoaihang\index.php(17): CApplication->run()
 #24 {main}
 REQUEST_URI=/thu/giaingoaihang/
+=======
+2014/02/21 10:48:04 [error] [php] Undefined variable: row (C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\one_post.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\CWidget.php(244): One_Post->renderFile()
+#1 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\One_Post.php(5): One_Post->render()
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(147): One_Post->init()
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(172): Index_Post->createWidget()
+#4 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\index_post.php(4): Index_Post->widget()
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(130): require()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): Index_Post->renderInternal()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\CWidget.php(244): Index_Post->renderFile()
+#8 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\Index_Post.php(8): Index_Post->render()
+#9 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(147): Index_Post->init()
+#10 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(172): DefaultController->createWidget()
+#11 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\views\default\index.php(12): DefaultController->widget()
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(126): require()
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): DefaultController->renderInternal()
+#14 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(869): DefaultController->renderFile()
+#15 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(782): DefaultController->renderPartial()
+#16 C:\xampp\htdocs\giaingoaihang\protected\modules\Home\controllers\DefaultController.php(7): DefaultController->render()
+#17 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#18 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams()
+#19 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): DefaultController->runAction()
+#20 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#21 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): DefaultController->run()
+#22 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\giaingoaihang\index.php(17): CWebApplication->run()
+REQUEST_URI=/giaingoaihang/
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\one_post.php (3)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\One_Post.php (5)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Home\components\views\index_post.php (4)
+2014/02/21 12:49:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Home/default/vi...')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Home/default/view&id=6
+HTTP_REFERER=http://localhost/giaingoaihang/
+>>>>>>> e22b167135ece344ca09fdeec2c909f441f75bd1
 ---

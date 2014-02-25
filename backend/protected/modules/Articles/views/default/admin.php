@@ -46,6 +46,7 @@ $('.search-form form').submit(function(){
             'value'=>'Articles::model()->getHot($data->hot)',
             'filter'=>array('0'=>'Bình thường','1'=>'Hot'),
         ),
+        'endhot_date',
         
         array(
             'name'=>'active',

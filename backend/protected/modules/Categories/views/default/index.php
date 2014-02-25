@@ -33,12 +33,7 @@ $('.search-form form').submit(function(){
 			'id',
 			'title',
 			'description',
-			'create_date',
-			array(
-            'name'=>'Thể loại',
-            'filter'=>array('G'=>'Truyện','A'=>'Download'),
-            'value'=>'Categories::model()->getType($data)',
-        	),
+			'order_possition',
 			array(
 				'class'=>'CButtonColumn',
 			),

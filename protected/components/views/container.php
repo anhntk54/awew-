@@ -20,11 +20,9 @@
     	<li><a href="index-2.html" class="current"><i class="icon-home"></i></a></li>
     	<li><a href="index-2.html">Home</a>
         	<ul>
-            	<li><a href="index-2.html">2 Columns posts</a></li>
-                <li><a href="index-1.html">1 Column posts</a></li>
-                <li><a href="index-3.html">Full width slider</a></li>
-                <li><a href="index-4.html">Standard layout</a></li>
-                <li><a href="index-5.html">Filterable grid</a></li>
+                <?php foreach($model_parent_cate as $row_parent_cate):?>
+            	   <li><a href="index-2.html"><?php echo $row_parent_cate->title;?></a></li>
+                <?php endforeach;?>
             </ul>
         </li>
         <li><a href="blog-1.html">Blog category</a>
