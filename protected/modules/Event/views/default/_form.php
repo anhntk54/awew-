@@ -69,10 +69,11 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript">
-	$("#Event_title").autocomplete({
+	$(function() {
+		$("#Event_title").autocomplete({
 		    minLength: 0,
 		    source: function(request, response) {
 		    	console.log('a');
@@ -82,28 +83,23 @@
 		    		dataType: 'json',
 		    		data: {p: 'value1'},
 		    		success: function(data) {
-		    			console.log(data);
 		              	response($.map(data,function (items) {
-		              		console.log(items.name+"  ,smlks");
 		              		return{
 		              			value: items.name,
-		              			// id: items.id,
 		              		}
 		              	}));
 		    		}
 		    	});
 		    	
-		    },
-		    select: function( event, ui ) {
-				console.log('kj');
-				return false;
-			}
-		}).data( "ui-autocomplete" )._renderMenu  = function(ul, item) {
-			$.each( item, function( index, item ) {
-			   return $('<li></li>')
-			            .data("item.autocomplete", item)
-			            .append(item.value )
-			            .appendTo(ul);
-				});
-			}
+		    	},
+		select: function( event, ui ) {
+			console.log('kj');
+			return false;
+		}
+		}).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+		    return $( '<li></li>' )
+		        .data( "item.autocomplete", item )
+		        .append('<a><span>'+item.value+'</span></a>').appendTo(ul);
+		    };
+	});
 </script>
