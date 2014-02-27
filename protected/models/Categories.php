@@ -80,7 +80,7 @@ class Categories extends CActiveRecord
 		return array(
 			'connects' =>array(self::HAS_MANY,'CategoryRelation','category_id'),
             'parent'=> array(self::BELONGS_TO,'Categories','parent_id','condition'=>'t.parent_id <> 0'),
-            'children' =>array(self::HAS_MANY,'Categories','parent_id'),
+            'children' =>array(self::HAS_MANY,'Categories','parent_id','order' =>'order_possition asc'),
         );
 	}
 	public function getType($value)
