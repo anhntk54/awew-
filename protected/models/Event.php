@@ -34,16 +34,30 @@ class Event extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content, sub_title, sub_content, location_id, status, end_date, begin_date', 'required'),
+			array('title, content,nameLocation, location_id, end_date, begin_date', 'required'),
 			array('location_id, status', 'numerical', 'integerOnly'=>true),
 			array('title, sub_title', 'length', 'max'=>70),
 			array('sub_content', 'length', 'max'=>140),
+			array('begin_date,end_date', 'checkTime'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, content, sub_title, sub_content, location_id, status, end_date, begin_date', 'safe', 'on'=>'search'),
 		);
 	}
-
+	public function checkTime($attributes,$params)
+	{
+		if (strtotime($this->end_date) < strtotime(date("Y-m-d H:i:s"))) {
+			$this->addError('end_date', "Thời gian cuối bé hơn thời gian hiện tại");
+			return false;
+		}
+		if (strtotime($this->end_date) >= strtotime($this->begin_date)) {
+			return true;
+		}else{
+			$this->addError('end_date', "Thời gian cuối nhở hơn thời gian đầu");
+			return false;
+		}
+		return true;
+	}
 	/**
 	 * @return array relational rules.
 	 */
