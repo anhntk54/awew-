@@ -16,6 +16,8 @@
  */
 class Event extends CActiveRecord
 {
+	public $nameLocation;
+	public $addressLocation;
 	/**
 	 * @return string the associated database table name
 	 */

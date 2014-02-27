@@ -1,4 +1,4 @@
-
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -27,29 +27,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sub_title'); ?>
-		<?php echo $form->textField($model,'sub_title',array('size'=>60,'maxlength'=>70)); ?>
-		<?php echo $form->error($model,'sub_title'); ?>
+		<?php echo $form->labelEx($model,'nameLocation'); ?>
+		<?php echo $form->textField($model,'nameLocation',array('size'=>60,'maxlength'=>70)); ?>
+		<?php echo $form->error($model,'nameLocation'); ?>
 	</div>
-
+	<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 	<div class="row">
-		<?php echo $form->labelEx($model,'sub_content'); ?>
-		<?php echo $form->textField($model,'sub_content',array('size'=>60,'maxlength'=>140)); ?>
-		<?php echo $form->error($model,'sub_content'); ?>
+		<?php echo $form->labelEx($model,'addressLocation'); ?>
+		<?php echo $form->textField($model,'addressLocation',array('size'=>60,'maxlength'=>140)); ?>
+		<?php echo $form->error($model,'addressLocation'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'location_id'); ?>
-		<?php echo $form->textField($model,'location_id'); ?>
-		<?php echo $form->error($model,'location_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
-		<?php echo $form->error($model,'status'); ?>
-	</div>
-
+	<div id="map-canvas"></div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'end_date'); ?>
 		<?php echo $form->textField($model,'end_date'); ?>
@@ -69,11 +57,12 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/lib/place/place.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#Event_title").autocomplete({
+		$("#Event_nameLocation").autocomplete({
 		    minLength: 0,
 		    source: function(request, response) {
 		    	console.log('a');
@@ -81,7 +70,7 @@
 		    		url: '<?php echo Yii::app()->createUrl("/Event/default/place"); ?>',
 		    		type: 'POST',
 		    		dataType: 'json',
-		    		data: {p: 'value1'},
+		    		data: {p:$("#Event_nameLocation").val() },
 		    		success: function(data) {
 		              	response($.map(data,function (items) {
 		              		return{
