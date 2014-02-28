@@ -57,10 +57,10 @@
 	
 	<script>$( "#Event_begin_date" ).datetimepicker();</script>
 	<script>$( "#Event_end_date" ).datetimepicker();</script>
+	<div id="place_address"></div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Tạo sự kiện',array('id'=>'create_event')); ?>
 	</div>
-	<div id="place_address"></div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

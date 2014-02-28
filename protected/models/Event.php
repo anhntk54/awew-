@@ -34,7 +34,7 @@ class Event extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content,nameLocation, location_id, end_date, begin_date', 'required'),
+			array('title, content,nameLocation, end_date, begin_date', 'required'),
 			array('location_id, status', 'numerical', 'integerOnly'=>true),
 			array('title, sub_title', 'length', 'max'=>70),
 			array('sub_content', 'length', 'max'=>140),

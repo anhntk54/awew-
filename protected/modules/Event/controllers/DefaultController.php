@@ -48,12 +48,12 @@ class DefaultController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView()
+	public function actionView($id)
 	{
 		echo "string";
-		// $this->render('view',array(
-		// 	'model'=>$this->loadModel($id),
-		// ));
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
@@ -71,6 +71,7 @@ class DefaultController extends Controller
 		{
 			$model->attributes=$_POST['Event'];
 			if ($model->validate()) {
+				echo $_POST['longitude'].'aksj';
 				if (isset($_POST['longitude'])) {
 					$location = Location::model()->findByAttributes(array('longitude'=>$_POST['longitude'],'latitude'=>$_POST['latitude']));
 					if ($location == null) {

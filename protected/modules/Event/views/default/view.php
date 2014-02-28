@@ -1,34 +1,91 @@
-<?php
-/* @var $this DefaultController */
-/* @var $model Event */
-
-$this->breadcrumbs=array(
-	'Events'=>array('index'),
-	$model->title,
-);
-
-$this->menu=array(
-	array('label'=>'List Event', 'url'=>array('index')),
-	array('label'=>'Create Event', 'url'=>array('create')),
-	array('label'=>'Update Event', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Event', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Event', 'url'=>array('admin')),
-);
-?>
-
-<h1>View Event #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'title',
-		'content',
-		'sub_title',
-		'sub_content',
-		'location_id',
-		'status',
-		'end_date',
-		'begin_date',
-	),
-)); ?>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+	
+  <script src="<?php echo Yii::app()->theme->baseUrl ?>/lib/uicropper/cropper.js" type="text/javascript"></script>
+  <script src="<?php echo Yii::app()->theme->baseUrl ?>/lib/pixastic\pixastic.core.js" type="text/javascript"></script>
+  <script src="<?php echo Yii::app()->theme->baseUrl ?>/lib/pixastic\pixastic.jquery.js" type="text/javascript"></script>
+  <script src="<?php echo Yii::app()->theme->baseUrl ?>/lib/pixastic\actions\crop.js" type="text/javascript"></script>
+  <div id="primary-left">   
+  		<script type="text/javascript" charset="utf-8">
+		var x1,y1,x2,y2;
+		function onEndCrop( coords, dimensions ) {
+			console.log(coords,dimensions);
+			x1 = coords.x1;
+			y1 = coords.y1;
+			x2 = coords.x2;
+			y2 = coords.y2;
+			// $( 'width' ).value = dimensions.width;
+			// $( 'height' ).value = dimensions.height;
+		}
+		
+		// example with a preview of crop results, must have minimumm dimensions
+		Event.observe( 
+			window, 
+			'load', 
+			function() { 
+				new Cropper.ImgWithPreview( 
+					'testImage',
+					{ 
+						minWidth: 200, 
+						minHeight: 120,
+						ratioDim: { x: 200, y: 120 },
+						displayOnInit: true, 
+						onEndCrop: onEndCrop,
+						previewWrap: 'previewArea'
+					} 
+				) 
+			} 
+		);
+	</script>
+	<style type="text/css">
+		label { 
+			clear: left;
+			margin-left: 50px;
+			float: left;
+			width: 5em;
+		}
+		
+		#testWrap {
+			width: 500px;
+			float: left;
+			margin: 20px 0 0 50px; /* Just while testing, to make sure we return the correct positions for the image & not the window */
+		}
+		
+		#previewArea {
+			margin: 20px; 0 0 20px;
+			float: left;
+		}
+		
+		#results {
+			clear: both;
+		}
+	</style>
+	<div id="testWrap">
+		<img src="/giaingoaihang/image/castle.jpg" alt="test image" id="testImage" width="500" height="333" />
+	</div>
+	
+	<div id="previewArea"></div>
+	<button id="crop">Crop</button>
+	<img src="/giaingoaihang/image/castle.jpg" alt="test image" id="testIma1ge" width="500" height="333" />
+	<img src="" id="MyPix">
+	<script type="text/javascript">
+		jQuery('#crop').click(function(event) {
+			Pixastic.process(document.getElementById("testImage"), "crop", {
+				rect : {
+					left : x1, top : y1, width : (x2 - x1), height : (y2 - y1)
+				}
+			});
+			 var canvas1 = document.getElementById("testImage");        
+			  if (canvas1.getContext) {
+			     var ctx = canvas1.getContext("2d");                
+			     var myImage = canvas1.toDataURL("image/png");      
+			  }
+			  var imageElement = document.getElementById("MyPix");  
+			  imageElement.src = myImage;     
+			// var oCanvas = document.getElementById("testImage");  
+  
+			// Canvas2Image.saveAsPNG(oCanvas);  
+			return false;
+		});
+	</script>
+  </div>
