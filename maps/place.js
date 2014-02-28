@@ -11,7 +11,7 @@ var str = '',i = 0;
 function initialize() {
   var mapOptions = {
     zoom: zoommap,
-    center:new google.maps.LatLng(21.004722, 105.82205810000005),
+    center:new google.maps.LatLng(21.004722595214844000, 105.82205810000005),
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);

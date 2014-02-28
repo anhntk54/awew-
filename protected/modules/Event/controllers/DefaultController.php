@@ -44,16 +44,6 @@ class DefaultController extends Controller
 			),
 		);
 	}
-	public function actionPlace()
-	{
-		$model = Users::model()->findAll();
-		$arrs = array();$i=0;
-		foreach ($model as $key => $value) {
-			$arr =array('name'=>$value->username);
-			$arrs[$i++] = $arr;
-		}
-		echo json_encode($arrs);
-	}
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -79,9 +69,23 @@ class DefaultController extends Controller
 
 		if(isset($_POST['Event']))
 		{
-			$model->attributes=$_POST['Event'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if (isset($_POST['longitude'])) {
+				$model->attributes=$_POST['Event'];
+				$location = Location::model()->findByAttributes(array('longitude'=>$_POST['longitude'],'latitude'=>$_POST['latitude']));
+				if ($location == null) {
+					$location = new Location;
+					$location->longitude = $_POST['longitude'];	
+					$location->latitude = $_POST['latitude'];	
+					$location->title = $model->nameLocation;
+					$location->url = toSlug(stripVietnamese($model->nameLocation));
+					$location->save(false);
+				}
+				$model->location_id = $location->id;
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			}else{
+				$model->addError('nameLocation','Chưa nhập thông tin địa điểm');
+			}
 		}
 
 		$this->render('create',array(

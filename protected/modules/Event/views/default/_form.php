@@ -1,4 +1,12 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl ?>/lib/datetimepicker/jquery.datetimepicker.css">
+  <script src="<?php echo Yii::app()->theme->baseUrl ?>/lib/datetimepicker/jquery.datetimepicker.js"></script>
+<style type="text/css">
+#map-canvas{
+	width: 640px;
+	height: 320px;
+}
+</style>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -10,9 +18,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
+	<?php //echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
@@ -31,10 +37,9 @@
 		<?php echo $form->textField($model,'nameLocation',array('size'=>60,'maxlength'=>70)); ?>
 		<?php echo $form->error($model,'nameLocation'); ?>
 	</div>
-	<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 	<div class="row">
 		<?php echo $form->labelEx($model,'addressLocation'); ?>
-		<?php echo $form->textField($model,'addressLocation',array('size'=>60,'maxlength'=>140)); ?>
+		<?php echo $form->textField($model,'addressLocation',array('size'=>60,'maxlength'=>140,'id'=>'pac-input')); ?>
 		<?php echo $form->error($model,'addressLocation'); ?>
 	</div>
 	<div id="map-canvas"></div>
@@ -49,11 +54,13 @@
 		<?php echo $form->textField($model,'begin_date'); ?>
 		<?php echo $form->error($model,'begin_date'); ?>
 	</div>
-
+	
+	<script>$( "#Event_begin_date" ).datetimepicker();</script>
+	<script>$( "#Event_end_date" ).datetimepicker();</script>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton('Tạo sự kiện',array('id'=>'create_event')); ?>
 	</div>
-
+	<div id="place_address"></div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
@@ -61,13 +68,16 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript">
+	$('#pac-input').keydown(function(e) {
+		if (e.keyCode == 13) return false;
+	});
+	var u;
 	$(function() {
 		$("#Event_nameLocation").autocomplete({
 		    minLength: 0,
 		    source: function(request, response) {
-		    	console.log('a');
 		    	$.ajax({
-		    		url: '<?php echo Yii::app()->createUrl("/Event/default/place"); ?>',
+		    		url: '<?php echo Yii::app()->createUrl("/Event/location/load"); ?>',
 		    		type: 'POST',
 		    		dataType: 'json',
 		    		data: {p:$("#Event_nameLocation").val() },
@@ -75,6 +85,8 @@
 		              	response($.map(data,function (items) {
 		              		return{
 		              			value: items.name,
+		              			latitude:items.latitude,
+		              			longitude:items.longitude,
 		              		}
 		              	}));
 		    		}
@@ -82,7 +94,8 @@
 		    	
 		    	},
 		select: function( event, ui ) {
-			console.log('kj');
+			$('#pac-input').val(ui.item.value);
+			codeLatLng(ui.item.latitude,ui.item.longitude);
 			return false;
 		}
 		}).data( "ui-autocomplete" )._renderItem = function( ul, item ) {

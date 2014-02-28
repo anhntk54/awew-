@@ -1,12 +1,7 @@
 <!-- Header group -->
 <div class="container">
     <!-- Top menu -->
-    <ul class="top-menu">
-        <li><a href="index-2.html">Home</a></li>
-        <li><a href="shortcodes.html">Shortcodes</a></li>
-        <li><a href="404.html">404 Page</a></li>
-        <li><a href="http://themeforest.net/user/Voodoo-pixel?ref=Voodoo-pixel" target="_blank">Buy template</a></li>
-    </ul>    
+    <?php $this->widget('application.components.Top_Menu');?> 
     <!-- Header -->
 	<div id="header">    
         <div id="logo">

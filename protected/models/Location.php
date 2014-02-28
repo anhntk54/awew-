@@ -29,7 +29,6 @@ class Location extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, content, longitude, latitude', 'required'),
-			array('longitude, latitude', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

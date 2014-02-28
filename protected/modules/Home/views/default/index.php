@@ -1,6 +1,6 @@
 <div id="primary-left">   
     <!-- Slider -->
-    <?php $this->widget('Articles.components.Index_Slideshow');?>
+    <?php $this->widget('Articles.components.Index_Slideshow'); ?>
     <!-- End slider-->
     <div class="clear"></div>
     <!-- Post -->

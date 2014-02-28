@@ -52,17 +52,17 @@ class Users extends CActiveRecord
 			array('avatar', 'length', 'max'=>500),
 			array('lastAccessTime, createDate', 'safe'),
 			// dang ky
-			array('username, confirmPassword, password,fullName, email', 'required', 'message'=>'{attribute} không du?c d? tr?ng', 'on'=>'register'),
-			array('email', 'email', 'message'=>'{attribute} không dúng d?nh d?ng', 'on'=>'register'),
-	    	array('username, email', 'unique', 'message'=>'{attribute} dã du?c s? d?ng', 'on'=>'register'),
-			array('username', 'match', 'not'=>true, 'pattern' => '/[^a-zA-Z0-9]/', 'message' => 'Ngu?i dùng ch? du?c s? d?ng ch? cái không d?u, kí t? hoa, kí t? thu?ng và kí t? s?', 'on'=>'register'),
+			array('username, confirmPassword, password,fullName, email', 'required', 'message'=>'{attribute} khÃ´ng du?c d? tr?ng', 'on'=>'register'),
+			array('email', 'email', 'message'=>'{attribute} khÃ´ng dÃºng d?nh d?ng', 'on'=>'register'),
+	    	array('username, email', 'unique', 'message'=>'{attribute} dÃ£ du?c s? d?ng', 'on'=>'register'),
+			array('username', 'match', 'not'=>true, 'pattern' => '/[^a-zA-Z0-9]/', 'message' => 'Ngu?i dÃ¹ng ch? du?c s? d?ng ch? cÃ¡i khÃ´ng d?u, kÃ­ t? hoa, kÃ­ t? thu?ng vÃ  kÃ­ t? s?', 'on'=>'register'),
 			//array('phone, mobilephone', 'match', 'pattern'=>'/^[0-9-()\s+]+$/'),
-			array('confirmPassword', 'compare', 'compareAttribute'=>'password', 'message' => "{attribute} không chính xác", 'on'=>'register'),
+			array('confirmPassword', 'compare', 'compareAttribute'=>'password', 'message' => "{attribute} khÃ´ng chÃ­nh xÃ¡c", 'on'=>'register'),
 			array('confirmPassword', 'safe'),
 			// ChangePassword rule
-			array('currentPassword, newPassword, confirmNewPassword', 'required', 'message'=>'{attribute} không du?c d? tr?ng', 'on'=>'changePassword'),
+			array('currentPassword, newPassword, confirmNewPassword', 'required', 'message'=>'{attribute} khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng', 'on'=>'changePassword'),
 			// array('currentPassword', 'checkPassword', 'on'=>'changePassword'),
-			array('confirmNewPassword', 'compare', 'compareAttribute'=>'newPassword', 'message' => "{attribute} không chính xác", 'on'=>'changePassword'),
+			array('confirmNewPassword', 'compare', 'compareAttribute'=>'newPassword', 'message' => "{attribute} khÃ´ng chÃ­nh xÃ¡c", 'on'=>'changePassword'),
 			array('confirmPassword', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
