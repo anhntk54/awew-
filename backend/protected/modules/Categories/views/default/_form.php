@@ -51,7 +51,7 @@
 	<?php if($check == 0): ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->dropDownList($model,'type',array('A'=>"Rape",'G'=>"Truyện")); ?>
+		<?php echo $form->dropDownList($model,'type',array('G'=>"Không hiển thị tại index",'A'=>"Hiển thị tại index")); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 	<?php else: ?>

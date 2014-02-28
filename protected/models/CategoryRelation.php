@@ -45,6 +45,7 @@ class CategoryRelation extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'category'=> array(self::BELONGS_TO,'Categories','category_id'),
+            'baiviet'=>array(self::HAS_ONE,'Articles','table_id'),
 		);
 	}
 
