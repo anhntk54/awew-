@@ -4,6 +4,9 @@
         $leng = count($pieces);
         return $pieces[$leng-1];
     }
+    function formatPath($path){
+        return str_replace("../","/",$path);
+    }
     function checkdirectory($name_root_directory)
     {
         if (!is_dir($name_root_directory))
