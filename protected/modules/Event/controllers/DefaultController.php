@@ -69,22 +69,24 @@ class DefaultController extends Controller
 
 		if(isset($_POST['Event']))
 		{
-			if (isset($_POST['longitude'])) {
-				$model->attributes=$_POST['Event'];
-				$location = Location::model()->findByAttributes(array('longitude'=>$_POST['longitude'],'latitude'=>$_POST['latitude']));
-				if ($location == null) {
-					$location = new Location;
-					$location->longitude = $_POST['longitude'];	
-					$location->latitude = $_POST['latitude'];	
-					$location->title = $model->nameLocation;
-					$location->url = toSlug(stripVietnamese($model->nameLocation));
-					$location->save(false);
+			$model->attributes=$_POST['Event'];
+			if ($model->validate()) {
+				if (isset($_POST['longitude'])) {
+					$location = Location::model()->findByAttributes(array('longitude'=>$_POST['longitude'],'latitude'=>$_POST['latitude']));
+					if ($location == null) {
+						$location = new Location;
+						$location->longitude = $_POST['longitude'];	
+						$location->latitude = $_POST['latitude'];	
+						$location->title = $model->nameLocation;
+						$location->url = toSlug(stripVietnamese($model->nameLocation));
+						$location->save(false);
+					}
+					$model->location_id = $location->id;
+					if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
+				}else{
+					$model->addError('nameLocation','Chưa nhập thông tin địa điểm');
 				}
-				$model->location_id = $location->id;
-				if($model->save())
-					$this->redirect(array('view','id'=>$model->id));
-			}else{
-				$model->addError('nameLocation','Chưa nhập thông tin địa điểm');
 			}
 		}
 
