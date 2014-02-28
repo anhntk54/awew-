@@ -1727,3 +1727,6 @@ REQUEST_URI=/giaingoaihang/index.php?r=Event/location/load
 HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Event/default/create
 >>>>>>> 79f6f34a49ac75e525afa0cdacbfea04071909dd
 ---
+2014/02/28 05:09:46 [warning] [application] Failed to set unsafe attribute "addressLocation" of "Event".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Event\controllers\DefaultController.php (73)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)

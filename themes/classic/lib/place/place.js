@@ -68,6 +68,9 @@ function codeLatLng(lat,lng) {
             position: latlng,
             map: map
         });
+        place = results[1];
+        var t = "<input type ='hidden' name='longitude' value="+place.geometry.location.e+"><input type ='hidden' name='latitude' value="+place.geometry.location.d+"><input type ='hidden' name='name_location' value='"+place.formatted_address+"'>";
+        $(id).html(t);
         infowindow.open(map, marker);
       } else {
         alert('No results found');
