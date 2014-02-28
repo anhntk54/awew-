@@ -1,3 +1,7 @@
+<div class="category-title">
+    <h4>Technology</h4>
+    <span><a href="#">View all posts</a></span>
+</div>
 <article class="category-post-alt2">            
     <div class="entry-thumb hover-image-alt1 logo">
         <?php echo Articles::model()->getThumIndex($row);?>
