@@ -28,7 +28,7 @@ class DefaultController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('place','create','index','view'),
+				'actions'=>array('image','place','create','index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -44,13 +44,42 @@ class DefaultController extends Controller
 			),
 		);
 	}
+	public function actionImage()
+	{
+		if(isset($_POST['data'])){
+			$rows = json_decode($_POST['data'],true);
+			echo var_dump($rows);
+			// $row = $rows[0];
+			// $typeImage = $row['type'];
+   //          $img = $row['image'];
+   //          $alt = $row['alt'];
+   //          $logo = $row['logo'];
+            
+   //          if($typeImage == 'jpg' || $typeImage == 'jpeg'){
+			// 	$img = str_replace('data:image/jpeg;base64', '', $img);
+			// }
+			// if($typeImage == 'png' || $typeImage == 'PNG'){
+			// 	$img = str_replace('data:image/png;base64', '', $img);
+			// }
+			// if($typeImage == 'gif' || $typeImage == 'GIF'){
+			// 	$img = str_replace('data:image/gif;base64', '', $img);
+			// }
+   //          $img = str_replace(' ', '+', $img);
+   //          $_data = base64_decode($img);
+   //          $name_image =  'game'.uniqid() . '.png';
+   //          $path = Yii::app()->basePath .'/../image/demo/';
+   //          $file = $path. $name_image;
+   //          $success = file_put_contents($file, $_data);
+            // file_put_contents(Yii::app()->basePath.'/../'.AVATAR.$nameavatar, $file); 
+            // $image_thumbai = Yii::app()->image->load($path. $name_image);
+		}
+	}
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
 	{
-		echo "string";
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));

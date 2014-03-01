@@ -82,9 +82,23 @@
 			  }
 			  var imageElement = document.getElementById("MyPix");  
 			  imageElement.src = myImage;     
-			// var oCanvas = document.getElementById("testImage");  
-  
-			// Canvas2Image.saveAsPNG(oCanvas);  
+			console.log(myImage);
+			jQuery.ajax({
+				url: '<?php echo Yii::app()->createUrl("/Event/default/image") ?>',
+				type: 'POST',
+				data: {data: myImage},
+			})
+			.done(function(data) {
+				console.log(data);
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			  
 			return false;
 		});
 	</script>
