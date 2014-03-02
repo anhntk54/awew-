@@ -70,7 +70,7 @@
 	<img src="" id="MyPix">
 	<script type="text/javascript">
 		jQuery('#crop').click(function(event) {
-			Pixastic.process(document.getElementById("testImage"), "crop", {
+			Pixastic.process(document.getElementById("testIma1ge"), "crop", {
 				rect : {
 					left : x1, top : y1, width : (x2 - x1), height : (y2 - y1)
 				}

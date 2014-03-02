@@ -48,30 +48,15 @@ class DefaultController extends Controller
 	{
 		if(isset($_POST['data'])){
 			$rows = json_decode($_POST['data'],true);
-			echo var_dump($rows);
-			// $row = $rows[0];
-			// $typeImage = $row['type'];
-   //          $img = $row['image'];
-   //          $alt = $row['alt'];
-   //          $logo = $row['logo'];
-            
-   //          if($typeImage == 'jpg' || $typeImage == 'jpeg'){
-			// 	$img = str_replace('data:image/jpeg;base64', '', $img);
-			// }
-			// if($typeImage == 'png' || $typeImage == 'PNG'){
-			// 	$img = str_replace('data:image/png;base64', '', $img);
-			// }
-			// if($typeImage == 'gif' || $typeImage == 'GIF'){
-			// 	$img = str_replace('data:image/gif;base64', '', $img);
-			// }
-   //          $img = str_replace(' ', '+', $img);
-   //          $_data = base64_decode($img);
-   //          $name_image =  'game'.uniqid() . '.png';
-   //          $path = Yii::app()->basePath .'/../image/demo/';
-   //          $file = $path. $name_image;
-   //          $success = file_put_contents($file, $_data);
-            // file_put_contents(Yii::app()->basePath.'/../'.AVATAR.$nameavatar, $file); 
-            // $image_thumbai = Yii::app()->image->load($path. $name_image);
+			echo var_dump(json_decode($_POST['data'],true));
+			$img = $_POST['data'];
+			$img = str_replace('data:image/png;base64,', '', $img);
+			$img = str_replace(' ', '+', $img);
+			$data = base64_decode($img);
+			$path = Yii::app()->basePath .'/../image/demo/';
+            $file = $path. uniqid() . '.png';
+			$success = file_put_contents($file, $data);
+			print $success ? $file : 'Unable to save the file.';
 		}
 	}
 	/**

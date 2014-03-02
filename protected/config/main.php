@@ -23,6 +23,7 @@ return array(
 		// uncomment the following to enable the Gii tool
 		'Home',
 		'Articles',
+		'Users',
 		'Event',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',

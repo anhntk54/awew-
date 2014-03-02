@@ -26,6 +26,7 @@ class Users extends CActiveRecord
 	public $confirmNewEmail;
 	public $currentPassword;
 	public $newPassword;
+	public $month,$day,$year;
 	public $confirmNewPassword;
 	private $_identity;
 	/**
@@ -52,10 +53,12 @@ class Users extends CActiveRecord
 			array('avatar', 'length', 'max'=>500),
 			array('lastAccessTime, createDate', 'safe'),
 			// dang ky
-			array('username, confirmPassword, password,fullName, email', 'required', 'message'=>'{attribute} không du?c d? tr?ng', 'on'=>'register'),
-			array('email', 'email', 'message'=>'{attribute} không dúng d?nh d?ng', 'on'=>'register'),
-	    	array('username, email', 'unique', 'message'=>'{attribute} dã du?c s? d?ng', 'on'=>'register'),
-			array('username', 'match', 'not'=>true, 'pattern' => '/[^a-zA-Z0-9]/', 'message' => 'Ngu?i dùng ch? du?c s? d?ng ch? cái không d?u, kí t? hoa, kí t? thu?ng và kí t? s?', 'on'=>'register'),
+			array('username,month,day,year,gender, confirmPassword, password,fullName, email', 'required', 'message'=>'{attribute} không được để trống', 'on'=>'register'),
+			// array('email', 'email', 'message'=>'{attribute} không dúng định dạng', 'on'=>'register'),
+			array('password,confirmPassword', 'length', 'min'=>6,'on'=>'register'),
+	    	array('username, email', 'unique', 'message'=>'{attribute} đã được sử dụng', 'on'=>'register'),
+			// array('email', 'match', 'not'=>true, 'pattern' => '/[^a-zA-Z0-9]/', 'message' => '{attribute} chỉ sử dụng chữ cái,chữ hoa và số', 'on'=>'register'),
+			array('email', 'match', 'not'=>true, 'pattern' =>'/[^a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/', 'message' => '{attribute} chỉ sử dụng chữ cái,chữ hoa và số', 'on'=>'register'),
 			//array('phone, mobilephone', 'match', 'pattern'=>'/^[0-9-()\s+]+$/'),
 			array('confirmPassword', 'compare', 'compareAttribute'=>'password', 'message' => "{attribute} không chính xác", 'on'=>'register'),
 			array('confirmPassword', 'safe'),
@@ -69,7 +72,42 @@ class Users extends CActiveRecord
 			array('username, email, password, fullName, roles, lastAccessTime, lastIPAccess, isBlock, createDate, createBy, avatar, id, phone', 'safe', 'on'=>'search'),
 		);
 	}
-
+	public static function getMonthtoYear($m)
+	{
+		switch ($m) {
+			case 'm':
+				return array(
+					1 => 'Tháng một',
+					2 => 'Tháng hai',
+					3 => 'Tháng ba',
+					4 => 'Tháng tư',
+					5 => 'Tháng năm',
+					6 => 'Tháng sáu',
+					7 => 'Tháng bảy',
+					8 => 'Tháng tám',
+					9 => 'Tháng chín',
+					10 => 'Tháng mười',
+					11 => 'Tháng mười một',
+					12 => 'Tháng hai',
+				);
+				break;
+			case 'd':
+				$arr = array();
+				for ($i=1; $i < 32 ; $i++) { 
+					$arr[$i] = $i;
+				}
+				return $arr;
+				break;
+			case 'y':
+				$y = date('Y');
+				$arr = array();
+				for ($i=$y; $i >= 1950 ; $i--) { 
+					$arr[$i] = $i;
+				}
+				return $arr;
+				break;
+		}
+	}
 	/**
 	 * @return array relational rules.
 	 */
@@ -113,38 +151,7 @@ class Users extends CActiveRecord
 			'phone' => 'Phone',
 		);
 	}
-	public function login()
-	{
-		if($this->_identity===null)
-		{
-			$this->_identity=new Useridentity($this->username,$this->password);
-			$this->_identity->authenticate();
-		}
-		if($this->_identity->errorCode===Useridentity::ERROR_NONE)
-		{
-
-			$duration=  0; // 30 days
-			if($this->rememberMe == 1){
-				$duration= 3600*24*30 ; // 30 days
-			}
-			Yii::app()->user->login($this->_identity,$duration);
-			return true;
-		}
-		else
-			return false;
-	}
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
+	
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.

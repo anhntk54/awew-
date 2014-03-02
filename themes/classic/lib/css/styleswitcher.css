@@ -13,3 +13,14 @@
 #styleswitcher a {
 	display: block;
 }
+.rowselect select {
+	display: inline-block;
+	margin-right: 7px;
+}
+.rowradio{
+	display: inline-block;
+	margin-bottom: 20px;
+}
+.row input.error{
+	border: 1px solid #F10B0B;
+}

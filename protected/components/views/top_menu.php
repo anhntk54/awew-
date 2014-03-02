@@ -1,4 +1,4 @@
 <ul class="top-menu">
-    <li><a href="index-2.html">Đăng ký</a></li>
-    <li><a href="shortcodes.html">Đăng nhập</a></li>
+    <li><a href="<?php echo Yii::app()->createUrl('Users/default/create'); ?>">Đăng ký</a></li>
+    <li><a href="<?php echo Yii::app()->createUrl('Users/default/login'); ?>">Đăng nhập</a></li>
 </ul> 
