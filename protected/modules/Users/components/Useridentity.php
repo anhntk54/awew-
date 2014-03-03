@@ -25,16 +25,17 @@ class UserIdentity extends CUserIdentity
         	if (!CPasswordHelper::verifyPassword($this->password, $user->password)){
         		$this->errorCode=self::ERROR_USERNAME_INVALID;
         	}else {
-                // $user->updateByPk($user->id, array("lastlogin"=>new CDbExpression('NOW()')));
+                $user->updateByPk($user->id, array("lastAccessTime"=>new CDbExpression('NOW()')));
+                $this->setState('name', $user->fullName);
                 $this->_id=$user->id;
-                $auth=Yii::app()->authManager;
-                if(!$auth->isAssigned($user->roles,$this->_id))
-                {
-                    if($auth->assign($user->roles,$this->_id))
-                    {
-                        Yii::app()->authManager->save();
-                    }
-                }
+                // $auth=Yii::app()->authManager;
+                // if(!$auth->isAssigned($user->roles,$this->_id))
+                // {
+                //     if($auth->assign($user->roles,$this->_id))
+                //     {
+                //         Yii::app()->authManager->save();
+                //     }
+                // }
 			    $this->errorCode=self::ERROR_NONE;
     		}
 		}

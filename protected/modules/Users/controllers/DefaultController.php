@@ -27,7 +27,7 @@ class DefaultController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update','logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -46,7 +46,7 @@ class DefaultController extends Controller
 	public function actionLogin()
 	{
 		$model=new LoginForm;
-
+		echo Yii::app()->user->id;
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{

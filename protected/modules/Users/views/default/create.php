@@ -45,10 +45,10 @@
 		<div class="row rowraddo">
 			<?php echo $form->labelEx($model,'gender'); ?>
 			<div class="rowradio">
-				<?php echo $form->radioButton($model,'gender',array('value'=>'Male')); ?><span>Male</span>
+				<input value="Male" name="Users[gender]" id="Users_gender" type="radio"><span>Male</span>
 			</div>
 			<div class="rowradio">
-				<?php echo $form->radioButton($model,'gender',array('value'=>'Female')); ?><span>Female</span>
+				<input value="Female" name="Users[gender]" id="Users_gender" type="radio"><span>Female</span>
 			</div>
 			<?php echo $form->error($model,'gender'); ?>
 		</div>

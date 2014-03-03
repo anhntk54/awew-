@@ -2274,3 +2274,157 @@ Stack trace:
 REQUEST_URI=/giaingoaihang/index.php?r=Event/default/image
 HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Event/default/view&id=1
 ---
+2014/03/03 04:21:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=site/login
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Users/default/create
+---
+2014/03/03 04:22:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=site/login
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Users/default/create
+---
+2014/03/03 04:27:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=site/login
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Users/default/create
+---
+2014/03/03 05:06:34 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/03/03 05:06:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\giaingoaihang\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/v...')
+#9 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Users/default/view&id=22
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Users/default/login
+---
+2014/03/03 05:13:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\giaingoaihang\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('logout')
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/l...')
+#9 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Users/default/logout
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Home/default
+---
+2014/03/03 05:16:52 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/03/03 05:17:37 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/03/03 10:55:32 [error] [php] mkdir(): File exists (C:\xampp\htdocs\giaingoaihang\framework\web\CAssetManager.php:225)
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(226): asset()
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(216): registerCssFile()
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(131): CLinkPager->registerClientScript()
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(173): CLinkPager->run()
+#4 C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\views\category\view.php(10): CategoryController->widget()
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): CategoryController->renderInternal()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(869): CategoryController->renderFile()
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(782): CategoryController->renderPartial()
+#9 C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\controllers\CategoryController.php(18): CategoryController->render()
+#10 unknown(0): CategoryController->actionViewArticleOfCate()
+#11 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): CategoryController->runAction()
+#15 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#16 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CategoryController->run()
+#17 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\giaingoaihang\index.php(17): CWebApplication->run()
+REQUEST_URI=/giaingoaihang/index.php?r=Articles/Category/viewArticleOfCate&id=8
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\views\category\view.php (10)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\controllers\CategoryController.php (18)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/03/03 10:55:32 [error] [php] mkdir(): File exists (C:\xampp\htdocs\giaingoaihang\framework\web\CAssetManager.php:225)
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(226): asset()
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(216): registerCssFile()
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(131): CLinkPager->registerClientScript()
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(173): CLinkPager->run()
+#4 C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\views\category\view.php(10): CategoryController->widget()
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): CategoryController->renderInternal()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(869): CategoryController->renderFile()
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(782): CategoryController->renderPartial()
+#9 C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\controllers\CategoryController.php(18): CategoryController->render()
+#10 unknown(0): CategoryController->actionViewArticleOfCate()
+#11 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): CategoryController->runAction()
+#15 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#16 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CategoryController->run()
+#17 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\giaingoaihang\index.php(17): CWebApplication->run()
+REQUEST_URI=/giaingoaihang/index.php?r=Articles/Category/viewArticleOfCate&id=8
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\views\category\view.php (10)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\controllers\CategoryController.php (18)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/03/03 10:55:32 [error] [php] mkdir(): File exists (C:\xampp\htdocs\giaingoaihang\framework\web\CAssetManager.php:225)
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(226): asset()
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(216): registerCssFile()
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\widgets\pagers\CLinkPager.php(131): CLinkPager->registerClientScript()
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(173): CLinkPager->run()
+#4 C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\views\category\view.php(10): CategoryController->widget()
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CBaseController.php(95): CategoryController->renderInternal()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(869): CategoryController->renderFile()
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(782): CategoryController->renderPartial()
+#9 C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\controllers\CategoryController.php(18): CategoryController->render()
+#10 unknown(0): CategoryController->actionViewArticleOfCate()
+#11 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(286): CategoryController->runAction()
+#15 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#16 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CategoryController->run()
+#17 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\giaingoaihang\index.php(17): CWebApplication->run()
+REQUEST_URI=/giaingoaihang/index.php?r=Articles/Category/viewArticleOfCate&id=8
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\views\category\view.php (10)
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Articles\controllers\CategoryController.php (18)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)

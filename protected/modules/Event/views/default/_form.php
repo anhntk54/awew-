@@ -87,6 +87,7 @@
 		              			value: items.name,
 		              			latitude:items.latitude,
 		              			longitude:items.longitude,
+		              			image:<?php echo '"'.Yii::app()->theme->baseUrl.'/images/location.png"'; ?>,
 		              		}
 		              	}));
 		    		}
@@ -94,6 +95,7 @@
 		    	
 		    	},
 		select: function( event, ui ) {
+			console.log(ui.item);
 			$('#pac-input').val(ui.item.value);
 			codeLatLng(ui.item.latitude,ui.item.longitude);
 			return false;
@@ -101,7 +103,7 @@
 		}).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
 		    return $( '<li></li>' )
 		        .data( "item.autocomplete", item )
-		        .append('<a><span>'+item.value+'</span></a>').appendTo(ul);
+		        .append('<a><img src="'+item.image+'" style="width:20px;height:25px;display:inline;"><span>'+item.value+'</span></a>').appendTo(ul);
 		    };
 	});
 </script>
