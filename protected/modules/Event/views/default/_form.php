@@ -87,7 +87,7 @@
 		              			value: items.name,
 		              			latitude:items.latitude,
 		              			longitude:items.longitude,
-		              			image:<?php echo '"'.Yii::app()->theme->baseUrl.'/images/location.png"'; ?>,
+		              			image:<?php echo '"'.Yii::app()->theme->baseUrl.'/lib/images/location.png"'; ?>,
 		              		}
 		              	}));
 		    		}
@@ -103,7 +103,30 @@
 		}).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
 		    return $( '<li></li>' )
 		        .data( "item.autocomplete", item )
-		        .append('<a><img src="'+item.image+'" style="width:20px;height:25px;display:inline;"><span>'+item.value+'</span></a>').appendTo(ul);
+		        .append('<a><div class="auto_complete"><img src="'+item.image+'"><span>'+item.value+'</span></div></a>').appendTo(ul);
 		    };
 	});
 </script>
+<style type="text/css">
+.ui-menu .ui-menu-item:hover a{
+	background: red;
+}
+.ui-menu .ui-menu-item{
+	background: #f19d94;
+	margin-bottom: 6px;
+	height: 37px;
+}
+.auto_complete {
+	display: block;
+	width: 100%;
+	height: 30px;
+
+}
+.auto_complete img{
+	width: 40px;
+	display:inline;
+}
+::selection{
+	background: none;
+}
+</style>
