@@ -3743,3 +3743,15 @@ in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
 2014/02/28 15:07:32 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
 in E:\xampp\htdocs\giaingoaihang.com\backend\protected\modules\Articles\controllers\DefaultController.php (137)
 in E:\xampp\htdocs\giaingoaihang.com\backend\index.php (23)
+2014/03/03 11:37:52 [warning] [application] Failed to set unsafe attribute "image" of "Articles".
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (137)
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\index.php (23)
+2014/03/03 11:37:52 [warning] [application] Failed to set unsafe attribute "hot" of "Articles".
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (137)
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\index.php (23)
+2014/03/03 11:37:52 [warning] [application] Failed to set unsafe attribute "endhot_date" of "Articles".
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (137)
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\index.php (23)
+2014/03/03 11:37:52 [warning] [application] Failed to set unsafe attribute "description" of "Articles".
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\protected\modules\Articles\controllers\DefaultController.php (137)
+in C:\xampp\htdocs\BongDa\giaingoaihang\backend\index.php (23)

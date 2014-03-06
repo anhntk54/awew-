@@ -2274,3 +2274,14 @@ Stack trace:
 REQUEST_URI=/giaingoaihang/index.php?r=Event/default/image
 HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Event/default/view&id=1
 ---
+2014/03/03 11:38:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Home/default/vi...')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Home/default/view&id=7
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/
+---
