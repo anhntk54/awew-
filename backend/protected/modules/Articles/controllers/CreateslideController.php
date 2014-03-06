@@ -71,7 +71,7 @@ class CreateslideController extends Controller
                     if($model->save(false)){
                         checkdirectory(RAPE_DATE);
                         $image_thumbai = Yii::app()->image->load(Yii::app()->basePath .'/../'.TEMP_IMAGE.$data[$key]['image']);
-                        $image_thumbai->resize(640,350,Image::NONE);
+                        $image_thumbai->resize(538,340,Image::NONE);
                         $image_thumbai->save(Yii::getPathOfAlias('webroot').'/'.RAPE_DATE.'slide_640_350/'.$data[$key]['image']);
                         ArticleImage::model()->updateByPk($model->id,array('path'=>RAPE_DATE.'slide_640_350/'));
                     }

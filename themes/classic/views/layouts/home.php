@@ -1,33 +1,26 @@
 <!DOCTYPE html>
-<html dir="ltr">
-<!--HEAD-->
-<?php $this->widget('application.components.Head');?>
-<!--END HEAD-->
-    <body>
-        <!-- Open layout -->
-        <div class="site-layout">
+<html lang="en">
+    <?php $this->widget('application.components.Head');?>
         
-            <!-- DEMO Style Switcher -->
-            <?php $this->widget('application.components.Boxed');?>
-        
-            <!-- Header group -->
-            <?php $this->widget('application.components.Container');?>
-            
-            <!-- Main content -->
-            <div class="container"> <!-- Primary content -->
-                <?php echo $content;?>
-                <!-- Sidebar -->
-                <?php $this->widget('application.components.Sidebar');?>
-                <!-- End Sidebar-->
-            </div>
-            
-            <!-- Footer -->
-            <?php $this->widget('application.components.Footer');?>
-            
-            <!-- Copyright -->
-            <?php $this->widget('application.components.Copyright');?>
-        
-        <!-- Closed layout -->
-        </div>
+    <body class="site-boxed">
+    	<div class="site-wrapper">
+    		<div class="prl-container">
+                <?php $this->widget('application.components.Header');?>
+    			<?php $this->widget('application.components.Nav');?>
+    			<?php $this->widget('application.components.Search');?>  
+    		</div>
+    		<div class="prl-container">
+    			<div class="prl-grid prl-grid-divider">
+    				<?php echo $content;?>
+    				<?php $this->widget('application.components.Sidebar');?>  
+    			</div><!--.prl-grid-->
+    		</div>
+    		<?php $this->widget('application.components.Footer');?>  
+    	</div><!-- .site-wrapper -->
+    	<a id="toTop" href="#"><i class="fa fa-long-arrow-up"></i></a>
+    	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/superfish.js"></script>
+    	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/flexslider/jquery.flexslider-min.js"></script>
+    	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery.masonry.min.js"></script>
+    	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/plugins.js"></script>
     </body>
-</html>
+</html> 
