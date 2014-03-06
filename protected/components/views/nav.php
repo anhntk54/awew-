@@ -3,76 +3,7 @@
 		<div class='nav-container clearfix'>
 			<ul class="sf-menu" id="sf-menu">
 				<li class="menu_item-home current"><a href="<?php echo Yii::app()->createUrl('/Home/default'); ?>"><i class="fa fa-home"></i> Homepage</a>
-				<li class="sf-mega-parent"><a href="index.php"><i class="fa fa-flag"></i> Mega 1</a>
-					<div class="sf-mega">
-						<div class="prl-grid prl-grid-divider">
-							<div class="prl-span-3">
-								<article class="prl-article">
-									<a class="prl-thumbnail" href="#">
-										<span class="prl-overlay">
-											 <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_p/1.jpg" alt="Lorem ipsum dolor sit amet">
-											<span class="prl-overlay-area o-video"></span>
-										</span>
-									</a>
-									<h3 class="prl-article-title"><a href="">Praesent lectus orci, volutpat ultrices</a> <span class="prl-badge prl-badge-warning">Video</span></h3> 
-									<div class="prl-article-meta">
-										<i class="fa fa-calendar-o"></i> Nov 18th, 2013&nbsp;&nbsp;<i class="fa fa-comment-o"></i> 23
-									</div>    
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lectus orci, volutpat ultrices porta ac, ultricies eget sem.</p>
-								</article>
-							</div>
-							
-							<div class="prl-span-3">
-								<article class="prl-article">
-									<a class="prl-thumbnail" href="#">
-										<span class="prl-overlay">
-											 <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_p/1.jpg" alt="Lorem ipsum dolor sit amet">
-											<span class="prl-overlay-area o-video"></span>
-										</span>
-									</a>
-									<h3 class="prl-article-title"><a href="">Praesent lectus orci, volutpat ultrices</a> <span class="prl-badge prl-badge-warning">Video</span></h3> 
-									<div class="prl-article-meta">
-										<i class="fa fa-calendar-o"></i> Nov 18th, 2013&nbsp;&nbsp;<i class="fa fa-comment-o"></i> 23
-									</div>    
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lectus orci, volutpat ultrices porta ac, ultricies eget sem.</p>
-								</article>
-							</div>
-					
-							<div class="prl-span-3">
-								<article class="prl-article">
-									<a class="prl-thumbnail" href="#">
-										<span class="prl-overlay">
-											 <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_p/1.jpg" alt="Lorem ipsum dolor sit amet">
-											<span class="prl-overlay-area o-video"></span>
-										</span>
-									</a>
-									<h3 class="prl-article-title"><a href="">Praesent lectus orci, volutpat ultrices</a> <span class="prl-badge prl-badge-warning">Video</span></h3> 
-									<div class="prl-article-meta">
-										<i class="fa fa-calendar-o"></i> Nov 18th, 2013&nbsp;&nbsp;<i class="fa fa-comment-o"></i> 23
-									</div>    
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lectus orci, volutpat ultrices porta ac, ultricies eget sem.</p>
-								</article>
-							</div>
-							
-							<div class="prl-span-3">
-								<article class="prl-article">
-									<a class="prl-thumbnail" href="#">
-										<span class="prl-overlay">
-											 <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_p/1.jpg" alt="Lorem ipsum dolor sit amet">
-											<span class="prl-overlay-area o-video"></span>
-										</span>
-									</a>
-									<h3 class="prl-article-title"><a href="">Praesent lectus orci, volutpat ultrices</a> <span class="prl-badge prl-badge-warning">Video</span></h3> 
-									<div class="prl-article-meta">
-										<i class="fa fa-calendar-o"></i> Nov 18th, 2013&nbsp;&nbsp;<i class="fa fa-comment-o"></i> 23
-									</div>    
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lectus orci, volutpat ultrices porta ac, ultricies eget sem.</p>
-								</article>
-							</div>
-						</div>	
-					</div>
-				</li>
-                
+			
                 <?php foreach($model_parent_cate as $row_parent_cate):?>
                 <li>
                 	<a href="<?php echo Categories::model()->getURL($row_parent_cate);?>"><i class="fa fa-file-text"></i><?php echo $row_parent_cate->title;?></a>
@@ -89,6 +20,17 @@
                 <?php foreach($model_menu as $row):?>
                     <li><a href="<?php echo $row->link; ?>"><i class="fa fa-smile-o"></i><?php echo $row->name;?></a></li>
                 <?php endforeach;?>	
+                
+                
+                <li class="sf-mega-parent"><a href="index.php"><i class="fa fa-flag"></i>Tin nhanh</a>
+					<div class="sf-mega">
+						<div class="prl-grid prl-grid-divider">
+							<?php foreach($model_news as $news):?>
+                                <?php $this->widget('Articles.components.Index_OnePost',array('value'=>$news));?>
+                            <?php endforeach;?>
+						</div>	
+					</div>
+				</li>
 				 
 			</ul>
 

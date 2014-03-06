@@ -137,7 +137,7 @@ class Articles extends CActiveRecord
     
     public function getThumIndex($model){
         if($model->image != ""){
-            return '<a rel="prettyPhoto" href="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'"><img src="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'" alt="'.$model->title.'"/></a>';
+            return '<img src="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'" alt="'.$model->title.'" width="260"/>';
         }
     }
     public function getTitleURL($model){

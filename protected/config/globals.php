@@ -62,7 +62,7 @@
         if(strpos($string," ",$leghth) > $leghth){
             $new_leghth=strpos($string," ",$leghth);
             $new_string = substr($string,0,$new_leghth);
-            return $new_string;
+            return $new_string." ...";
         }
         // trường hợp còn lại không ảnh hưởng tới kết quả
         $new_string = substr($string,0,$leghth);

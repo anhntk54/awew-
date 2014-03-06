@@ -98,9 +98,9 @@ class Categories extends CActiveRecord
 	public function getType($value)
 	{
 		if ($value->type == 'G') {
-			return "Truyện";
+			return "Không hiện";
 		}else{
-			return "Rape";
+			return "Hiện tại trang chủ tin tức";
 		}
 	}
 	/**
@@ -191,7 +191,6 @@ class Categories extends CActiveRecord
         $model = Categories::model()->findByPk($id);
         if($model===null){
             return "Không có";
-			//throw new CHttpException(404,'The requested page does not exist.');
         }else{
             return $model->title;
         }

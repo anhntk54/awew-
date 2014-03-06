@@ -1,0 +1,3 @@
+﻿Ngày 6-3-2014 
++ Hoàn thành: Ghép xong giao diện mới
++ Hoàn thành: Hiển thị danh sách cate trong trang chủ tin tức

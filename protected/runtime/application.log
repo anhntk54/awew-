@@ -2511,3 +2511,47 @@ REQUEST_URI=/Bongda/giaingoaihang/
 in C:\xampp\htdocs\BongDa\giaingoaihang\protected\components\views\nav.php (78)
 in C:\xampp\htdocs\BongDa\giaingoaihang\protected\components\Nav.php (14)
 in C:\xampp\htdocs\BongDa\giaingoaihang\themes\classic\views\layouts\home.php (10)
+2014/03/06 17:50:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(270): CController->missingAction('view')
+#1 E:\xampp\htdocs\giaingoaihang.com\framework\web\CWebApplication.php(282): CController->run('view')
+#2 E:\xampp\htdocs\giaingoaihang.com\framework\web\CWebApplication.php(141): CWebApplication->runController('Home/default/vi...')
+#3 E:\xampp\htdocs\giaingoaihang.com\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\giaingoaihang.com\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang.com/index.php?r=Home/default/view&id=5
+HTTP_REFERER=http://localhost/giaingoaihang.com/index.php?r=Articles/Category/viewArticleOfCate&id=1
+---
+2014/03/06 18:28:23 [error] [php] Trying to get property of non-object (E:\xampp\htdocs\giaingoaihang.com\protected\models\Articles.php:139)
+Stack trace:
+#0 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(95): Cate_OnePost->renderInternal()
+#1 E:\xampp\htdocs\giaingoaihang.com\framework\web\widgets\CWidget.php(244): Cate_OnePost->renderFile()
+#2 E:\xampp\htdocs\giaingoaihang.com\protected\modules\Articles\components\Cate_OnePost.php(5): Cate_OnePost->render()
+#3 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(147): Cate_OnePost->init()
+#4 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(172): Nav->createWidget()
+#5 E:\xampp\htdocs\giaingoaihang.com\protected\components\views\nav.php(29): Nav->widget()
+#6 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(130): require()
+#7 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(95): Nav->renderInternal()
+#8 E:\xampp\htdocs\giaingoaihang.com\framework\web\widgets\CWidget.php(244): Nav->renderFile()
+#9 E:\xampp\htdocs\giaingoaihang.com\protected\components\Nav.php(19): Nav->render()
+#10 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(147): Nav->init()
+#11 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(172): CategoryController->createWidget()
+#12 E:\xampp\htdocs\giaingoaihang.com\themes\classic\views\layouts\home.php(9): CategoryController->widget()
+#13 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(126): require()
+#14 E:\xampp\htdocs\giaingoaihang.com\framework\web\CBaseController.php(95): CategoryController->renderInternal()
+#15 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(784): CategoryController->renderFile()
+#16 E:\xampp\htdocs\giaingoaihang.com\protected\modules\Articles\controllers\CategoryController.php(18): CategoryController->render()
+#17 unknown(0): CategoryController->actionViewArticleOfCate()
+#18 E:\xampp\htdocs\giaingoaihang.com\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#19 E:\xampp\htdocs\giaingoaihang.com\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#20 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#21 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(286): CategoryController->runAction()
+#22 E:\xampp\htdocs\giaingoaihang.com\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#23 E:\xampp\htdocs\giaingoaihang.com\framework\web\CWebApplication.php(282): CategoryController->run()
+#24 E:\xampp\htdocs\giaingoaihang.com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 E:\xampp\htdocs\giaingoaihang.com\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 E:\xampp\htdocs\giaingoaihang.com\index.php(17): CWebApplication->run()
+REQUEST_URI=/giaingoaihang.com/index.php?r=Articles/Category/viewArticleOfCate&id=6
+in E:\xampp\htdocs\giaingoaihang.com\protected\models\Articles.php (139)
+in E:\xampp\htdocs\giaingoaihang.com\protected\modules\Articles\components\views\cate_onepost.php (5)
+in E:\xampp\htdocs\giaingoaihang.com\protected\modules\Articles\components\Cate_OnePost.php (5)

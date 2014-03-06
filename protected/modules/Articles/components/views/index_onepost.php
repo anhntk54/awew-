@@ -1,18 +1,17 @@
-<article class="category-post-alt2">            
-    <div class="entry-thumb hover-image-alt1 logo">
-        <?php echo Articles::model()->getThumIndex($row);?>
-	</div>
-    <div class="entry">            
-        <h3 class="entry-title">
-            <a href="<?php echo Articles::model()->getTitleURL($row);?>"><?php echo $row->title;?></a>
-        </h3>
-        <ul class="entry-meta">
-            <li class="posted-date"><?php echo Articles::model()->getDate($row);?></li>
-            <li class="posted-comments"><a href="post.html">23 Comments</a></li>
-        </ul>
-        <div class="entry-content">
-            <p><?php echo $row->short_description;?></p>
-            <a href="post.html" class="more-link">Read more</a>
-        </div>
-    </div>
-</article>  
+<div class="prl-span-3">
+	<article class="prl-article">
+		<a class="prl-thumbnail" href="<?php echo Articles::model()->getTitleURL($row);?>">
+			<span class="prl-overlay">
+				 <span class="prl-overlay">
+                 <?php echo Articles::model()->getThumIndex($row);?>
+            </span>
+		
+		</a>
+		<h3 class="prl-article-title"><a href="<?php echo Articles::model()->getTitleURL($row);?>"><?php echo $row->title;?></a> 
+        <?php if($row->hot == 1):?><span class="prl-badge prl-badge-warning">HOT</span><?php endif;?></h3> 
+		<div class="prl-article-meta">
+            <i class="fa fa-calendar-o"></i> <?php echo Articles::model()->getDate($row);?>&nbsp;&nbsp;<i class="fa fa-comment-o"></i> 23
+        </div>    
+		<p><?php echo CutString($row->short_description,120);?></p>
+	</article>
+</div>
