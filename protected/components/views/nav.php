@@ -26,7 +26,7 @@
 					<div class="sf-mega">
 						<div class="prl-grid prl-grid-divider">
 							<?php foreach($model_news as $news):?>
-                                <?php $this->widget('Articles.components.Index_OnePost',array('value'=>$news));?>
+                                <?php $this->widget('Articles.components.Tinnhanh_OnePost',array('value'=>$news));?>
                             <?php endforeach;?>
 						</div>	
 					</div>

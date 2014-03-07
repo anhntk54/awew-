@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Giai ngoai hang',
     'theme'=>'classic',
-    'defaultController' => 'Home/default/index',
+    'defaultController' => 'Articles/default/index',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -66,7 +66,7 @@ return array(
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
-			'errorAction'=>'Home/default/error',
+			'errorAction'=>'Articles/default/error',
 		),
 		'log'=>array(
 			'class'=>'CLogRouter',
