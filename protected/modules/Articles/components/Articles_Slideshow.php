@@ -1,5 +1,5 @@
 <?php
-class Index_Slideshow extends CWidget{
+class Articles_Slideshow extends CWidget{
     public function init(){
         $date_now = date('Y-m-d H:i:s');
         //echo $date_now;
@@ -8,7 +8,7 @@ class Index_Slideshow extends CWidget{
         $criteria->order='id DESC';
         $criteria->limit=5;
         $model = Articles::model()->findAll($criteria);
-        $this->render('index_slideshow',array('model'=>$model));
+        $this->render('articles_slideshow',array('model'=>$model));
     }
 }
 ?>

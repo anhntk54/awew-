@@ -1,5 +1,5 @@
 <section id="main" class="prl-span-9"> 
-	<?php $this->widget('Articles.components.Index_Slideshow');?>               
+	<?php $this->widget('Articles.components.Articles_Slideshow');?>               
 
 	<div class="prl-panel">
 		<h5 class="prl-block-title sienna">Entertaiment <span class="prl-block-title-link right"><a href="">ALL POSTS <i class="fa fa-caret-right"></i></a></span></h5>
