@@ -103,7 +103,7 @@
 		}).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
 		    return $( '<li></li>' )
 		        .data( "item.autocomplete", item )
-		        .append('<a><div class="auto_complete"><img src="'+item.image+'"><span>'+item.value+'</span></div></a>').appendTo(ul);
+		        .append('<a><div class="auto_complete"><img src="'+item.image+'"><p>'+item.value+'</p></div></a>').appendTo(ul);
 		    };
 	});
 </script>
@@ -128,5 +128,10 @@
 }
 ::selection{
 	background: none;
+}
+.auto_complete p {
+	display: inline-block;
+	color: rgb(30, 27, 27);
+	margin: 5px;
 }
 </style>
