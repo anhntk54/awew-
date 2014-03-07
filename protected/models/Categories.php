@@ -81,7 +81,7 @@ class Categories extends CActiveRecord
 			'connects' =>array(self::HAS_MANY,'CategoryRelation','category_id'),
             'parent'=> array(self::BELONGS_TO,'Categories','parent_id','condition'=>'t.parent_id <> 0'),
             'children' =>array(self::HAS_MANY,'Categories','parent_id','order' =>'order_possition asc'),
-            'articles' =>array(self::MANY_MANY,'Articles','category_relation(category_id,table_id)','on'=>'table_name="A"','limit'=>4),
+            'articles' =>array(self::MANY_MANY,'Articles','category_relation(category_id,table_id)','on'=>'table_name="A"','limit'=>5),
         );
 	}
     
