@@ -15,7 +15,15 @@
 					<i class="fa fa-comment-o"></i> 
 					<span class="cm">04</span>
 				</div>
+				<button class="chang-image prl-button prl-button-primary" type="submit">Thay đổi ảnh bìa </button>
 			</article>
 		</div><!-- #slider -->	
 	</div>
 </section>
+<style type="text/css" media="screen">
+.chang-image{
+	position: absolute;
+	top: 79%;
+	right: 2%;
+}	
+</style>
