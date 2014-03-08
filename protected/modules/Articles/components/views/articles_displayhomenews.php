@@ -16,7 +16,7 @@
     			   </div>	
     			   <div class="prl-span-6">
     					<article class="prl-article">
-    						<h3 class="prl-article-title"><a href="<?php echo Articles::model()->getTitleURL($row);?>">Praesent lectus orci, volutpat ultrices</a> 
+    						<h3 class="prl-article-title"><a href="<?php echo Articles::model()->getTitleURL($row);?>"><?php echo $row->title;?></a> 
                                 <?php if($row->hot == '1'){?>
                                     <span class="prl-badge prl-badge-warning">HOT</span>
                                 <?php }?>
