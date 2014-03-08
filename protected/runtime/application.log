@@ -2763,3 +2763,13 @@ REQUEST_URI=/Bongda/giaingoaihang/index.php?r=Articles/default
 in C:\xampp\htdocs\BongDa\giaingoaihang\protected\models\Articles.php (151)
 in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Articles\components\views\articles_displayhomenews.php (10)
 in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Articles\components\Articles_DisplayHomeNews.php (5)
+2014/03/08 04:32:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "articlesView".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(270): CController->missingAction('articlesView')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('articlesView')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Articles/defaul...')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(17): CApplication->run()
+#5 {main}
+REQUEST_URI=/Bongda/giaingoaihang/index.php?r=Articles/default/articlesView
+---

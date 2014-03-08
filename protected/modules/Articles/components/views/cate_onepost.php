@@ -2,7 +2,7 @@
    <article class="prl-article">
 		<a class="prl-thumbnail left" href="<?php echo Articles::model()->getTitleURL($row);?>">
 			<div class="prl-overlay">
-                <?php echo Articles::model()->getThumIndex($row);?>
+                <?php echo Articles::model()->getThumListCate($row);?>
 			</div>
 		</a>
 		<div class="prl-article-entry">
@@ -12,7 +12,7 @@
 			<div class="prl-article-meta">
                 <i class="fa fa-calendar-o"></i> <?php echo Articles::model()->getDate($row);?>&nbsp;&nbsp;<i class="fa fa-comment-o"></i> 23
             </div>    
-			<p><?php echo $row->short_description;?></p>
+			<p><?php echo CutString($row->short_description,200);?></p>
 		</div>
 	</article>
 </li>

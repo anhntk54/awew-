@@ -1,6 +1,5 @@
-<?php echo count($model->articles);?>
 <div class="prl-panel">
-	<h5 class="prl-block-title alizarin"><?php echo $model->title.'-'.$model->id;?>  <span class="prl-block-title-link right"><a href="">ALL POSTS <i class="fa fa-caret-right"></i></a></span></h5>
+	<h5 class="prl-block-title alizarin"><?php echo $model->title;?>  <span class="prl-block-title-link right"><a href="<?php echo Categories::model()->getURL($model);?>">XEM TẤT CẢ <i class="fa fa-caret-right"></i></a></span></h5>
 	<div class="prl-grid prl-grid-divider">
 		<div class="prl-span-8">
             <?php foreach($model->articles as $key=>$row):?>
@@ -45,4 +44,3 @@
 		</div>
 	</div>	
 </div>
-<hr class="prl-grid-divider">
