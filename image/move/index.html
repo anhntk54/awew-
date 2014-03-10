@@ -45,7 +45,7 @@ function OnMouseDown(e)
 	// IE is retarded and doesn't pass the event object
 	if (e == null) 
 		e = window.event; 
-	
+	console.log(e.target);
 	// IE uses srcElement, others use target
 	var target = e.target != null ? e.target : e.srcElement;
 	
