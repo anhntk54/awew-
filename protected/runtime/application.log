@@ -2773,3 +2773,12 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/Bongda/giaingoaihang/index.php?r=Articles/default/articlesView
 ---
+2014/03/10 12:28:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Home/default/view".' in C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Home/default/vi...')
+#1 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Home/default/view&id=10
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Articles/default
+---
