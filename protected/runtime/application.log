@@ -2812,3 +2812,27 @@ in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (17)
 in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Event\controllers\DefaultController.php (86)
 in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (17)
 >>>>>>> 638bd2ec4d971938718c4ec01eecc5ea0d2fe25b
+2014/03/11 03:25:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\giaingoaihang\protected\modules\Event\controllers\DefaultController.php:186
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\protected\modules\Event\controllers\DefaultController.php(68): DefaultController->loadModel('1')
+#1 [internal function]: DefaultController->actionView('1')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Event/default/v...')
+#14 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\giaingoaihang\index.php(17): CApplication->run()
+#16 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Event/default/view&id=1
+---
+2014/03/11 03:27:44 [warning] [application] Failed to set unsafe attribute "addressLocation" of "Event".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Event\controllers\DefaultController.php (87)
+in C:\xampp\htdocs\giaingoaihang\index.php (17)

@@ -9,3 +9,12 @@
 @media (max-width: 765px) {
 	.chang-image{bottom: 30%;}
 }
+
+.image-logo {
+	display: block;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.image-logo a img{
+	width: 100%;
+}

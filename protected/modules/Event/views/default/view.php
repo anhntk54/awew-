@@ -146,23 +146,21 @@ function OnMouseMove(e)
 {
 	if (e == null) 
 		var e = window.event; 
-		console.log(_startX,_startY,_offsetX,_offsetY);
-		if((_offsetX + e.clientX - _startX <= 300 - 150)&&(_offsetX + e.clientX - _startX >= 0))
-		{
-			if((_offsetY + e.clientY - _startY <= 500 - 120)&&(_offsetY + e.clientY - _startY >= 0))
-				{
-	// this is the actual "drag code"
-	_dragElement.style.left = (_offsetX + e.clientX - _startX) + 'px';
-	_dragElement.style.top = (_offsetY + e.clientY - _startY) + 'px';
+		var changX = _offsetX + e.clientX - _startX ;
+		var changY = _offsetY + e.clientY - _startY;
+		console.log(_startX,_startY,_offsetX,_offsetY,changX,changY);
+		// if((changX == 0)){
+			if((changY >= -110)){
+				_dragElement.style.position = 'relative';
+				// _drag?Element.style.left = changX + 'px';
+				_dragElement.style.top = changY + 'px';
+			}
 	
-	_debug.innerHTML = '(' + _dragElement.style.left + ', ' + _dragElement.style.top + ')';	
-				}
-	
-		}
-		_dragElement.style.position = 'relative';
-		_dragElement.style.left = (_offsetX + e.clientX - _startX) + 'px';
-	_dragElement.style.top = (_offsetY + e.clientY - _startY) + 'px';
-		console.log(_startX,_startY,_offsetX,_offsetY);
+		// }
+	// 	_dragElement.style.position = 'relative';
+	// 	_dragElement.style.left = (_offsetX + e.clientX - _startX) + 'px';
+	// _dragElement.style.top = (_offsetY + e.clientY - _startY) + 'px';
+	// 	console.log(_startX,_startY,_offsetX,_offsetY);
 }
 
 function OnMouseUp(e)
