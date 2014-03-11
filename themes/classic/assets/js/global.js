@@ -1,0 +1,1 @@
+var domain = "http://localhost/Bongda/giaingoaihang/";

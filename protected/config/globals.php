@@ -219,4 +219,12 @@
         $str = nl2br(trim($value)); 
         return trim($str);
     }
+    
+    function get_youtube_id_from_url($url){
+        if (stristr($url,'youtu.be/')){ 
+            preg_match('/(https|http):\/\/(.*?)\/([a-zA-Z0-9_]{11})/i', $url, $final_ID);return $final_ID[3]; 
+        }else { 
+            preg_match('/(https|http):\/\/(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-zA-Z0-9_]{11})/i', $url, $IDD); return $IDD[5]; 
+        }
+    }
 ?>
