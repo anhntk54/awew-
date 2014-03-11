@@ -25,6 +25,7 @@ return array(
 		'Articles',
 		'Users',
 		'Event',
+        'Videos',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
