@@ -2836,3 +2836,20 @@ REQUEST_URI=/giaingoaihang/index.php?r=Event/default/view&id=1
 2014/03/11 03:27:44 [warning] [application] Failed to set unsafe attribute "addressLocation" of "Event".
 in C:\xampp\htdocs\giaingoaihang\protected\modules\Event\controllers\DefaultController.php (87)
 in C:\xampp\htdocs\giaingoaihang\index.php (17)
+2014/03/12 12:31:39 [error] [php] file_put_contents(/giaingoaihang/..//images/event/5320459bd8ee4.jpg): failed to open stream: No such file or directory (C:\xampp\htdocs\giaingoaihang\protected\modules\Event\controllers\DefaultController.php:67)
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilterChain.php(133): DefaultController->runAction()
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CInlineFilter.php(58): DefaultController->filterAccessControl()
+#5 C:\xampp\htdocs\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#8 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): DefaultController->run()
+#9 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\giaingoaihang\index.php(19): CWebApplication->run()
+REQUEST_URI=/giaingoaihang/index.php?r=Event/default/image
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Event\controllers\DefaultController.php (67)
+in C:\xampp\htdocs\giaingoaihang\index.php (19)

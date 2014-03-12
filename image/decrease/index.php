@@ -2,23 +2,24 @@
 	function compress($source, $destination, $quality) {
 
 		$info = getimagesize($source);
+		var_dump($info,filesize($source));
+		// if ($info['mime'] == 'image/jpeg') 
+		// 	$image = imagecreatefromjpeg($source);
 
-		if ($info['mime'] == 'image/jpeg') 
-			$image = imagecreatefromjpeg($source);
+		// elseif ($info['mime'] == 'image/gif') 
+		// 	$image = imagecreatefromgif($source);
 
-		elseif ($info['mime'] == 'image/gif') 
-			$image = imagecreatefromgif($source);
+		// elseif ($info['mime'] == 'image/png') 
+		// 	$image = imagecreatefrompng($source);
 
-		elseif ($info['mime'] == 'image/png') 
-			$image = imagecreatefrompng($source);
+		// imagejpeg($image, $destination, $quality);
 
-		imagejpeg($image, $destination, $quality);
-
-		return $destination;
+		// return $destination;
 	}
 
 	$source_img = 'demo.jpg';
 	$destination_img = 'destination .jpg';
 
 	$d = compress($source_img, $destination_img, 50);
+	// echo phpinfo();
  ?>

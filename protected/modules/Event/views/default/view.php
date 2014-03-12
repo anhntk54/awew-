@@ -60,8 +60,12 @@ function fileSelect(evt) {
                 return function (evt) {
                     var div = document.createElement('div');
                     var type_image = TypeFile();
-                    console.log(evt.target.result);
-                    $('.image-logo a img').attr('src',evt.target.result);
+                    var data = [];
+                    data.push({
+		                image : evt.target.result,
+		                type : type_image,
+		            });
+		            sendImages(data);
                 };
             }(file));
             reader.readAsDataURL(file);
@@ -71,7 +75,21 @@ function fileSelect(evt) {
         alert('The File APIs are not fully supported in this browser.');
     }
 }
-
+jQuery(document).ready(function() {
+		
+});
+function sendImages (ima) {
+	jQuery.ajax({
+	  url: '<?php echo Yii::app()->createUrl("/Event/default/image") ?>',
+	  type: 'POST',
+	  data: {data: JSON.stringify(ima)},
+	  success: function(data) {
+	    console.log(data);
+	    $('.image-logo a img').attr('src',data);
+	  },
+	});
+	
+}
 document.getElementById('filesToUpload').addEventListener('change', fileSelect, false);
 
 var _startX = 0;			// mouse starting positions
@@ -168,7 +186,7 @@ function OnMouseUp(e)
 	if (_dragElement != null)
 	{
 		_dragElement.style.zIndex = _oldZIndex;
-
+		// _dragElement.style.position = 'static';
 		// we're done with these events until the next OnMouseDown
 		document.onmousemove = null;
 		document.onselectstart = null;
@@ -176,8 +194,6 @@ function OnMouseUp(e)
 
 		// this is how we know we're not dragging
 		_dragElement = null;
-		
-		_debug.innerHTML = 'mouse up';
 	}
 }
 </script>

@@ -1,4 +1,29 @@
 <?php
+    function compress($source, $destination) {
+        $quality = 50;
+        $minSize = 100000;
+        $maxSize =$minSize * 10;
+        $info = getimagesize($source);
+        $size = filesize($source);
+        if ($size <= $minSize) {
+            return 0;
+        }
+        if ($size > $minSize && $size <= $maxSize) {
+            $quality = 80;
+        }
+        if ($info['mime'] == 'image/jpeg') 
+         $image = imagecreatefromjpeg($source);
+
+        elseif ($info['mime'] == 'image/gif') 
+         $image = imagecreatefromgif($source);
+
+        elseif ($info['mime'] == 'image/png') 
+         $image = imagecreatefrompng($source);
+
+        imagejpeg($image, $destination, $quality);
+
+        return $destination;
+    }
     function getTypeFile($string){
         $pieces = explode(".", $string);
         $leng = count($pieces);
