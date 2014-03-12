@@ -8,6 +8,7 @@
                 <?php $this->widget('application.components.Header');?>
     			<?php $this->widget('application.components.Nav');?>
     			<?php $this->widget('application.components.Search');?>  
+      	         <?php $this->widget('application.components.Off_Canvas');?>  
     		</div>
     		<div class="prl-container">
     			<div class="prl-grid prl-grid-divider">

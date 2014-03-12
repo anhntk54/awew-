@@ -143,7 +143,7 @@ class Articles extends CActiveRecord
     
     public function getThumListCate($model){
         if($model->image != ""){
-            return '<img src="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'" alt="'.$model->title.'" width="150"/>';
+            return '<img src="'.Yii::app()->request->baseUrl.'/'.formatPath($model->path).'thumbai_300/'.$model->image.'" alt="'.$model->title.'" width="260"/>';
         }
     }
     
