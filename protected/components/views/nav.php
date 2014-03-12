@@ -2,7 +2,7 @@
 	<div class="nav-wrapper">
 		<div class='nav-container clearfix'>
 			<ul class="sf-menu" id="sf-menu">
-				<li class="menu_item-home current"><a href="<?php echo Yii::app()->createUrl('/Articles/default'); ?>"><i class="fa fa-home"></i> Homepage</a>
+				<li class="menu_item-home current"><a href="<?php echo Yii::app()->createUrl('/Articles/default'); ?>"><i class="fa fa-home"></i>Trang ch?</a>
 			
                 <?php foreach($model_parent_cate as $row_parent_cate):?>
                 <li>

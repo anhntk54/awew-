@@ -2812,3 +2812,25 @@ in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (17)
 in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Event\controllers\DefaultController.php (86)
 in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (17)
 >>>>>>> 638bd2ec4d971938718c4ec01eecc5ea0d2fe25b
+2014/03/12 09:43:31 [error] [exception.CException] exception 'CException' with message 'Alias "application.components.Slidebar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWidgetFactory.php(146): YiiBase::import('application.com...', true)
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DefaultController), 'application.com...', Array)
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('application.com...', Array)
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Videos\views\default\index.php(22): CBaseController->widget('application.com...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Videos\controllers\DefaultController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('index')
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Videos/default/...')
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(17): CApplication->run()
+#17 {main}
+REQUEST_URI=/Bongda/giaingoaihang/index.php?r=Videos/default/index
+---
