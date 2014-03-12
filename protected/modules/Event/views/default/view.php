@@ -2,7 +2,7 @@
 	<div id="slider">
 		<div id="homeslider" class="fullwidth flexslider">
 			<article>
-				<div class="image-logo" style="position: relative;">
+				<div class="image-logo">
 					<a href="#">
 						<img class="drag" src="./images/event/image.jpg">
 					</a>
@@ -75,17 +75,18 @@ function fileSelect(evt) {
         alert('The File APIs are not fully supported in this browser.');
     }
 }
-jQuery(document).ready(function() {
-		
-});
+var heightImage = 0;
 function sendImages (ima) {
 	jQuery.ajax({
 	  url: '<?php echo Yii::app()->createUrl("/Event/default/image") ?>',
 	  type: 'POST',
 	  data: {data: JSON.stringify(ima)},
 	  success: function(data) {
-	    console.log(data);
-	    $('.image-logo a img').attr('src',data);
+	  	console.log(data.linkI);
+	    $('.image-logo a img').attr('src',data.linkI);
+	    $('.image-logo').attr('style','height: 385px;');
+	  	heightImage = data.heightI;
+	  	console.log(heightImage);
 	  },
 	});
 	
