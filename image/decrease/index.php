@@ -17,7 +17,7 @@
 		// return $destination;
 	}
 
-	$source_img = 'demo.jpg';
+	$source_img = 'image.jpg';
 	$destination_img = 'destination .jpg';
 
 	$d = compress($source_img, $destination_img, 50);

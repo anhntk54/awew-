@@ -39,6 +39,20 @@
 </style>
 <script type="text/javascript">
 var statusUpimage = 0,dataImage = null,moveIng = 0;
+var maxHeight = 385,minHeight = 0;
+function getMinHeight () {
+	if (jQuery('.drag').height() <= maxHeight) {
+		minHeight = jQuery('.drag').height();
+	}else{
+		minHeight = maxHeight;
+	}
+	return minHeight;
+}
+jQuery(document).ready(function() {
+	
+	console.log($('.drag').height());
+	jQuery('.image-logo').css('height',getMinHeight());
+})
 jQuery('.save-image').click(function(e) {
 	if (statusUpimage == 0) {
 		document.getElementById('filesToUpload').click();
@@ -46,7 +60,6 @@ jQuery('.save-image').click(function(e) {
 		if (dataImage != null) {
 			topImage = jQuery('.drag').position().top;
 			style = 'top:'+topImage +'px;';
-			console.log(topImage);
 			jQuery.ajax({
 			  url: '<?php echo Yii::app()->createUrl("/Event/default/saveimage") ?>',
 			  type: 'POST',
@@ -59,7 +72,7 @@ jQuery('.save-image').click(function(e) {
 			    jQuery('.event-title').show();
 			    statusUpimage = 0;
 				destroyDrag();	    
-				jQuery('.save-image').css('display','none');
+				jQuery('.save-image').css('display','');
 			  },
 			});
 		};
@@ -75,33 +88,59 @@ function TypeFile()
         return ext;
     }
 }
+
 function fileSelect(evt) {
     if (window.File && window.FileReader && window.FileList && window.Blob) {
 
         var files = evt.target.files;
         var result = '';
         var file;
-        console.log(files);
+        console.log(files,'askj');
+        alert('1c1');
         for (var i = 0; file = files[i]; i++) {
             // if the file is not an image, continue
             if (!file.type.match('image.*')) {
                 continue;
             }
+            if (file.size > 1000) {
+            	// alert('Ảnh quá lớn');
+            	// return false;
+            };
+            alert('1c');
             reader = new FileReader();
+            status = 0;
+            var imageU  = new Image();
             reader.onload = (function (tFile) {
                 return function (evt) {
-                    var div = document.createElement('div');
-                    var type_image = TypeFile();
-                    var data = [];
-                    data.push({
-		                image : evt.target.result,
-		                type : type_image,
-		            });
-		            sendImages(data);
+                	// imageU.src = evt.target.result;
+                	alert('c');
+                	imageU.onload = function() {
+		            var w = this.width;
+		                alert('a');
+        			};
+			        imageU.onerror= function() {
+			            alert('Invalid file type: '+ file.type);
+			        }; 
+                	// alert(imageU.width); 
+                	if (imageU.width >= 0) {
+                		var div = document.createElement('div');
+	                    var type_image = TypeFile();
+	                    var dataU = [];
+	                    dataU.push({
+			                image : evt.target.result,
+			                type : type_image,
+			            });
+			            sendImages(dataU);
+                	}else{
+                		status = 1;
+                	}
                 };
             }(file));
-            reader.readAsDataURL(file);
-            
+            if (status == 1) {
+            	alert('aaa');
+            }else{
+            	reader.readAsDataURL(file);
+            }
         }
     } else {
         alert('The File APIs are not fully supported in this browser.');
@@ -115,13 +154,18 @@ function sendImages (ima) {
 	  success: function(data) {
 	  	dataImage = data;
 	    jQuery('.image-logo a img').attr('src',data.linkI);
-	    jQuery('.image-logo').attr('style','height: 385px;');
 	    jQuery('.save-image').html('Lưu hình ảnh');
 	    jQuery('.save-image').css('display','block');
 	    jQuery('.delete-image').show();
 	    jQuery('.event-title').hide();
 	    statusUpimage = 1;
 	    moveIng = 1;
+	    height = jQuery('.drag').width() * data.height / data.width;
+	    console.log(height);
+	    if (height >= maxHeight) {
+	    	height = maxHeight;
+	    };
+	    jQuery('.image-logo').css('height',height);
 	    InitDragDrop();
 	  },
 	});
@@ -204,7 +248,7 @@ function OnMouseMove(e)
 	if (e == null) 
 		var e = window.event; 
 		var changY = _offsetY + e.clientY - _startY;
-		var max = $('.drag').height() - 385;
+		var max = jQuery('.drag').height() - 385;
 		if((changY >= -max) && changY <= 0){
 			_dragElement.style.position = 'relative';
 			_dragElement.style.top = changY + 'px';

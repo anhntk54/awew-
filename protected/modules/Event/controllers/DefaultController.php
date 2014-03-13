@@ -121,9 +121,12 @@ class DefaultController extends Controller
 					unlink($file);
 					$file = $fileNew;
 				}		
+				$info = getimagesize($file);
 				$arr = array(
 					'linkI'=>$link,
 					'name' =>$name,
+					'height' => $info[1],
+					'width' => $info[0],
 				);
 				echo json_encode($arr);
 			}
