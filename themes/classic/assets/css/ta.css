@@ -10,11 +10,6 @@
 	.chang-image{bottom: 30%;}
 }
 
-.image-logo {
-	display: block;
-	overflow: hidden;
-	margin: 0 auto;
-}
-.image-logo a img{
-	width: 100%;
-}
+.image-logo {display: block;overflow: hidden;margin: 0 auto;
+	position: relative;}
+.image-logo a img{width: 100%;}

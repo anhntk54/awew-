@@ -11,6 +11,8 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 define('SLIDE_SHOW','/images/slideshow/');
+define('IMAGE_EVENT','/images/event/');
+define('MAX_SIZE',100000);
 
 require_once($yii);
 require_once($globals);

@@ -47,16 +47,44 @@ class DefaultController extends Controller
 	public function actionImage()
 	{
 		if(isset($_POST['data'])){
+			header('Content-Type: application/json');
 			$rows = json_decode($_POST['data'],true);
-			echo var_dump(json_decode($_POST['data'],true));
-			$img = $_POST['data'];
-			$img = str_replace('data:image/png;base64,', '', $img);
-			$img = str_replace(' ', '+', $img);
+			$img = $rows[0]['image'];
+			$typeImage = strtolower($rows[0]['type']);
+			if($typeImage == 'jpg' || $typeImage == 'jpeg'){
+            	$img = str_replace('data:image/jpeg;base64', '', $img);
+            }
+			if($typeImage == 'png' || $typeImage == 'PNG'){
+				$img = str_replace('data:image/png;base64', '', $img);
+			}
+			if($typeImage == 'gif' || $typeImage == 'GIF'){
+				$img = str_replace('data:image/gif;base64', '', $img);
+			}
+			// $img = str_replace(' ', '+', $img);
 			$data = base64_decode($img);
-			$path = Yii::app()->basePath .'/../image/demo/';
-            $file = $path. uniqid() . '.png';
+			$path = Yii::app()->basePath .'/../'.IMAGE_EVENT;
+			$name = uniqid() . '.jpg';
+			$nameNew = uniqid() . 'N.jpg';
+            $file = $path.$name;
+            $fileNew =$path. $nameNew;
 			$success = file_put_contents($file, $data);
-			print $success ? $file : 'Unable to save the file.';
+			if ($success) {
+				$status = compress($file,$fileNew);
+				if ($status == 0) {
+					$link =  Yii::app()->baseUrl.IMAGE_EVENT.$name;
+				}else{
+					$link =  Yii::app()->baseUrl.IMAGE_EVENT.$nameNew;
+					$name = $nameNew;
+					$file = $fileNew;
+				}
+				$info = getimagesize($file);
+				$height = $info[1];
+				$arr = array(
+					'linkI'=>$link,
+					'heightI' => $height,
+				);
+				echo json_encode($arr);
+			}
 		}
 	}
 	/**
