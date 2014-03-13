@@ -5,11 +5,19 @@
 	position: absolute;
 	bottom: 2%;
 	right: 2%;
+	display: none;
+}
+.delete-image{
+	background-color: rgb(147, 86, 86);
+	right: 20%;
+}
+.image-logo:hover .save-image{
+	display: block;
 }
 @media (max-width: 765px) {
 	.chang-image{bottom: 30%;}
 }
 
 .image-logo {display: block;overflow: hidden;margin: 0 auto;
-	position: relative;}
+	position: relative;height: 385px;}
 .image-logo a img{width: 100%;}

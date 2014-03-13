@@ -1,19 +1,28 @@
+<?php 
+	$srcImg = "./images/event/image.jpg";
+	$styleImg = '';
+	if ($model->image != null) {
+		$srcImg = Yii::app()->baseUrl.$model->image->path.$model->image->image;
+		$styleImg = "style='".$model->image->style."'";
+	}
+?>
 <section id="main" class="prl-span-9">
 	<div id="slider">
 		<div id="homeslider" class="fullwidth flexslider">
 			<article>
 				<div class="image-logo">
 					<a href="#">
-						<img class="drag" src="./images/event/image.jpg">
+						<img class="drag" src="<?php echo $srcImg; ?>" <?php echo $styleImg; ?> >
 					</a>
-					<button class="chang-image prl-button prl-button-primary">Thay đổi ảnh bìa </button>
+					<button class="delete-image chang-image prl-button prl-button-newsletter" >Hủy bỏ</button>
+					<button class="save-image chang-image prl-button prl-button-primary">Thay đổi ảnh bìa </button>
 				</div>
-				<div class="slider-title">
+				<div class="event-title slider-title">
 					<h2>
-						<a href="single.php"><?php echo $model->title; ?></a> <span class="prl-badge prl-badge-success">Dicussion</span>
+						<a ><?php echo $model->title; ?></a> <span class="prl-badge prl-badge-success">Dicussion</span>
 					</h2>
 				</div>
-				<div class="slider-meta">
+				<div class="event-about slider-meta">
 					<span>Nov 23th, 2013</span> 
 					<i class="fa fa-comment-o"></i> 
 					<span class="cm">04</span>
@@ -29,10 +38,33 @@
 }
 </style>
 <script type="text/javascript">
-$('.chang-image').click(function(e) {
-	document.getElementById('filesToUpload').click();
+var statusUpimage = 0,dataImage = null,moveIng = 0;
+jQuery('.save-image').click(function(e) {
+	if (statusUpimage == 0) {
+		document.getElementById('filesToUpload').click();
+	}else{
+		if (dataImage != null) {
+			topImage = jQuery('.drag').position().top;
+			style = 'top:'+topImage +'px;';
+			console.log(topImage);
+			jQuery.ajax({
+			  url: '<?php echo Yii::app()->createUrl("/Event/default/saveimage") ?>',
+			  type: 'POST',
+			  data: {name:dataImage.name,style:style,id:<?php echo $model->id; ?>},
+			  success: function(data) {
+			  	console.log(data);
+			    jQuery('.image-logo a img').attr('src',data.linkI);
+			    jQuery('.save-image').html('Thay đổi ảnh bìa');
+			    jQuery('.delete-image').hide();
+			    jQuery('.event-title').show();
+			    statusUpimage = 0;
+				destroyDrag();	    
+				jQuery('.save-image').css('display','none');
+			  },
+			});
+		};
+	};
 });
-var count = 0;
 function TypeFile()
 {
     var fup = document.getElementById('filesToUpload');
@@ -75,18 +107,22 @@ function fileSelect(evt) {
         alert('The File APIs are not fully supported in this browser.');
     }
 }
-var heightImage = 0;
 function sendImages (ima) {
 	jQuery.ajax({
 	  url: '<?php echo Yii::app()->createUrl("/Event/default/image") ?>',
 	  type: 'POST',
 	  data: {data: JSON.stringify(ima)},
 	  success: function(data) {
-	  	console.log(data.linkI);
-	    $('.image-logo a img').attr('src',data.linkI);
-	    $('.image-logo').attr('style','height: 385px;');
-	  	heightImage = data.heightI;
-	  	console.log(heightImage);
+	  	dataImage = data;
+	    jQuery('.image-logo a img').attr('src',data.linkI);
+	    jQuery('.image-logo').attr('style','height: 385px;');
+	    jQuery('.save-image').html('Lưu hình ảnh');
+	    jQuery('.save-image').css('display','block');
+	    jQuery('.delete-image').show();
+	    jQuery('.event-title').hide();
+	    statusUpimage = 1;
+	    moveIng = 1;
+	    InitDragDrop();
 	  },
 	});
 	
@@ -99,11 +135,13 @@ var _offsetX = 0;			// current element offset
 var _offsetY = 0;
 var _dragElement;			// needs to be passed from OnMouseDown to OnMouseMove
 var _oldZIndex = 0;			// we temporarily increase the z-index during drag
-var _debug = $('debug');	// makes life easier
 
 
-InitDragDrop();
 
+function destroyDrag () {
+	document.onmousedown = null;
+	document.onmouseup = null;
+}
 function InitDragDrop()
 {
 	document.onmousedown = OnMouseDown;
@@ -132,8 +170,8 @@ function OnMouseDown(e)
 		_offsetY = ExtractNumber(target.style.top);
 		
 		// bring the clicked element to the front while it is being dragged
-		_oldZIndex = target.style.zIndex;
-		target.style.zIndex = 10000;
+		// _oldZIndex = target.style.zIndex;
+		// target.style.zIndex = 10000;
 		
 		// we need to access the element in OnMouseMove
 		_dragElement = target;
@@ -165,21 +203,12 @@ function OnMouseMove(e)
 {
 	if (e == null) 
 		var e = window.event; 
-		var changX = _offsetX + e.clientX - _startX ;
 		var changY = _offsetY + e.clientY - _startY;
-		console.log(_startX,_startY,_offsetX,_offsetY,changX,changY);
-		// if((changX == 0)){
-			if((changY >= -110)){
-				_dragElement.style.position = 'relative';
-				// _drag?Element.style.left = changX + 'px';
-				_dragElement.style.top = changY + 'px';
-			}
-	
-		// }
-	// 	_dragElement.style.position = 'relative';
-	// 	_dragElement.style.left = (_offsetX + e.clientX - _startX) + 'px';
-	// _dragElement.style.top = (_offsetY + e.clientY - _startY) + 'px';
-	// 	console.log(_startX,_startY,_offsetX,_offsetY);
+		var max = $('.drag').height() - 385;
+		if((changY >= -max) && changY <= 0){
+			_dragElement.style.position = 'relative';
+			_dragElement.style.top = changY + 'px';
+		}
 }
 
 function OnMouseUp(e)

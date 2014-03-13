@@ -12,7 +12,10 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 define('SLIDE_SHOW','/images/slideshow/');
 define('IMAGE_EVENT','/images/event/');
-define('MAX_SIZE',100000);
+define('TEMP_IMAGE','/images/temp_image/');
+$_date = date("Y-m-d");
+define('DATE_EVENT','images/event/'.$_date);
+define('DATE_EVENT_PATH','/images/event/'.$_date.'/');
 
 require_once($yii);
 require_once($globals);

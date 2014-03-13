@@ -28,7 +28,7 @@ class DefaultController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('image','place','create','index','view'),
+				'actions'=>array('saveimage','image','place','create','index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -43,6 +43,49 @@ class DefaultController extends Controller
 				'users'=>array('*'),
 			),
 		);
+	}
+	public function actionSaveImage()
+	{
+		// echo DATE_EVENT;
+		// checkdirectory(DATE_EVENT);
+		if(isset($_POST['id'])){
+			header('Content-Type: application/json');
+			$id = $_POST['id'];
+			$name = $_POST['name'];
+			$model = Event::model()->findByPk($id);
+			if ($model != null) {
+				checkdirectory(DATE_EVENT);
+				$pathTemp = Yii::app()->basePath .'/../'.TEMP_IMAGE;
+				$path = Yii::app()->basePath .'/../'.DATE_EVENT_PATH;
+				$image = EventImage::model()->findByAttributes(array('event_id'=>$id));
+				$status = 0;
+				$nameOld = '';
+				if ($image == null) {
+					$image = new EventImage;					
+				}else{
+					$nameOld = $image->image;
+				}
+				$image->event_id = $id;
+				$image->image = $name;
+				$image->path = DATE_EVENT_PATH;
+				$image->style = $_POST['style'];
+				if ($image->save(false)) {
+					if ($name != $nameOld) {
+						if (is_file($path.$nameOld)) {
+							unlink($path.$nameOld);
+						}
+						rename($pathTemp.$name, $path.$image->image);
+					}
+					$link =  Yii::app()->baseUrl.$image->path.$image->image;
+					$arr = array(
+						'linkI'=>$link,
+						'name' =>$name,
+					);
+					echo json_encode($arr);
+				}
+			}
+
+		}	
 	}
 	public function actionImage()
 	{
@@ -62,26 +105,25 @@ class DefaultController extends Controller
 			}
 			// $img = str_replace(' ', '+', $img);
 			$data = base64_decode($img);
-			$path = Yii::app()->basePath .'/../'.IMAGE_EVENT;
-			$name = uniqid() . '.jpg';
-			$nameNew = uniqid() . 'N.jpg';
+			$path = Yii::app()->basePath .'/../'.TEMP_IMAGE;
+			$name = strtotime(date('y-m-d H:i:s')).uniqid() . '.jpg';
+			$nameNew = strtotime(date('y-m-d H:i:s')).uniqid() . '.jpg';
             $file = $path.$name;
             $fileNew =$path. $nameNew;
 			$success = file_put_contents($file, $data);
 			if ($success) {
 				$status = compress($file,$fileNew);
-				if ($status == 0) {
-					$link =  Yii::app()->baseUrl.IMAGE_EVENT.$name;
+				if ($status == null) {
+					$link =  Yii::app()->baseUrl.TEMP_IMAGE.$name;
 				}else{
-					$link =  Yii::app()->baseUrl.IMAGE_EVENT.$nameNew;
+					$link =  Yii::app()->baseUrl.TEMP_IMAGE.$nameNew;
 					$name = $nameNew;
+					unlink($file);
 					$file = $fileNew;
-				}
-				$info = getimagesize($file);
-				$height = $info[1];
+				}		
 				$arr = array(
 					'linkI'=>$link,
-					'heightI' => $height,
+					'name' =>$name,
 				);
 				echo json_encode($arr);
 			}
