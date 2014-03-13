@@ -177,9 +177,9 @@
           $pattern ="/(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~])*/m"; 
           preg_match_all($pattern, $value, $matches, PREG_SET_ORDER);
           return $matches;
-         }
+     }
 
- function convertImage($value, $domain, $uploadPath, $newName = ''){
+    function convertImage($value, $domain, $uploadPath, $newName = ''){
         $arrTemp = parserContent($value);
         $arrPattern = array();
         $arrReplace = array();
@@ -214,29 +214,20 @@
         return $r_value;
     }
     function formatInputContent($value) {
-        $str = trim($value); 
+        //$str = trim($value); 
+        $str = nl2br(trim($value));
         // Replace all blocked words in content
         $arrBlock = array("#sex|porn|xxx#ie");
         $arrBlockReplace = array("");
         $str = preg_replace($arrBlock,$arrBlockReplace,trim($str));
         // Replace all link http:// or www in content
-        $arrBlock = array("/\b(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)[-A-Z0-9+&@#\/%=~_|$?!:,.]*[A-Z0-9+&@#\/%=~_|$]/i");
-        $arrBlockReplace = array("<a style=\"color:#10A702\" href=\"$0\" target=\"_blank\">$0</a>");
-        $str = preg_replace($arrBlock, $arrBlockReplace, $str); 
-        // Replace target="_blank" in http://foodwoow.com link in content
-        $arrBlock = array("/\<a style\=\"color\:\#10A702\" href\=\"http\:\/\/foodwoow\.com([^\"]*)\" target=\"_blank\"\>(.*)\<\/a\>/");
-        $arrBlockReplace = array("<a style=\"color:#10A702\" href=\"http://www.foodwoow.com$1\">$2</a>");
-        $str = preg_replace($arrBlock, $arrBlockReplace, $str); 
-        // Replace target="_blank" in http://www.foodwoow.com link in content
-        $arrBlock = array("/\<a style\=\"color\:\#10A702\" href\=\"http\:\/\/www\.foodwoow\.com([^\"]*)\" target=\"_blank\"\>(.*)\<\/a\>/");
-        $arrBlockReplace = array("<a style=\"color:#10A702\" href=\"http://www.foodwoow.com$1\">$2</a>");
-        $str = preg_replace($arrBlock, $arrBlockReplace, $str); 
-        // Replace target="_blank" in www.foodwoow.com link in content
-        $arrBlock = array("/\<a style\=\"color\:\#10A702\" href\=\"www\.foodwoow\.com([^\"]*)\" target=\"_blank\"\>(.*)\<\/a\>/");
-        $arrBlockReplace = array("<a style=\"color:#10A702\" href=\"http://www.foodwoow.com$1\">$2</a>");
-        $str = preg_replace($arrBlock, $arrBlockReplace, $str); 
+        //$arrBlock = array("/\b(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)[-A-Z0-9+&@#\/%=~_|$?!:,.]*[A-Z0-9+&@#\/%=~_|$]/i");
+        $arrBlock = array("/(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~])*/m");
+        $arrBlockReplace = array("<a style=\"color:#3b5998\" href=\"$0\" target=\"_blank\">$0</a>");
+        $str = preg_replace($arrBlock, $arrBlockReplace, $str);     
         // Replace more than two space in content
         $str = preg_replace("/  /", " ", $str); 
+        
         return trim($str);
     }
     function formatContent($value) {
@@ -246,10 +237,15 @@
     }
     
     function get_youtube_id_from_url($url){
-        if (stristr($url,'youtu.be/')){ 
-            preg_match('/(https|http):\/\/(.*?)\/([a-zA-Z0-9_]{11})/i', $url, $final_ID);return $final_ID[3]; 
+        if(stristr($url,'youtu.be/') === FALSE and stristr($url,'youtube') === FALSE){
+            return false;
+        }
+        else if(stristr($url,'youtu.be/')){ 
+            preg_match('/(https|http):\/\/(.*?)\/([a-zA-Z0-9_]{11})/i', $url, $final_ID);
+            return $final_ID[3]; 
         }else { 
-            preg_match('/(https|http):\/\/(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-zA-Z0-9_]{11})/i', $url, $IDD); return $IDD[5]; 
+            preg_match('/(https|http):\/\/(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-zA-Z0-9_]{11})/i', $url, $IDD); 
+            return $IDD[5]; 
         }
     }
 ?>
