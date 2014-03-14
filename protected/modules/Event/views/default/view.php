@@ -37,10 +37,14 @@
 	display: none;
 }
 </style>
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/view_event.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/view_event1.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function(e) {
-		var eventView = new ViewEvent(1);
-		eventView.init();
+		var dataEvent = {
+			fileUpload:'#filesToUpload',
+			buttonUpload:'.save-image',
+		};
+		var eventView = new EventView(dataEvent);
+		// eventView.init();
 	});
 </script>
