@@ -15,27 +15,67 @@
 
 <section id="main" class="prl-span-9"> 
    <article id="article-single"> 
-	   <div class="prl-span-12">		
-			<div class="prl-form-row space-bot">
-				<label class="prl-form-label" for="form-s-t">Chia sẻ videos về CLB của bạn</label>
-				<div class="prl-form-controls">
-					<textarea id="videos_youtube" cols="30" rows="8" placeholder="Chia sẻ videos youtube về CLB của bạn" class="prl-width-1-1"></textarea>
-				    <button onclick="send_videos();">Button</button>
-                </div>
-			</div>
-		</div>
-	   <hr class="prl-grid-divider">
+	   
 	   <div class="prl-grid">	
-		<div class="prl-span-9 prl-span-flip" id="content_tube">	
-			<div class="prl-entry-content">
-                <p>SDHGAJKD GSHDAGHSD KSDHGJK KJSDHGJKSDH JKGSDHJKG JKSHDGJKASDH JKASDHGJKSDAH JKGHJKSDH GJKASDH</p>
-				<div class="space-bot">
-				    <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
-                        <iframe src="//www.youtube.com/embed/scuxovLtYuA" id="fitvid290741"></iframe>
+    		<div class="prl-span-9 prl-span-flip" id="content_tube" style="border-left: 1px solid #ddd">
+                <div class="prl-span-12">		
+    			<div class="prl-form-row space-bot">
+    				<label class="prl-form-label" for="form-s-t">Chia sẻ videos về CLB của bạn</label>
+    				<div class="prl-form-controls">
+    					<textarea id="videos_youtube" cols="30" rows="8" placeholder="Chia sẻ videos youtube về CLB của bạn" class="prl-width-1-1"></textarea>
+    				    <button onclick="send_videos();">Button</button>
                     </div>
-				</div>
-			   <h2><a href="">Lorem ipsum dolor sit amet</a></h2>
-			</div>
+    			</div>
+    		</div>
+    	   <hr class="prl-grid-divider">
+            <div class="content">
+                <div class="user">
+                    <div class="user_avatar" style="float: left; margin-right: 10px;">
+                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg"/ style="width: 60px;">
+                    </div>
+                    <div class="user_name" style="float: left;">
+                        <a style="font-weight: bold">Tiến Minh</a><br />
+                        <a style="color: #bbb; font-weight: normal ">Fan: Chelsea FC</a>
+                        <p style="color: #bbb; font-weight: normal ">Cập nhật 1h trước</p>
+                    </div>
+                </div>	
+                <div class="clearfix"></div>
+    			<div class="prl-entry-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus luctus est vestibulum luctus</p>
+    				<div class="space-bot">
+    				    <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
+                            <iframe src="//www.youtube.com/embed/scuxovLtYuA" id="fitvid290741"></iframe>
+                        </div>
+    				</div>
+    			   <h2><a href="">Lorem ipsum dolor sit amet</a></h2>
+    			</div>
+                <hr class="prl-grid-divider">
+            </div>
+            
+            <div class="content">
+                <div class="user">
+                <div class="user_avatar" style="float: left; margin-right: 10px;">
+                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg"/ style="width: 60px;">
+                </div>
+                <div class="user_name" style="float: left;">
+                    <a style="font-weight: bold">Tiến Minh</a><br />
+                    <a style="color: #bbb; font-weight: normal ">Fan: Chelsea FC</a>
+                    <p style="color: #bbb; font-weight: normal ">Cập nhật 1h trước</p>
+                </div>
+                </div>	
+                <div class="clearfix"></div>
+    			<div class="prl-entry-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus luctus est vestibulum luctus</p>
+    				<div class="space-bot">
+    				    <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
+                            <iframe src="//www.youtube.com/embed/scuxovLtYuA" id="fitvid290741"></iframe>
+                        </div>
+    				</div>
+    			   <h2><a href="">Lorem ipsum dolor sit amet</a></h2>
+    			</div>
+                <hr class="prl-grid-divider">
+            </div>
+            
 		</div>	
 		<?php $this->widget('Videos.components.Left_Sidebar');?>
 	   </div>
