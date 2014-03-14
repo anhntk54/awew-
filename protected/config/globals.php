@@ -6,7 +6,7 @@
         $info = getimagesize($source);
         $size = filesize($source);
         if ($size <= $minSize) {
-            return 0;
+            return null;
         }
         if ($size > $minSize && $size <= $maxSize) {
             $quality = 80;
@@ -36,6 +36,7 @@
     {
         if (!is_dir($name_root_directory))
         {
+            // echo $name_root_directory;
             mkdir($name_root_directory, 0777);
                 //mkdir($name_root_directory, 0777);
                     //mkdir($name_root_directory.'Banner/originimage', 0777);
