@@ -14,7 +14,7 @@ class LoginForm extends CFormModel
 		return array(
 			array('username, password', 'required'),
 			array('username', 'match', 'not'=>false, 'pattern' =>'/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*(@([a-z0-9\-]+\.)+[a-z]{2,6})?$/ix', 'message' => '{attribute} không đúng định dạng'),
-			array('password', 'length', 'min'=>6,'on'=>'register'),
+			array('password', 'length', 'min'=>6),
 		);
 	}
 

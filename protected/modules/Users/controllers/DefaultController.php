@@ -46,7 +46,6 @@ class DefaultController extends Controller
 	public function actionLogin()
 	{
 		$model=new LoginForm;
-		echo Yii::app()->user->id;
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
@@ -59,11 +58,14 @@ class DefaultController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+			if($model->validate() && $model->login()){
+				echo "string";
+				// $this->redirect(Yii::app()->user->returnUrl);
+			}
+			echo "qkjkaz";
+		}else{
+			$this->render('login',array('model'=>$model));
 		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
 	}
 
 	/**

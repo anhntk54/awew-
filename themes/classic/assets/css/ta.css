@@ -21,3 +21,6 @@
 .image-logo {display: block;overflow: hidden;margin: 0 auto;
 	position: relative;height: 385px;}
 .image-logo a img{width: 100%;}
+#login-3{
+	border-bottom: 1px solid #ddd;
+}

@@ -12,6 +12,7 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 define('SLIDE_SHOW','/images/slideshow/');
 define('IMAGE_EVENT','/images/event/');
+define('AVATAR_USER','/images/users/avatar/');
 define('TEMP_IMAGE','/images/temp_image/');
 $_date = date("Y-m-d");
 define('DATE_EVENT','images/event/'.$_date);

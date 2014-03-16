@@ -1,235 +1,224 @@
-function ViewEvent (id,e) {
-	this.e = e;
-	this.statusUpimage = 0,this.dataImage = null;
-	this.maxHeight = 385,minHeight = 0;
-	this._startX = 0;			// mouse starting positions
-	this._startY = 0;
-	// var _offsetX = 0;			// current element offset
-	this._offsetY = 0;
-	this._dragElement;			// needs to be passed from OnMouseDown to OnMouseMove
-	// var _oldZIndex = 0;			// we temporarily increase the z-index during drag
-	this.init = function () {
-		console.log('aaaaaaaaaaaaaaa');
-		document.getElementById('filesToUpload').addEventListener('change', this.fileSelect, false);
-		this.clickSaveImage(this.e);
-		alert('1c1');
-	}
-this.getMinHeight = function  () {
-	if (jQuery('.drag').height() <= maxHeight) {
-		minHeight = jQuery('.drag').height();
-	}else{
-		minHeight = maxHeight;
-	}
-	return minHeight;
-}
-this.TypeFile = function()
-{
-    var fup = document.getElementById('filesToUpload');
-    var fileName = fup.value;
-    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
-    if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "PNG" || ext == "png" )
-    {
-        return ext;
-    }
-}
-this.clickSaveImage = function (e) {
-	
-	document.getElementById('filesToUpload').click();
-	jQuery('.save-image').click(function(e) {
-	if (this.statusUpimage == 0) {
-		console.log('nnnnn');
-		document.getElementById('filesToUpload').click();
-	}else{
-		if (this.dataImage != null) {
-			topImage = jQuery('.drag').position().top;
-			style = 'top:'+topImage +'px;position: relative;';
-			jQuery.ajax({
-			  url: 'http://localhost/giaingoaihang/index.php?r=Event/default/saveimage',
-			  type: 'POST',
-			  data: {name:this.dataImage.name,style:style,id:1},
-			  success: function(data) {
-			  	console.log(data);
-			    jQuery('.image-logo a img').attr('src',data.linkI);
-			    jQuery('.save-image').html('Thay đổi ảnh bìa');
-			    jQuery('.delete-image').hide();
-			    jQuery('.event-title').show();
-			    this.statusUpimage = 0;
-				this.destroyDrag();	    
-				jQuery('.save-image').css('display','');
-			  },
-			});
+function EventView (data) {
+	var statusUpimage = 0;
+	var dataImage = null;
+	var t = this;
+	var maxHeight = 385,minHeight = 0;
+	var _startY = 0;
+	var _offsetY = 0;
+	var _dragElement;			// needs to be passed from OnMouseDown to OnMouseMove
+	var _oldZIndex = 0;			// we temporarily increase the z-index during drag
+	this.getMinHeight = function  () {
+		if (jQuery(data.nameImg).height() <= maxHeight) {
+			minHeight = jQuery(data.nameImg).height();
+		}else{
+			minHeight = maxHeight;
+		}
+		if (minHeight == 0) {
+			minHeight =300;
 		};
-	};
-});
-}
-this.fileSelect = function (evt) {
-    if (window.File && window.FileReader && window.FileList && window.Blob) {
+		return minHeight;
+	}
+	jQuery(data.nameDiv).css('height',t.getMinHeight());
+	this.TypeFile = function(){
+	    var fup = document.getElementById(data.fileUpload);
+	    var fileName = fup.value;
+	    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+	    if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "PNG" || ext == "png" )
+	    {
+	        return ext;
+	    }
+	}
+	this.sendImages = function (ima) {
+		jQuery.ajax({
+		  url: data.urlUpImg,
+		  type: 'POST',
+		  data: {data: JSON.stringify(ima)},
+		  success: function(a) {
+		  	dataImage = a;
+		  	console.log(a);
+		  	if (a.width <= data.widthMin || a.height <= data.heightMin) {
+		  		alert('Ảnh độ rộng tối thiểu 200px');
+		  		return false;
+		  	};
+		  	if (jQuery(data.nameImg).attr('style') != '') {
+		  		jQuery(data.nameImg).attr('style','');
+		  	};
+		    jQuery(data.nameImg).attr('src',a.linkI);
+		    jQuery(data.buttonUpload).html('Lưu hình ảnh');
+		    jQuery(data.buttonUpload).css('display','block');
+		    jQuery(data.btnDelete).show();
+		    jQuery(data.title).hide();
+		    statusUpimage = 1;
+		    height = jQuery(data.nameImg).width() * a.height / a.width;
+		    console.log(height);
+		    if (height >= maxHeight) {
+		    	height = maxHeight;
+		    };
+		    jQuery(data.nameDiv).css('height',height);
+		    t.InitDragDrop();
+		  },
+		});
+		
+	}
+	this.fileSelect = function (evt) {
+	    if (window.File && window.FileReader && window.FileList && window.Blob) {
 
-        var files = evt.target.files;
-        var result = '';
-        var file;
-        console.log(files,'askj');
-        alert('1c1');
-        for (var i = 0; file = files[i]; i++) {
-            // if the file is not an image, continue
-            if (!file.type.match('image.*')) {
-                continue;
-            }
-            if (file.size > 1000) {
-            	// alert('Ảnh quá lớn');
-            	// return false;
-            };
-            alert('1c');
-            reader = new FileReader();
-            status = 0;
-            var imageU  = new Image();
-            reader.onload = (function (tFile) {
-                return function (evt) {
-                	// imageU.src = evt.target.result;
-                	alert('c');
-                	imageU.onload = function() {
-		            var w = this.width;
-		                alert('a');
-        			};
-			        imageU.onerror= function() {
-			            alert('Invalid file type: '+ file.type);
-			        }; 
-                	// alert(imageU.width); 
-                	if (imageU.width >= 0) {
-                		var div = document.createElement('div');
-	                    var type_image = this.TypeFile();
+	        var files = evt.target.files;
+	        var file;
+	        for (var i = 0; file = files[i]; i++) {
+	            if (!file.type.match('image.*')) {
+	            	alert('Không phải image');
+	            	return false;
+	            }
+	            if (file.size > data.sizeMax) {
+	            	alert('Ảnh quá lớn');
+	            	return false;
+	            };
+	            reader = new FileReader();
+	            reader.onload = (function (tFile) {
+	                return function (evt) {
+	                	var type_image = t.TypeFile();
 	                    var dataU = [];
 	                    dataU.push({
 			                image : evt.target.result,
 			                type : type_image,
 			            });
-			            this.sendImages(dataU);
-                	}else{
-                		status = 1;
-                	}
-                };
-            }(file));
-            if (status == 1) {
-            	alert('aaa');
-            }else{
-            	reader.readAsDataURL(file);
-            }
-        }
-    } else {
-        alert('The File APIs are not fully supported in this browser.');
-    }
-}
-this.sendImages = function (ima) {
-	jQuery.ajax({
-	  url: 'http://localhost/giaingoaihang/index.php?r=Event/default/image',
-	  type: 'POST',
-	  data: {data: JSON.stringify(ima)},
-	  success: function(data) {
-	  	this.dataImage = data;
-	    jQuery('.image-logo a img').attr('src',data.linkI);
-	    jQuery('.save-image').html('Lưu hình ảnh');
-	    jQuery('.save-image').css('display','block');
-	    jQuery('.delete-image').show();
-	    jQuery('.event-title').hide();
-	    this.statusUpimage = 1;
-	    height = jQuery('.drag').width() * data.height / data.width;
-	    console.log(height);
-	    if (height >= maxHeight) {
-	    	height = maxHeight;
-	    };
-	    jQuery('.image-logo').css('height',height);
-	    this.InitDragDrop();
-	  },
-	});
-	
-}
-
-this.destroyDrag = function  () {
-	document.onmousedown = null;
-	document.onmouseup = null;
-}
-this.InitDragDrop = function ()
-{
-	document.onmousedown = this.OnMouseDown;
-	document.onmouseup = this.OnMouseUp;
-}
-
-this.OnMouseDown = function (e)
-{
-	// IE is retarded and doesn't pass the event object
-	if (e == null) 
-		e = window.event; 
-	
-	// IE uses srcElement, others use target
-	var target = e.target != null ? e.target : e.srcElement;
-		// console.log(e.button,window.event);
-	// for IE, left click == 1
-	// for Firefox, left click == 0
-	if ((e.button == 1 && window.event != null || e.button == 0) && target.className == 'drag'){
-		// console.log(e.target);
-		// grab the mouse position
-		this._startX = e.clientX;
-		_startY = e.clientY;
-		
-		// grab the clicked element's position
-		_offsetX = this.ExtractNumber(target.style.left);
-		_offsetY = this.ExtractNumber(target.style.top);
-		
-		// bring the clicked element to the front while it is being dragged
-		// _oldZIndex = target.style.zIndex;
-		// target.style.zIndex = 10000;
-		
-		// we need to access the element in OnMouseMove
-		this._dragElement = target;
-
-		// tell our code to start moving the element with the mouse
-		document.onmousemove = OnMouseMove;
-		
-		// cancel out any text selections
-		document.body.focus();
-		
-		// prevent text selection in IE
-		document.onselectstart = function () { return false; };
-		// prevent IE from trying to drag an image
-		target.ondragstart = function() { return false; };
-		
-		// prevent text selection (except IE)
-		return false;
+			            t.sendImages(dataU);
+	                };
+	            }(file));
+	            reader.readAsDataURL(file);
+	        }
+	    } else {
+	        alert('The File APIs are not fully supported in this browser.');
+	    }
 	}
-}
-
-this.ExtractNumber = function (value)
-{
-	var n = parseInt(value);
-	
-	return n == null || isNaN(n) ? 0 : n;
-}
-
-this.OnMouseMove = function (e)
-{
-	if (e == null) 
-		var e = window.event; 
-		var changY = this._offsetY + e.clientY -this._startY;
-		var max = jQuery('.drag').height() - 385;
-		if((changY >= -max) && changY <= 0){
-			this._dragElement.style.position = 'relative';
-			this._dragElement.style.top = changY + 'px';
-		}
-}
-
-this.OnMouseUp = function(e)
-{
-	if (this._dragElement != null)
+	this.destroyDrag = function  () {
+		document.onmousedown = null;
+		document.onmouseup = null;
+	}
+	this.InitDragDrop = function ()
 	{
-		this._dragElement.style.zIndex = _oldZIndex;
-		// this._dragElement.style.position = 'static';
-		// we're done with these events until the next OnMouseDown
-		document.onmousemove = null;
-		document.onselectstart = null;
-		this._dragElement.ondragstart = null;
-
-		// this is how we know we're not dragging
-		this._dragElement = null;
+		document.onmousedown = t.OnMouseDown;
+		document.onmouseup = t.OnMouseUp;
 	}
-}
+
+	this.OnMouseDown = function (e)
+	{
+		if (e == null) 
+			e = window.event; 
+		var target = e.target != null ? e.target : e.srcElement;
+			// console.log(e.button,window.event);
+		// for IE, left click == 1
+		// for Firefox, left click == 0
+		if ((e.button == 1 && window.event != null || e.button == 0) && target.className == 'drag'){
+			// console.log(e.target);
+			// grab the mouse position
+			_startY = e.clientY;
+			
+			// grab the clicked element's position
+			_offsetY = t.ExtractNumber(target.style.top);
+			
+			// bring the clicked element to the front while it is being dragged
+			// _oldZIndex = target.style.zIndex;
+			// target.style.zIndex = 10000;
+			
+			// we need to access the element in OnMouseMove
+			this._dragElement = target;
+
+			// tell our code to start moving the element with the mouse
+			document.onmousemove = t.OnMouseMove;
+			
+			// cancel out any text selections
+			document.body.focus();
+			
+			// prevent text selection in IE
+			document.onselectstart = function () { return false; };
+			// prevent IE from trying to drag an image
+			target.ondragstart = function() { return false; };
+			
+			// prevent text selection (except IE)
+			return false;
+		}
+	}
+
+	this.ExtractNumber = function (value)
+	{
+		var n = parseInt(value);
+		
+		return n == null || isNaN(n) ? 0 : n;
+	}
+
+	this.OnMouseMove = function (e)
+	{
+		if (e == null) 
+			var e = window.event; 
+			var changY = _offsetY + e.clientY - _startY;
+			var max = jQuery(data.nameImg).height() - 385;
+			if((changY >= -max) && changY <= 0){
+				this._dragElement.style.position = 'relative';
+				this._dragElement.style.top = changY + 'px';
+			}
+	}
+
+	this.OnMouseUp = function(e)
+	{
+		if (this._dragElement != null)
+		{
+			// we're done with these events until the next OnMouseDown
+			document.onmousemove = null;
+			document.onselectstart = null;
+			this._dragElement.ondragstart = null;
+
+			// this is how we know we're not dragging
+			this._dragElement = null;
+		}
+	}
+	this.deleteImage = function (image) {
+		jQuery.ajax({
+			url : data.urlDeImge,
+			type : "POST",
+			data:{name:image},
+			success:function (result) {
+				console.log('da xoa thanh cong');
+			}
+		});
+	}
+	jQuery(data.btnDelete).click(function() {
+		console.log(dataImage);
+		if (dataImage != null) {
+			t.deleteImage(dataImage.image);
+		};
+		jQuery(data.nameImg).attr('src',data.imgEvent);
+	    jQuery(data.buttonUpload).html('Thay đổi ảnh bìa');
+	    jQuery(data.btnDelete).hide();
+	    jQuery(data.title).show();
+	    statusUpimage = 0;
+	});
+	document.getElementById(data.fileUpload).addEventListener('change', t.fileSelect, false);
+	jQuery(data.buttonUpload).click(function () {
+		if (statusUpimage == 0) {
+			console.log('bat su kien',data.fileUpload);
+			document.getElementById(data.fileUpload).click();
+		}else{
+			if (dataImage != null) {
+				topImage = jQuery(data.nameImg).position().top;
+				style = 'top:'+topImage +'px;position: relative;';
+				jQuery.ajax({
+				  url: data.urlSaveImg,
+				  type: 'POST',
+				  data: {name:dataImage.name,style:style,id:data.idEvent},
+				  success: function(da) {
+				  	console.log(data);
+				    jQuery(data.nameImg).attr('src',da.linkI);
+				    jQuery(data.buttonUpload).html('Thay đổi ảnh bìa');
+				    jQuery(data.btnDelete).hide();
+				    jQuery(data.title).show();
+				    statusUpimage = 0;
+					t.destroyDrag();	    
+					jQuery(data.buttonUpload).css('display','');
+				  },
+				});
+			};
+		};
+	});
 }
