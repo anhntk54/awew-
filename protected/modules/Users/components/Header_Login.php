@@ -1,10 +1,10 @@
 <?php
-class Sidebar_Login extends CWidget{
+class Header_Login extends CWidget{
     public function init(){
     	if (Yii::app()->user->isGuest) {
     		Yii::import('application.modules.Users.models.LoginForm');
 	    	$model=new LoginForm;
-	        $this->render('sidebar_login_guest',array('model'=>$model));
+	        $this->render('header_login_guest',array('model'=>$model));
     	}else{
     		$model = Users::model()->findByPk(Yii::app()->user->id);
     		if ($model != null) {
@@ -13,7 +13,7 @@ class Sidebar_Login extends CWidget{
     			}else{
     				$image =Yii::app()->baseUrl.AVATAR_USER.'avatar.png';
     			}
-    			$this->render('sidebar_login_view_user',array('model'=>$model,'image'=>$image));
+    			$this->render('header_login_view_user',array('model'=>$model,'image'=>$image));
     		}
     	}
     }

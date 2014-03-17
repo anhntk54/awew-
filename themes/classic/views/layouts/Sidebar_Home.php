@@ -6,7 +6,6 @@
     	<div class="site-wrapper">
     		<div class="prl-container">
                 <?php $this->widget('application.components.Header');?>
-                <?php $this->widget('Users.components.Header_Login'); ?>
     			<?php $this->widget('application.components.Nav');?>
     			<?php $this->widget('application.components.Search');?>  
                 <?php $this->widget('application.components.Off_Canvas');?>  
@@ -15,7 +14,6 @@
     		<div class="prl-container">
     			<div class="prl-grid prl-grid-divider">
     				<?php echo $content;?>
-    				<?php $this->widget('application.components.Sidebar');?>  
     			</div><!--.prl-grid-->
     		</div>
     		<?php $this->widget('application.components.Footer');?>  

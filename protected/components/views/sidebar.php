@@ -1,5 +1,4 @@
 <aside id="sidebar" class="prl-span-3">	
-	<?php $this->widget('Users.components.Sidebar_Login'); ?>
 	<div class="widget prl-panel">
 		<script>
 			$(function () {

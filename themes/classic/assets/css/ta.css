@@ -24,3 +24,56 @@
 #login-3{
 	border-bottom: 1px solid #ddd;
 }
+/*login-header*/
+.login-header{
+	display: none;
+}
+.login-header div{
+		display: inline-block;
+}
+.login-header div p{
+	margin-bottom: 0px;
+}
+.prl-header-logo{
+	float: left;
+}
+.login-header a:hover{
+	color: #fff;
+}
+.login-header label{
+	display: inline-block;
+	margin-right: 32px;
+}
+.submit-login{
+	padding: 4px 9px;
+	margin-bottom: 3px;
+}
+.input-login{
+	padding: 3px 9px !important;
+}
+.login-header{
+	margin-right: 40px;
+	float: right;
+	width: 40%;
+	padding-top: 5px;
+}
+.login-header p,.login-header label{color: #fff;}
+.login-header a{
+	margin-left: 20px;
+}
+#form-s-mix1{
+	margin: 0px;
+}
+@media (min-width: 1000px) {
+	.login-header{
+		display: block;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+	}	
+}
+@media (max-width: 1366px) {
+	.input-login{
+		padding: 3px 6px !important;
+	}	
+}

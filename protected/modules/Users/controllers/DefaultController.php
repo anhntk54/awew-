@@ -45,6 +45,7 @@ class DefaultController extends Controller
 	 */
 	public function actionLogin()
 	{
+		$this->layout ='//layouts/Sidebar_Home';
 		$model=new LoginForm;
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
@@ -62,10 +63,8 @@ class DefaultController extends Controller
 				echo "string";
 				// $this->redirect(Yii::app()->user->returnUrl);
 			}
-			echo "qkjkaz";
-		}else{
-			$this->render('login',array('model'=>$model));
 		}
+		$this->render('login',array('model'=>$model));
 	}
 
 	/**
