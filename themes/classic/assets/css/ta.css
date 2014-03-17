@@ -54,7 +54,7 @@
 .login-header{
 	margin-right: 40px;
 	float: right;
-	width: 40%;
+	width: 456px;
 	padding-top: 5px;
 }
 .login-header p,.login-header label{color: #fff;}
@@ -77,3 +77,49 @@
 		padding: 3px 6px !important;
 	}	
 }
+/*login - view*/
+.login-submit{
+		padding: 3px 6px !important;
+		font-size: 11px !important;
+	}
+	.login h5{
+		font-weight: bold;
+		color: #000;
+		border-bottom: 1px solid #ddd;
+		font-family: Arial;
+	}
+	.row p,.row label,.row .input-login-view{
+		display: inline-block;
+	}
+	.row .input-login-view{
+		width: 45%;
+		padding: 5px;
+	}
+	.login-bottom,.login .errorMessage{margin-left: 73px;}
+	.login .errorMessage{
+		color: red;
+	}
+	.row p{
+		font-weight: bold;
+		margin-right: 10px;
+	}
+	.login{
+		width: 50%;
+		margin: 0px auto;
+		border: 1px solid #857D7D;
+		border-radius: 6px;
+		padding: 16px;
+	}
+	.login-main{
+		width: 100%;
+	}
+	.login .error .input-login{
+		border-color: red;
+	}
+	.login .errorSummary ul li{
+		list-style: none;
+	}
+	.login .errorSummary{
+		background: #ffebe8;
+		border: 1px solid #dd3c10;
+	}
