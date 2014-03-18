@@ -1,20 +1,41 @@
-<div id="login-3" class="widget widget-login prl-panel">
-<h5 class="prl-block-title">Login</h5>
-<div>
-	<form class="prl-form">
-		<div class="prl-form-row prl-login-username">
-			<input type="text" placeholder="Username" class="prl-width-1-1">
-		</div>
-		<div class="prl-form-row prl-login-password">
-			<input type="password" placeholder="Password" class="prl-width-1-1">
-		</div>	
-		<div class="prl-form-row">
-			<button class="prl-button prl-button-primary" type="submit">Login</button>
-			<label for="form-s-mix1" class="prl-form-help-inline"><input type="checkbox" id="form-s-mix1" checked="checked"> Remember me</label>
-		</div>
-		<div class="prl-form-row">
-			<a href="#">Lost your password?</a>
-		</div>
-	</form>	
+<div class="user-info">
+	<div class="avatar-user">
+		<img src="<?php echo $image; ?>">
+	</div>
+	<div class="user-info-name">
+		<p><?php echo Yii::app()->user->name; ?></p>
+		<p>0 Xu</p>
+	</div>
 </div>
-</div>
+<style type="text/css">
+.user-info{
+	position: absolute;
+	top: 0px;
+	right: 12%;
+	background: #6F7779;
+	margin: 3px;
+	height: 64px;
+	padding: 1px;
+	overflow: hidden;
+}
+.avatar-user{
+	float: left;
+	border-radius: 50%;
+	max-width: 50%;
+	overflow: hidden;
+}
+.user-info-name p:first-child{
+	min-width: 133px;
+	color: #aeb8c2;
+}
+.user-info-name{
+	float: left;
+	max-width: 50%;
+	margin: 5px 2px;
+}
+.avatar-user img{
+	margin: 6px;
+	height: 51px;
+	border-radius: 100%;
+}
+</style>

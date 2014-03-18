@@ -52,7 +52,7 @@
 	padding: 3px 9px !important;
 }
 .login-header{
-	margin-right: 40px;
+	margin-right: 9%;
 	float: right;
 	width: 456px;
 	padding-top: 5px;
@@ -114,12 +114,25 @@
 		width: 100%;
 	}
 	.login .error .input-login{
-		border-color: red;
+		margin-left: 75px;
+		padding: 0px 3px 5px;
 	}
 	.login .errorSummary ul li{
 		list-style: none;
 	}
+	p.label-input{
+		width: 12%;
+	}
+	.checkbox-login{
+		margin: 0px;
+	}
 	.login .errorSummary{
 		background: #ffebe8;
 		border: 1px solid #dd3c10;
+		margin-bottom: 12px;
+		padding: 6px 12px;
+	}
+	.login .errorSummary>p{
+		font-size: 14px;
+		font-weight: bold;
 	}

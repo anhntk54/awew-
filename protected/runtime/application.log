@@ -340,3 +340,90 @@ REQUEST_URI=/giaingoaihang/index.php?r=Event/default/view&id=1
 2014/03/17 11:50:48 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
 in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
 in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 03:19:50 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 05:44:33 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 05:48:39 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 05:50:21 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 05:50:56 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 05:57:13 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 06:39:50 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:18:08 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:19:08 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:25:48 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:26:30 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:29:00 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:29:09 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:30:21 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:30:25 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:30:51 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:31:41 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:32:01 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:36:03 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:39:14 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:39:15 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:40:02 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:40:09 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:40:21 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:40:33 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:43:36 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:44:04 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:44:11 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/18 08:44:14 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\giaingoaihang\index.php (23)
