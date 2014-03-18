@@ -136,3 +136,49 @@
 		font-size: 14px;
 		font-weight: bold;
 	}
+	/*view user*/
+	.user-info{
+	position: absolute;
+	top: 0px;
+	right: 12%;
+	background: #6F7779;
+	margin: 3px;
+	height: 64px;
+	padding: 1px;
+	overflow: hidden;
+}
+.avatar-user{
+	float: left;
+	border-radius: 50%;
+	max-width: 50%;
+	overflow: hidden;
+}
+.user-info-name p:first-child{
+	min-width: 133px;
+	color: #aeb8c2;
+}
+.user-info-name{
+	float: left;
+	max-width: 50%;
+	margin: 7px 4px;
+	padding: 2px 0px 1px 0px;
+}
+.avatar-user img{
+	margin: 6px;
+	height: 51px;
+	border-radius: 100%;
+}
+.activity-user{
+	float: left;
+	margin: 9px;
+	border: 2px solid rgba(146, 196, 186, 0.24);
+	border-radius: 6px;
+}
+.activity-user span.icon{
+	background: url(images/down.png) no-repeat;
+	width: 38px;
+	margin: 2px;
+	height: 38px;
+	display: block;
+	background-size: 36px 36px;
+}
