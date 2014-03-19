@@ -130,6 +130,13 @@ class Users extends CActiveRecord
 		$user = Users::model()->findByPk($id);
 		return $user->roles;
 	}
+	public static function getUrlUser()
+	{
+		if (!Yii::app()->user->isGuest) {
+			// $user = Users::model()->findByPk(Yii::app()->user->id);
+			return Yii::app()->createUrl('/Users/default/view',array('id'=>Yii::app()->user->id));
+		}
+	}
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

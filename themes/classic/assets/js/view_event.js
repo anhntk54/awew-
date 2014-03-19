@@ -18,6 +18,7 @@ function EventView (data) {
 		};
 		return minHeight;
 	}
+	// console.log('aks');
 	jQuery(data.nameDiv).css('height',t.getMinHeight());
 	this.TypeFile = function(){
 	    var fup = document.getElementById(data.fileUpload);
@@ -189,9 +190,11 @@ function EventView (data) {
 			t.deleteImage(dataImage.image);
 		};
 		jQuery(data.nameImg).attr('src',data.imgEvent);
+		jQuery(data.nameImg).attr('style',data.styleOld);
 	    jQuery(data.buttonUpload).html('Thay đổi ảnh bìa');
 	    jQuery(data.btnDelete).hide();
 	    jQuery(data.title).show();
+	    jQuery(data.nameDiv).css('height',t.getMinHeight());
 	    statusUpimage = 0;
 	});
 	document.getElementById(data.fileUpload).addEventListener('change', t.fileSelect, false);

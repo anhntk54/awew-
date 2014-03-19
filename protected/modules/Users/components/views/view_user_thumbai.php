@@ -1,10 +1,9 @@
 <?php 
 	$srcImg = "./images/event/image.jpg";
-	$styleImg = '';$style = '';
+	$styleImg = '';
 	if ($model->image != null) {
 		$srcImg = Yii::app()->baseUrl.$model->image->path.$model->image->image;
 		$styleImg = "style='".$model->image->style."'";
-		$style = $model->image->style;
 	}
 ?>
 
@@ -17,11 +16,6 @@
 				</a>
 				<button class="delete-image chang-image prl-button prl-button-newsletter" >Hủy bỏ</button>
 				<button class="save-image chang-image prl-button prl-button-primary">Thay đổi ảnh bìa </button>
-			</div>
-			<div class="event-title slider-title">
-				<h2>
-					<a ><?php echo $model->title; ?></a> <span class="prl-badge prl-badge-success">Dicussion</span>
-				</h2>
 			</div>
 			<div class="event-about slider-meta">
 				<span>Nov 23th, 2013</span> 
@@ -51,7 +45,6 @@
 			urlUpImg : '<?php echo Yii::app()->createUrl("/Event/default/image") ?>',
 			urlDeImge:  '<?php echo Yii::app()->createUrl("/Event/default/deleteimage") ?>',
 			idEvent: <?php echo $model->id; ?>,
-			styleOld : '<?php echo $style; ?>',
 			imgEvent : '<?php echo $srcImg; ?>',
 			sizeMax:10000000,
 			widthMin : 400,

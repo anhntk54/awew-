@@ -190,8 +190,140 @@ display: block;
 		top: 17%;
 		width: 269px;
 		right: 12%;
+		display: none;
 		background: rgb(22, 21, 21);
+		z-index: 1000;
 }
 .activity li{
-	
+	list-style: none;
+	margin: 1px 3px 2px;
+	border-bottom: 1px solid rgba(255,255,255,0.17);
 }
+.activity li:last-child{
+	border-bottom: none;
+}
+.activity li:hover{
+	background: rgba(224, 56, 77,0.9);
+}
+.activity li a{
+	color: #fff;
+	width: 100%;
+	margin: 8px;
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
