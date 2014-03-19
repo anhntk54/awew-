@@ -1,6 +1,6 @@
 <div class="user-info">
 	<div class="avatar-user">
-		<img src="<?php echo $image; ?>">
+		<a href=""><img src="<?php echo $image; ?>"></a>
 	</div>
 	<div class="user-info-name">
 		<p><?php echo Yii::app()->user->name; ?></p>
@@ -10,3 +10,8 @@
 		<span class="icon"></span>
 	</div>
 </div>
+<ul class="activity">
+	<li>Trang cá nhân</li>
+	<li>Trang cá nhân</li>
+	<li>Trang cá nhân</li>
+</ul>

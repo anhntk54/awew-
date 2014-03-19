@@ -141,7 +141,7 @@
 	position: absolute;
 	top: 0px;
 	right: 12%;
-	background: #6F7779;
+	background: rgba(255,255,255,0.1);
 	margin: 3px;
 	height: 64px;
 	padding: 1px;
@@ -152,6 +152,10 @@
 	border-radius: 50%;
 	max-width: 50%;
 	overflow: hidden;
+}
+.user-info-name p{
+	min-width: 133px;
+	color: #fff;
 }
 .user-info-name p:first-child{
 	min-width: 133px;
@@ -175,10 +179,19 @@
 	border-radius: 6px;
 }
 .activity-user span.icon{
-	background: url(images/down.png) no-repeat;
-	width: 38px;
-	margin: 2px;
-	height: 38px;
-	display: block;
-	background-size: 36px 36px;
+	background: url(images/down-user.png) no-repeat;
+width: 18px;
+margin: 14px 10px;
+height: 9px;
+display: block;
+}
+.activity{
+	position: absolute;
+		top: 17%;
+		width: 269px;
+		right: 12%;
+		background: rgb(22, 21, 21);
+}
+.activity li{
+	
 }
