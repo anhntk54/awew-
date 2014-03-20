@@ -115,6 +115,7 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'image'=> array(self::HAS_ONE,'UserImage','user_id','on'=>'status = 1'),
 		);
 	}
 	// kiem tra phan quyen nguoi dung, 0 la nguoi dung, 1 la admin
@@ -128,6 +129,13 @@ class Users extends CActiveRecord
         }
 		$user = Users::model()->findByPk($id);
 		return $user->roles;
+	}
+	public static function getUrlUser()
+	{
+		if (!Yii::app()->user->isGuest) {
+			// $user = Users::model()->findByPk(Yii::app()->user->id);
+			return Yii::app()->createUrl('/Users/default/view',array('id'=>Yii::app()->user->id));
+		}
 	}
 	/**
 	 * @return array customized attribute labels (name=>label)

@@ -1,1 +1,1 @@
-var domain = "http://localhost/Bongda/giaingoaihang/";
+var domain = "http://localhost/giaingoaihang/";

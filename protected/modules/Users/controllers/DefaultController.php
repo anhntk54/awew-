@@ -27,7 +27,7 @@ class DefaultController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','logout'),
+				'actions'=>array('update','view','logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -45,8 +45,8 @@ class DefaultController extends Controller
 	 */
 	public function actionLogin()
 	{
+		$this->layout ='//layouts/Sidebar_Home';
 		$model=new LoginForm;
-		echo Yii::app()->user->id;
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
@@ -59,10 +59,10 @@ class DefaultController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if($model->validate() && $model->login()){
 				$this->redirect(Yii::app()->user->returnUrl);
+			}
 		}
-		// display the login form
 		$this->render('login',array('model'=>$model));
 	}
 

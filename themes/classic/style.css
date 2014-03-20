@@ -46,7 +46,7 @@
 	
 
 /***** Header *****/
-	header#masthead { background-color:#000; color: #ddd; font-size:12px; line-height:70px;}
+	header#masthead { background-color:#000; color: #ddd; font-size:12px; /*line-height:70px;*/}
 
 	/* Logo */
 	header#masthead .prl-header-logo { background-color:#e74c3c; padding:0px 20px; float:left;}

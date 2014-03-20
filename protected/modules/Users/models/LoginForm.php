@@ -14,10 +14,24 @@ class LoginForm extends CFormModel
 		return array(
 			array('username, password', 'required'),
 			array('username', 'match', 'not'=>false, 'pattern' =>'/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*(@([a-z0-9\-]+\.)+[a-z]{2,6})?$/ix', 'message' => '{attribute} không đúng định dạng'),
-			array('password', 'length', 'min'=>6,'on'=>'register'),
+			array('username, password', 'checkPassword'),
+			array('password', 'length', 'min'=>6),
 		);
 	}
-
+	public function checkPassword($attributes,$params)
+	{
+		$user = Users::model()->find("username='$this->username' or email='$this->username'");
+		if ($user != null) {
+			if (!CPasswordHelper::verifyPassword($this->password, $user->password)) {
+				$this->addError('password', "Mật khẩu hiện tại không đúng");
+				return false;
+			}
+		}else{
+			$this->addError('username', "Không tồn tại tài khoản này");
+			return false;
+		}
+		return true;
+	}
 	/**
 	 * Declares customized attribute labels.
 	 * If not declared here, an attribute would have a label that is
@@ -47,7 +61,8 @@ class LoginForm extends CFormModel
 			Yii::app()->user->login($this->_identity,$duration);
 			return true;
 		}
-		else
+		else{
 			return false;
+		}
 	}
 }
