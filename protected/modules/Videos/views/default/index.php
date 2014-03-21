@@ -83,6 +83,15 @@
 </section>
 
 <script>
+$('#videos_youtube').on('paste', function () {
+  var element = this;
+  setTimeout(function () {
+    var text = $(element).val();
+    console.log("end..."+text);
+    // do something with text
+  }, 100);
+});
+
 function send_videos(){
     var text = $("#videos_youtube").val();
     if(text != null){
