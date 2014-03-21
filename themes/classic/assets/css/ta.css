@@ -145,7 +145,7 @@
 	margin: 3px;
 	height: 64px;
 	padding: 1px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .avatar-user{
 	float: left;
@@ -187,9 +187,9 @@ display: block;
 }
 .activity{
 	position: absolute;
-		top: 17%;
+		top: 102%;
 		width: 269px;
-		right: 12%;
+		right: -1%;
 		display: none;
 		background: rgb(22, 21, 21);
 		z-index: 1000;
@@ -210,6 +210,22 @@ display: block;
 	width: 100%;
 	margin: 8px;
 	display: inline-block;
+}
+.activity-user:hover ul.activity{
+	display: block;
+}
+/*view thumbai user*/
+.avatar{
+	z-index: 1000;
+	position: absolute;
+	bottom: 3px;
+	width: 21% !important;
+	left: 2%;
+	box-shadow: 1px 1px 10px rgba(255,255,255,0.5);
+	background: #fff;
+	padding: 3px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
 }
 
 

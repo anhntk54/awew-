@@ -13,6 +13,7 @@
 			<div class="image-logo">
 				<a href="#">
 					<img class="drag" src="<?php echo $srcImg; ?>" <?php echo $styleImg; ?> >
+					<img class="avatar" src="./images/users/avatar/avatar.png">
 				</a>
 				<button class="delete-image chang-image prl-button prl-button-newsletter" >Hủy bỏ</button>
 				<button class="save-image chang-image prl-button prl-button-primary">Thay đổi ảnh bìa </button>
