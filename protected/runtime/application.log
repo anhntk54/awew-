@@ -427,3 +427,43 @@ in C:\xampp\htdocs\giaingoaihang\index.php (23)
 2014/03/18 08:44:14 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
 in C:\xampp\htdocs\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
 in C:\xampp\htdocs\giaingoaihang\index.php (23)
+2014/03/21 03:54:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=site/login
+---
+2014/03/21 03:55:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=site/login
+---
+2014/03/21 04:43:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=site/login
+---
+2014/03/21 04:43:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=site/login
+---
