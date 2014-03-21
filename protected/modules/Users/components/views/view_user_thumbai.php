@@ -13,16 +13,16 @@
 			<div class="image-logo">
 				<a href="#">
 					<img class="drag" src="<?php echo $srcImg; ?>" <?php echo $styleImg; ?> >
-					<img class="avatar" src="./images/users/avatar/avatar.png">
+
 				</a>
 				<button class="delete-image chang-image prl-button prl-button-newsletter" >Hủy bỏ</button>
 				<button class="save-image chang-image prl-button prl-button-primary">Thay đổi ảnh bìa </button>
-			</div>
-			<div class="event-about slider-meta">
-				<span>Nov 23th, 2013</span> 
-				<i class="fa fa-comment-o"></i> 
-				<span class="cm">04</span>
-			</div>				
+			</div>	
+			<div class="img-avatat">
+				<img class="avatar" src="./images/users/avatar/avatar.png">
+				<button class="save-avatar prl-button prl-button-primary">Thay đổi ảnh đại diện</button>
+				<span class="name-user">Nhữ Tuấn Anh</span>
+			</div>		
 		</article>
 	</div><!-- #slider -->	
 </div>
