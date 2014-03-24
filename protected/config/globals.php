@@ -243,10 +243,18 @@
         }
         else if(stristr($url,'youtu.be/')){ 
             preg_match('/(https|http):\/\/(.*?)\/([a-zA-Z0-9_]{11})/i', $url, $final_ID);
-            return $final_ID[3]; 
+            if($final_ID != null and $final_ID != ''){
+                return $final_ID[3]; 
+            }else{
+                return false;
+            }
         }else { 
             preg_match('/(https|http):\/\/(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-zA-Z0-9_]{11})/i', $url, $IDD); 
-            return $IDD[5]; 
+            if($IDD != null and $IDD != ''){
+                return $IDD[5]; 
+            }else{
+                return false;
+            }
         }
     }
 ?>

@@ -26,53 +26,31 @@
                         </div>
                         <div class="select_upload">
                             <div class="select_left">
-                                <div class="icon-up">
-                                    <i class="fa fa-camera fa-2 test"></i>
-                                </div>
-                                <span></span>
-                                <div class="icon-up">
-                                    <i class="fa fa-youtube-play fa-2"></i>
-                                </div>
-                                <div class="icon-up">
-                                    <i class="fa fa-link"></i>
+                                <div class="icon-youtube">
+                                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/U_lagre.png"/>
                                 </div>
                             </div>
                             <div class="select_right">
-                                <button onclick="send_videos();">Button</button>
+                                <button onclick="send_videos();">Chia sẻ</button>
                             </div>
                         </div>
                         <div class="clearfix"></div>
         			</div>
         		</div>
                 <style>
-                .test{
-                    font-size: 20px;
-                }
-                .select_left .icon-up:last-child{
-                    border-right: none;
-                }
-                .icon-up{
-                    padding: 3px 2px 0px;
-                    float: left;
-                    margin: 5px 2px 5px 0px;
-                    border-right: 1px solid rgba(0,0,0,0.2);
-                }
                 .select_upload{
                     overflow: hidden; /****/
                     background: rgba(0,0,0,0.1);
                 }
                 .select_left{
-                   float: left;
+                    float: left;
                 }
-                
                 .select_right{
-                    float: right;    
+                    float: right;
                 }
-                
-                
                 </style>
     	   <hr class="prl-grid-divider">
-            <div class="content">
+            <div class="content" id="content_append">
                 <div class="user">
                     <div class="user_avatar" style="float: left; margin-right: 10px;">
                         <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg"/ style="width: 60px;">
@@ -163,7 +141,7 @@ function send_videos(){
     				videos +
     			'</div>';
                 
-                $("#content_tube").prepend(content);
+                $("#content_append").prepend(content);
             },
             complete : function(){
                 

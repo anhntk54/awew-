@@ -16,7 +16,7 @@ class ServicesController extends Controller{
                 foreach($link as $key1=>$value){
                     foreach($value as $key2=>$row){
                         $check = get_youtube_id_from_url($row);
-                        if($check){
+                        if($check and  $check != '' and $check != null){
                             
                             $id = $check;
                             $videoTitle = file_get_contents("http://gdata.youtube.com/feeds/api/videos/${id}?v=2&fields=title");
@@ -35,25 +35,11 @@ class ServicesController extends Controller{
                     }
                 }
             }
-            
             $content =  formatInputContent($yt_url);
             $data = array(
                 'content'=>$content,
                 'tube'=>$data_tube,
             );
-            
-            
-            //echo $yt_url;
-            /*$variable= get_youtube_id_from_url($yt_url);
-            $id = $variable;
-            $videoTitle = file_get_contents("http://gdata.youtube.com/feeds/api/videos/${id}?v=2&fields=title");
-            preg_match("/<title>(.+?)<\/title>/is", $videoTitle, $titleOfVideo);
-            $videoTitle = $titleOfVideo[1];
-            
-            $videos = array(
-                'youtube_id' => $variable,
-                'youtube_title' => $videoTitle,
-            ); */
             echo json_encode($data);
         }
      }
