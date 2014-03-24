@@ -105,6 +105,51 @@
 </section>
 
 <script>
+
+/*$('#videos_youtube').bind('paste', function(e){
+    
+    console.log("paste");
+    
+    var text = $(this).html();
+    console.log("Fuck:"+text);
+    if(text != null){
+        jQuery.ajax({
+            type: 'POST',
+    		url: '<?php echo Yii::app()->createUrl('/Videos/services/getLink');?>',
+            dataType: 'json',
+            data: { link_youtube : text},
+            success: function (json) {
+                
+                var videos = '';
+                $.each(json.tube, function( index, value ){
+                    videos = videos +
+                    '<div class="space-bot">'+
+    				    '<div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">'+
+                            '<iframe src="//www.youtube.com/embed/'+value.id+'" id="fitvid290741"></iframe>'+
+                        '</div>'+
+    				'</div>'+
+    			   '<h2><a href="'+value.link+'" target="_blank">'+value.title+'</a></h2>';
+                    
+                });
+                var content =
+                '<div class="prl-entry-content">'+
+                    '<p>'+json.content+'</p>'+
+    				videos +
+    			'</div>';
+                
+                $("#content_tube").prepend(content);
+            },
+            complete : function(){
+                
+            },
+            error: function () {
+            }
+    
+        });
+    }*/
+    
+    
+
 $('#videos_youtube').on('paste', function () {
   var element = this;
   setTimeout(function () {
