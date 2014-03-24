@@ -254,6 +254,7 @@ display: block;
 	display: block;
 }
 .name-user{
+	text-shadow: #000 0px 1px 0, #000 0 -1px;
 	position: absolute;
 	left: 199px;
 	bottom: 40px;
