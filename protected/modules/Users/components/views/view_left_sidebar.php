@@ -1,4 +1,4 @@
-<div class="prl-span-3 prl-entry-meta">
+<div class="user-span-3 prl-span-3 prl-entry-meta">
 	<div class="prl-article-meta">
 		<span><i class="fa fa-calendar-o"></i> Nov 18th, 2013</span> 
 		<span><a href="#comment"><i class="fa fa-comment-o"></i> 23</a></span>
