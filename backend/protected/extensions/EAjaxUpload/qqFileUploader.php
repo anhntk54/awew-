@@ -127,6 +127,8 @@ class qqFileUploader {
         $filename = $pathinfo['filename'];
         //$filename = md5(uniqid());
         $ext = $pathinfo['extension'];
+        
+        $filename = toSlug(stripVietnamese($filename));
 
         if($this->allowedExtensions && !in_array(strtolower($ext), $this->allowedExtensions)){
             $these = implode(', ', $this->allowedExtensions);

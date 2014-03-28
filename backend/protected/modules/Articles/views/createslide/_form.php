@@ -23,27 +23,29 @@
              'id'=>'image',
              'config'=>array(
                  'action'=>Yii::app()->createUrl('/Articles/createslide/upload'),
+                 'template'=>'<div class="qq-uploader">
+                                <div class="qq-upload-drop-area">
+                                    <span>Drop files here to upload</span>
+                                </div>
+                                <div class="qq-upload-button">Upload a file</div>
+                                <ul class="qq-upload-list"></ul>
+                            </div>',// Template buttom up image
                  'allowedExtensions'=>array("jpg", "jpeg", "png", "gif"),
                  'sizeLimit'=>2*1024*1024,// maximum file size in bytes
                  'onSubmit'=>"js:function(file, extension) {           		
                 	var createLi = 
-                    '<li id=\"image-'+y+'\" style=\"position: relative; display: inline-block; float: left; width: 150px; height: 150px; border: 1px solid #E6E6E6; margin: 10px;\">'+
-                        '<img src=\"".Yii::app()->theme->baseUrl."/images/loading.gif\" style=\"position: absolute; top: 50%; left: 50%; margin: -16px 0 0 -16px\"/>'+
+                    '<li id=\"image-'+y+'\" class=\"khung-anh\">'+
+                        '<img src=\"".Yii::app()->theme->baseUrl."/images/loading.gif\"/>'+
                     '</li>';
         			$('#list-image').append(createLi);
-        			y = y + 1;
+	    	    	y = y + 1;
               	 }",
               	'onComplete'=>"js:function(file, response, responseJSON) {
                     var createImage = 
-                    '<div style=\"background-color: #8BC94C; display: block; width: 100%; height: 20px;\">'+
-                        '<span style=\"float: right; padding-right: 10px;\">'+
-                            '<a style=\"cursor: pointer;\" onclick=\"deleteImageAlbum('+z+');\" >x</a>'+
-                        '</span>'+
-                    '</div>'+
-                    '<div style=\"position: relative; top: 20; left: 0; width: 100%; height: 130px; text-align: center;\">'+
-                        '<img id=\"image'+z+'\" src=\"".Yii::app()->request->baseUrl.'/'.TEMP_IMAGE."'+responseJSON[\"filename\"]+'\" style=\"max-height: 100%; max-width: 100%; position: absolute; top: 0; bottom: 0; margin: auto; left: 0; right: 0;\">'+
+                    '<a class=\"icon-del\" onclick=\"deleteImageAlbum('+z+');\" >XX</a>'+
+                    '<div class=\"append-image\">'+
+                        '<img id=\"image'+z+'\" src=\"".Yii::app()->request->baseUrl.'/'.TEMP_IMAGE."'+responseJSON[\"filename\"]+'\">'+
                     '</div>';
-                    
                     $('#image'+z).attr('style')
                     $('#image-'+z).html(createImage);
                     z = z + 1;
@@ -56,7 +58,7 @@
               )
         )); 
      
-     
+        
         echo $form->hiddenField($model,'image');
         //echo "<img id='thumb' src='/images/path/".$model->photos."'>";
       ?>
@@ -97,6 +99,52 @@
   }
 </script>
 <style>
+
+    
+    .icon-del{
+        cursor: pointer;
+        display: none;
+        position: absolute;
+        right: 0;
+        top : 0;
+        z-index : 1000;
+        width: 20px;
+        height: 20px;
+        background-image: url("<?php echo Yii::app()->theme->baseUrl; ?>/images/icon-del.png");
+    }
+    .append-image{
+        position: relative; top: 20; left: 0; width: 100%; height: 130px; text-align: center;
+    }
+    .append-image>img{
+        max-height: 170px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
+    .khung-anh{
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 130px;
+        height: 130px;
+        border: 1px solid #E6E6E6;
+        margin: 10px;
+        z-index: 900;
+    }
+    /*.khung-anh:hover{cursor: pointer;}*/
+    .khung-anh:hover .icon-del{
+        display: block;
+    }
+    
+    .khung-anh>img{
+        position: absolute; top: 50%; left: 50%; margin: -16px 0 0 -16px;
+    }
+    
+    /**End css up anh cua Minh Tien**/
     .myButton {
         
         -moz-box-shadow:inset 0px 1px 0px 0px #ffe0b5;
