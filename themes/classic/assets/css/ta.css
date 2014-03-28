@@ -302,6 +302,15 @@ div.clr{
   font-style:italic;
 }
 .hiddendiv{display: none;}
+/*view post */
+.status .info-user span.icon{
+	float: right;
+	background: url(images/down-user.png) center center no-repeat ;
+width: 15px;
+margin: 0px 10px;
+height: 17px;
+display: block;
+}
 
 
 

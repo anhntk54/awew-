@@ -13,9 +13,12 @@
             <div class="post">
                 <div class="status">
                     <div class="info-user">
-                        <span><a href="" class="username">Nhu tuan anh</a></span>    
-                        <span><a href="">ManUFC</a></span>
+                        <span class="name"><a href="" class="username">Nhu tuan anh</a></span>    
+                        <span class="icon"></span>
+                        <div class="clr"></div>
+                        <span class="time">1 giờ trước</span>
                     </div>
+                    <div class="clr"></div>
                     <div class="content-post">
                         <span>Clip ngắn vỏn vẹn 1 phút. Nhưng nó khiến người lớn phải giật mình vì chợt nhận thức rằng, mỗi một hành động của chúng ta đều được những ánh mắt trẻ thơ theo dõi, ghi nhận. Trẻ em như tờ giấy trắng, sẽ hằn in lên đó những vệt màu do ta vẩy vào.</span>
                     </div>
@@ -23,9 +26,9 @@
                         <a href="">Thích</a>
                         <a href="">Bình luận</a>
                         <a href="">Chia sẻ</a>
-                        <span class="time">1 giờ trước</span>
                     </div>
                 </div>
+                <div class="clr"></div>
                 <div class="comments">
                     <div class="comment">
                         <div class="avatar-user">
@@ -82,16 +85,23 @@
 </article>
 </section>
 <style type="text/css">
+
 	.info-user{
 		background: rgba(248, 243, 243, 0.26);
 	}
 	.time{
-		float: right;
 		color: #8D8A8A;
 	}
 	a.username{
 		font-weight: bold;
 	}
+    div.comment .time{
+        float: right;
+    }
+    span.name{
+        width: 50%;
+        float: left;
+    }
 	.info-user span{
 		display: block;
 		padding: 1px 8px;
@@ -119,7 +129,6 @@
     }
     .content-post{
     	border-radius: 5px;
-        /*border: 1px solid #ddd;*/
         padding: 7px 8px;
         margin-bottom: 1px;
         box-shadow: inset 0px 0px;
