@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/style.css" type='text/css' media="screen" />
 	<link rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/assets/css/print.css' id="print-style-css" type='text/css' media="print" />
 	<?php Yii::app()->clientScript->registerCoreScript('jquery');?>
-	</script>
 	
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript" ></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/custom.js"></script>
