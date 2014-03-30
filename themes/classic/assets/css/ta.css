@@ -296,11 +296,6 @@ div.clr{
 .post-status-user .input{
 	padding: 7px;
 }
-[contentEditable=true]:empty:not(:focus):before{
-  content:attr(data-ph);
-  color:grey;
-  font-style:italic;
-}
 .hiddendiv{display: none;}
 /*view post */
 .status .info-user span.icon{
@@ -310,6 +305,39 @@ width: 15px;
 margin: 0px 10px;
 height: 17px;
 display: block;
+}
+.content-post .prl-entry-content{
+	margin-bottom: -4px;
+}
+.content-post .user-activity{
+	margin-bottom: 3px;
+}
+.view-show-post{
+    width: 73%;
+}
+.comment .prl-entry-content{
+    float: right;
+    width: 87%;
+    margin-top: -4px;
+}
+.comment .prl-entry-content p.content-status{
+    display: inline;
+}
+.p-show{
+    color: #bbb;
+}
+.p-username-show{
+    font-weight: bold;
+}
+.time-comment{
+    display: inline;
+}
+.comment{
+    background: rgba(223, 221, 221, 0.16);
+	padding-top: 4px;
+}
+@media (max-width: 320px) {
+	.comment .prl-entry-content{ width: 76%;}
 }
 
 
