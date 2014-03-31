@@ -5,7 +5,7 @@
 	<div class="prl-grid">	
     	<div class="view-show-post prl-span-9 prl-span-flip posts-users" id="content_tube" >
     		<?php $this->widget('Users.components.View_Post_Status'); ?>
-            <hr class="prl-grid-divider">
+            <!-- <hr class="prl-grid-divider"> -->
             <?php $this->widget('Users.components.View_Show_Status'); ?>
             <?php $this->widget('Users.components.View_Show_Status'); ?>
 	   </div>
@@ -13,6 +13,26 @@
     </div>
 </article>
 </section>
-<style type="text/css">
+<script type="text/javascript">
+    var t,statusShowEditPost = 0;
+    jQuery('.edit-comment').click(function (e) {
+        t = jQuery(this);
+        statusShowEditPost = 1;
+        t.css('display','inline');
+        t.parent().find('.activity-post').slideToggle();
+    })
+    jQuery('.edit-post-status').click(function (e) {
+        t = jQuery(this);
+        statusShowEditPost = 1;
+        t.parent().find('.activity-post').slideToggle();
+    })
+    jQuery('body').click(function(e) {
+        if (statusShowEditPost == 0) {
+            jQuery('.activity-post').hide();
+            jQuery('.edit-comment').hide();
+            jQuery('.edit-comment').css('display','');
+        };
+        statusShowEditPost = 0;
+    })
 
-</style>
+</script>
