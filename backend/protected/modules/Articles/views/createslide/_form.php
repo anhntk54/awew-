@@ -1,3 +1,53 @@
+<style>
+    .khung-anh{
+        overflow: hidden;
+        position: relative;
+        display: inline-grid;
+        float: left;
+        width: 130px;
+        height: 130px;
+        border: 1px solid #E6E6E6;
+        margin: 10px;
+        z-index: 900;
+        text-align: center;
+        line-height: 130px;
+    }
+    .khung-anh>img{
+        display: inline-block;
+    }
+    
+    .khung-anh:hover .icon-del{
+        display: block;
+    }
+    
+    .icon-del{
+        cursor: pointer;
+        display: none;
+        position: absolute;
+        right: 0;
+        top : 0;
+        z-index : 1000;
+        width: 20px;
+        height: 20px;
+    }
+    .icon-del>img{
+        width: 20px;
+        height: 20px;
+    }
+    .append-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 130px;
+        height: 130px;
+        text-align: center;
+    }
+    .append-image>img{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
 <?php
 /* @var $this CreateslideController */
 /* @var $model GameImage */
@@ -41,21 +91,36 @@
 	    	    	y = y + 1;
               	 }",
               	'onComplete'=>"js:function(file, response, responseJSON) {
-                    var createImage = 
-                    '<a class=\"icon-del\" onclick=\"deleteImageAlbum('+z+');\" >XX</a>'+
-                    '<div class=\"append-image\">'+
-                        '<img id=\"image'+z+'\" src=\"".Yii::app()->request->baseUrl.'/'.TEMP_IMAGE."'+responseJSON[\"filename\"]+'\">'+
-                    '</div>';
-                    $('#image'+z).attr('style')
+              	     var createImage = 
+                       '<a class=\"icon-del\" onclick=\"deleteImageAlbum('+z+');\">'+
+                            '<img src=\"".Yii::app()->theme->baseUrl."/images/delete.png\"/>'+
+                        '</a>'+
+                        '<div class=\"append-image\">'+
+                            '<img id=\"image'+z+'\" src=\"".Yii::app()->baseUrl."/".TEMP_IMAGE."'+ responseJSON[\"filename\"] +'"."\" />'+ 
+                        '</div>';                                        
                     $('#image-'+z).html(createImage);
-                    z = z + 1;
-                    console.log(responseJSON[\"filename\"]);
-                    images.push({
-                        image : responseJSON[\"filename\"],
-                        type : 1,
-                    });
-                }",
+                    setTimeout(function(){
+                        // alert(window.z);
+                        var w = $('#image'+window.z).width(), h = $('#image'+window.z).height();
+                        if (w>h){
+                            alert('w>h'); $('#image'+window.z).css('height', '130px');
+                        } else {
+                            alert('h>w'); $('#image'+window.z).css('width', '130px');
+                        };
+                        window.z = window.z + 1;
+                    },500);".                    
+                "}",
               )
+                        /*
+                        src=\"".Yii::app()->baseUrl."/".TEMP_IMAGE."'+ responseJSON[\"filename\"] +'"."\"
+                        var returnObject = {};
+                        if(this.width > this.height){
+                            returnObject.height = height;
+                        }else{                            
+                            returnObject.width = width;
+                        }
+                        alert(this.width + 'x' + this.height);
+                        return returnObject;*/
         )); 
      
         
@@ -99,51 +164,6 @@
   }
 </script>
 <style>
-
-    
-    .icon-del{
-        cursor: pointer;
-        display: none;
-        position: absolute;
-        right: 0;
-        top : 0;
-        z-index : 1000;
-        width: 20px;
-        height: 20px;
-        background-image: url("<?php echo Yii::app()->theme->baseUrl; ?>/images/icon-del.png");
-    }
-    .append-image{
-        position: relative; top: 20; left: 0; width: 100%; height: 130px; text-align: center;
-    }
-    .append-image>img{
-        max-height: 170px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        left: 0;
-        right: 0;
-    }
-    .khung-anh{
-        overflow: hidden;
-        position: relative;
-        display: inline-block;
-        float: left;
-        width: 130px;
-        height: 130px;
-        border: 1px solid #E6E6E6;
-        margin: 10px;
-        z-index: 900;
-    }
-    /*.khung-anh:hover{cursor: pointer;}*/
-    .khung-anh:hover .icon-del{
-        display: block;
-    }
-    
-    .khung-anh>img{
-        position: absolute; top: 50%; left: 50%; margin: -16px 0 0 -16px;
-    }
-    
     /**End css up anh cua Minh Tien**/
     .myButton {
         
