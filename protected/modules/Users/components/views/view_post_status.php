@@ -1,8 +1,15 @@
 <div class="post-status-user">
 	<textarea id="comments" placeholder="Bạn đang nghĩ gì?"></textarea>
 	<div class="div-button">
-		<i class="fa fa-camera"></i>
+		<a href="javscript::void(0);"><i class="fa fa-camera"></i></a>
 		<button>Đăng bài</button>
+		<div class="status-post">
+			<a href="javscript::void(0);">Công khai</a>
+			<i class="fa fa-filter fa-lg"></i>
+			<div class="types">
+				<a href="javscript::void(0);">Riêng tư</a>
+			</div>
+		</div>
 	</div>
 	<div class="clr"></div>
 </div>
@@ -26,4 +33,7 @@
 	    jQuery(this).css('height', height);
 
 	});
+	jQuery('.status-post').click(function() {
+		jQuery('.types').slideToggle();
+	})
 </script>

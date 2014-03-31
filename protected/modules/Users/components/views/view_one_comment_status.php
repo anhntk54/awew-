@@ -1,7 +1,7 @@
 <div class="comment">
     <div class="user">
-        <div class="user_avatar" style="float: left; margin-right: 10px;">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg"/ style="width: 45px;">
+        <div class="user_avatar" >
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg">
         </div>
     </div>  
     <div class="content-post">
