@@ -17,4 +17,5 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/custom.js"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/global.js"></script>
     <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/assets/css/ta.css" type='text/css' media="screen" />
+    
 </head>
