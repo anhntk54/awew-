@@ -92,6 +92,14 @@ class Slideshow extends CActiveRecord
             return "Không có";
         }
     }
+    
+    public function getImageSlideMax($model){
+        if($model->image != ''){
+            return CHtml::image(Yii::app()->request->baseUrl.'/'.SLIDE_SHOW.$model->image);
+        }else{
+            return "Không có";
+        }
+    }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
