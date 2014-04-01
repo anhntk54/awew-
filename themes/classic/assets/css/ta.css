@@ -266,7 +266,32 @@ display: block;
 div.clr{
 	clear: both;
 }
+.status-post{
+	display: inline;
+	float: right;
+	margin: 4px;
+	position: relative;
+	padding: 2px 5px;
+}
+.types{
+	top: 30px;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0px 0px 8px;
+	padding: 3px;
+	width: 98px;
+	display: none;
+	left: 0px;
+}
+.status-post:hover{
+	background: #ddd;
+	box-shadow: 0px 0px 5px rgba(90, 84, 84, 0.57) inset;
+}
+.status-post i{
+	font-size: 14px !important;
+}
 .div-button{
+	line-height: 2;
 	background: #e9eaed;
 }
 .div-button i{
@@ -291,21 +316,13 @@ div.clr{
 	border: 1px solid rgba(39, 34, 34, 0.5);
 	border-radius: 0%;
 	margin-bottom: 15px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .post-status-user .input{
 	padding: 7px;
 }
 .hiddendiv{display: none;}
 /*view post */
-.status .info-user span.icon{
-	float: right;
-	background: url(images/down-user.png) center center no-repeat ;
-width: 15px;
-margin: 0px 10px;
-height: 17px;
-display: block;
-}
 .content-post .prl-entry-content{
 	margin-bottom: -4px;
 }
@@ -316,15 +333,20 @@ display: block;
     width: 73%;
 }
 .comment .prl-entry-content{
+	position: relative;
     float: right;
-    width: 87%;
-    margin-top: -4px;
+	width: 90%;
+	margin-top: -5px;
+	padding: 0px 2px;
+}
+.comment .prl-entry-content:hover .edit-comment{
+	display: inline;
 }
 .comment .prl-entry-content p.content-status{
     display: inline;
 }
 .p-show{
-    color: #bbb;
+    color: rgba(37, 37, 37, 0.38);
 }
 .p-username-show{
     font-weight: bold;
@@ -333,16 +355,96 @@ display: block;
     display: inline;
 }
 .comment{
-    background: rgba(223, 221, 221, 0.16);
-	padding-top: 4px;
+	border-bottom: 1px dotted #eee;
+    background: #ddd;
+	padding-top: 12px;
+	padding-left: 8px;
 }
 @media (max-width: 320px) {
 	.comment .prl-entry-content{ width: 76%;}
 }
+.content{
+	border: 1px solid #eee;
+	box-shadow: 0px 0px 1px;
+	margin-bottom: 20px;
+}
+div.post-status{
+	margin:5px;
+	padding: 7px;
+}
+.many-like p{
+	display: inline;
+}
+div.many-like{
+	border: 1px solid rgba(88, 87, 87, 0.07);
+	padding: 8px;
+}
+.post-status .user a.icon{
+	float: right;
+	background: url(images/down-user.png) center center no-repeat ;
+	width: 15px;
+	margin: 0px 10px;
+	height: 17px;
+	display: block;
+}
+.activity-post{
+	display: inline-block;
+	width: 100px;
+	border: 1px solid #eee;
+	padding: 2px;
+	position: absolute;
+	box-shadow: 0px 0px 10px;
+	right: 3px;
+	top: 15px;
+	display: none;
+	background: #fff;
+}
+.post-status .user{
+	position: relative;
+}
+.activity-post a{ 
+	display: block;
+	color: #000;
+}
+.post-user-activity{
+	padding: 8px;
+	border-top: 1px solid #eee;
+}
+.content-comment-post{
+	width: 95%;
+	float: left;
+}
+.edit-comment{
+	float: right;
+	margin: 5px 2px;
+	display: none;
+	color: #000;
+}
+.comment .activity-post{
+	top:25px;
+}
+.user .user_avatar{
+	float: left; margin-right: 10px;
+}
+.content .user .user_avatar img{
+	width: 60px;
+}
+.comment .user .user_avatar img{
+	width: 40px;
+}
+.input-post-comment .user{
 
-
-
-
+}
+.input-post-comment .input{
+	float: left;
+	width: 89%;
+	padding-bottom: 10px;
+	padding-left: 6px;
+	margin-top: -1px;
+}
+.input-post-comment .input-comment{
+	padding: 13px 11px;
+}
 
 
 
