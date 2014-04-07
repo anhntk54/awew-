@@ -1,4 +1,5 @@
-<div style="width: 100%;">
+
+<div id="content_div_2">
     <?php echo Slideshow::model()->getImageSlideMax($model);?>
-    <p>Tôi yêu quê hương tôi</p>
+    <p>T�i y�u qu� huong t�i</p>
 </div>
