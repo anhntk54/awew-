@@ -356,7 +356,7 @@ div.clr{
 }
 .comment{
 	border-bottom: 1px dotted #eee;
-    background: #ddd;
+    background: #e9eaed;
 	padding-top: 12px;
 	padding-left: 8px;
 }
@@ -416,7 +416,7 @@ div.many-like{
 }
 .edit-comment{
 	float: right;
-	margin: 5px 2px;
+	margin: 2px 2px 0px;
 	display: none;
 	color: #000;
 }
@@ -444,6 +444,15 @@ div.many-like{
 }
 .input-post-comment .input-comment{
 	padding: 13px 11px;
+}
+/*left slider barr*/
+.if-user {
+	font-size: 12px;
+	text-transform: none;
+	color: #999;
+}
+.user-prl{
+	color: red;
 }
 
 
