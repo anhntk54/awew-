@@ -195,13 +195,20 @@ class Users extends CActiveRecord
 		return parent::model($className);
 	}
     // function get name
-    public function getName($id){
+    public static function getName($id){
         $model = Users::model()->findByPk($id);
         if($model===null){
 			throw new CHttpException(404,'The requested page does not exist.');
         }else{
-            return $model->username;
-        }
-            
+            echo '<a class="p-username-show">'.$model->fullName.'</a>';
+        }   
+    }
+    public static function getAvatar($id){
+        $model = Users::model()->findByPk($id);
+        if($model===null){
+			throw new CHttpException(404,'The requested page does not exist.');
+        }else{
+            echo '<img src="'.Yii::app()->theme->baseUrl.'/assets/images/_small/1.jpg">';
+        }   
     }
 }

@@ -25,6 +25,7 @@ return array(
 		'Articles',
 		'Users',
 		'Event',
+		'Status',
         'Videos',
         'Popup',
 		'gii'=>array(

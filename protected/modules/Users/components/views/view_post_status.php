@@ -1,5 +1,5 @@
 <div class="post-status-user">
-	<textarea id="comments" placeholder="Bạn đang nghĩ gì?"></textarea>
+	<textarea id="input-comments" placeholder="Bạn đang nghĩ gì?"></textarea>
 	<div class="div-button">
 		<a href="javscript::void(0);"><i class="fa fa-camera"></i></a>
 		<button>Đăng bài</button>
