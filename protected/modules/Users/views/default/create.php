@@ -1,3 +1,5 @@
+
+<section id="main" class="prl-span-9">
 <h1>Đăng ký tài khoản người dùng</h1>
 
 <div id="primary-left">   
@@ -65,7 +67,7 @@
 		jQuery('.rowradio input[type="radio"').removeAttr('checked');
 	});
 </script>
-
+</section>
 
 
 
