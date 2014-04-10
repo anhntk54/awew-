@@ -2,7 +2,7 @@
 	<textarea id="input-comments" placeholder="Bạn đang nghĩ gì?"></textarea>
 	<div class="div-button">
 		<a href="javscript::void(0);"><i class="fa fa-camera"></i></a>
-		<button id="post-status">Đăng bài</button>
+		<button class="post-status" id="post-status-all">Đăng bài</button>
 		<div class="status-post">
 			<a href="javscript::void(0);">Công khai</a>
 			<i class="fa fa-filter fa-lg"></i>
@@ -14,7 +14,7 @@
 	<div class="clr"></div>
 </div>
 <script type="text/javascript">
-	jQuery('#post-status').click(function (e) {
+	jQuery('#post-status-all').click(function (e) {
 		console.log(jQuery('#input-comments').val());
 		var content = jQuery('#input-comments').val().replace(/\n/g, '<br />');
 		if (content != '') {

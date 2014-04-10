@@ -454,6 +454,18 @@ div.many-like{
 .user-prl{
 	color: red;
 }
+/*update status*/
+.cannel-update{
+	background-color: rgba(0,0,0,0.9);
+}
+.prl-entry-content .div-button button{
+	box-shadow: none !important;
+}
+.prl-entry-content .div-button{
+	background: #eee;
+	font-size: 12px;
+	line-height: 1;
+}
 
 
 

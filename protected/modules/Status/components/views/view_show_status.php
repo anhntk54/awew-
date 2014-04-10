@@ -11,7 +11,7 @@
             </div>
             <a href="javscript::void(0);" class="icon edit-post-status"></a>
             <div class="activity-post">
-                <a href="">Chỉnh sửa</a>
+                <a href="javscript::void(0);">Chỉnh sửa</a>
                 <a href="">Xóa</a>
                 <a href="">Riêng tư</a>
             </div>
