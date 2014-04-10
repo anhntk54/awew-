@@ -1,5 +1,5 @@
 var domain = "http://localhost/giaingoaihang/";
-var txt = jQuery('#comments');
+var txt = jQuery('#input-comments');
     hiddenDiv = jQuery(document.createElement('div'));
     content = null;
 
