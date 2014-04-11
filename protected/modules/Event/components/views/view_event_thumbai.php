@@ -1,10 +1,10 @@
 <?php 
 	$srcImg = "./images/event/image.jpg";
 	$styleImg = '';$style = '';
-	if ($model->image != null) {
-		$srcImg = Yii::app()->baseUrl.$model->image->path.$model->image->image;
-		$styleImg = "style='".$model->image->style."'";
-		$style = $model->image->style;
+	if ($model->coveImage != null) {
+		$srcImg = Yii::app()->baseUrl.$model->coveImage->path.$model->coveImage->image;
+		$styleImg = "style='".$model->coveImage->style."'";
+		$style = $model->coveImage->style;
 	}
 ?>
 
@@ -37,7 +37,7 @@
 	display: none;
 }
 </style>
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/view_event.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/coverImage.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function(e) {
 		var dataEvent = {
@@ -47,9 +47,10 @@
 			nameDiv:'.image-logo',
 			btnDelete:'.delete-image',
 			title:'.event-title',
-			urlSaveImg : '<?php echo Yii::app()->createUrl("/Event/default/saveimage") ?>',
-			urlUpImg : '<?php echo Yii::app()->createUrl("/Event/default/image") ?>',
-			urlDeImge:  '<?php echo Yii::app()->createUrl("/Event/default/deleteimage") ?>',
+			urlSaveImg : '<?php echo Yii::app()->createUrl("/Image/coverImage/saveimage") ?>',
+			urlUpImg : '<?php echo Yii::app()->createUrl("/Image/coverImage/image") ?>',
+			urlDeImge:  '<?php echo Yii::app()->createUrl("/Image/coverImage/deleteimage") ?>',
+			nameTable:'E',
 			idEvent: <?php echo $model->id; ?>,
 			styleOld : '<?php echo $style; ?>',
 			imgEvent : '<?php echo $srcImg; ?>',
@@ -57,6 +58,6 @@
 			widthMin : 400,
 			heightMin:100,
 		};
-		var eventView = new EventView(dataEvent);
+		var imgView = new CoverImage(dataEvent);
 	});
 </script> 

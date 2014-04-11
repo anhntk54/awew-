@@ -25,6 +25,7 @@ return array(
 		'Articles',
 		'Users',
 		'Event',
+		'Image',
 		'Pages',
         'Videos',
         'Popup',

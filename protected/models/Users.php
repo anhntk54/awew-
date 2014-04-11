@@ -116,6 +116,7 @@ class Users extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'image'=> array(self::HAS_ONE,'UserImage','user_id','on'=>'status = 1'),
+			'coveImage'=> array(self::HAS_ONE,'CoverImage','table_id','on'=>'status = 1 and table_name ="U"'),
 		);
 	}
 	// kiem tra phan quyen nguoi dung, 0 la nguoi dung, 1 la admin
