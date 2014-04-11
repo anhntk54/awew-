@@ -605,6 +605,16 @@ Stack trace:
 REQUEST_URI=/bongda/giaingoaihang/index.php
 HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Articles/Category/viewArticleOfCate&id=7
 ---
+<<<<<<< HEAD
+2014/04/08 13:54:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Home/default/view".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Home/default/vi...')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Home/default/view&id=9
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/
+=======
 2014/04/08 13:57:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
 ' in C:\xampp\htdocs\giaingoaihang\framework\db\CDbConnection.php:382
 Stack trace:
@@ -820,6 +830,7 @@ Stack trace:
 #27 C:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
 #28 {main}
 REQUEST_URI=/giaingoaihang/index.php?r=Users/default/view&id=1
+>>>>>>> a68c214d3110464abe4ebbc6f0e4cd2c9650d922
 ---
 2014/04/11 13:38:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php:286
 Stack trace:

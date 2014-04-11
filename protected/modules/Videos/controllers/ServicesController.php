@@ -3,8 +3,11 @@ class ServicesController extends Controller{
     
     public function actionGetLink(){
         if (isset($_POST['link_youtube'])) {
-             $yt_url = $_POST['link_youtube'];
-            
+            $yt_url = $_POST['link_youtube'];
+            $model = new ShareVideos;
+            $model->user_id = Yii::app()->user->id;
+            $model->videos = $_POST['link_youtube'];
+            $model->save();
             
             $data = array();
             $data_tube = array();
@@ -29,6 +32,13 @@ class ServicesController extends Controller{
                                 'link' => $row,
                             );
                             $data_tube[$i] = $arr_tube;
+                            
+                            $model_youtube = VideosYoutube;
+                            $model_youtube->video_id = $id;
+                            $model_youtube->video_link = $row;
+                            $model_youtube->title = $videoTitle;
+                            $model_youtube->save();
+                            
                             $i++;
                             
                         }

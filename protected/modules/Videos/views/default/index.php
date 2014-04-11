@@ -15,90 +15,63 @@
 
 <section id="main" class="prl-span-9"> 
    <article id="article-single"> 
-	   
 	   <div class="prl-grid">	
     		<div class="prl-span-9 prl-span-flip" id="content_tube" style="border-left: 1px solid #ddd">
-                <div class="prl-span-12">		
-        			<div class="prl-form-row space-bot">
-        				<label class="prl-form-label" for="form-s-t">Chia sẻ videos về CLB của bạn</label>
-        				<div class="prl-form-controls">
-        					<textarea id="videos_youtube" placeholder="Chia sẻ videos youtube về CLB của bạn" class="prl-width-1-1"></textarea>
-                        </div>
-                        <div class="select_upload">
-                            <div class="select_left">
-                                <div class="icon-youtube">
-                                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/U_lagre.png"/>
-                                </div>
-                            </div>
-                            <div class="select_right">
-                                <button onclick="send_videos();">Chia sẻ</button>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-        			</div>
-        		</div>
-                <style>
-                .select_upload{
-                    overflow: hidden; /****/
-                    background: rgba(0,0,0,0.1);
-                }
-                .select_left{
-                    float: left;
-                }
-                .select_right{
-                    float: right;
-                }
-                </style>
-    	   <hr class="prl-grid-divider">
-            <div class="content" id="content_append">
-                <div class="user">
-                    <div class="user_avatar" style="float: left; margin-right: 10px;">
-                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg"/ style="width: 60px;">
-                    </div>
-                    <div class="user_name" style="float: left;">
-                        <a style="font-weight: bold">Tiến Minh</a><br />
-                        <a style="color: #bbb; font-weight: normal ">Fan: Chelsea FC</a>
-                        <p style="color: #bbb; font-weight: normal ">Cập nhật 1h trước</p>
-                    </div>
-                </div>	
-                <div class="clearfix"></div>
-    			<div class="prl-entry-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus luctus est vestibulum luctus</p>
-    				<div class="space-bot">
-    				    <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
-                            <iframe src="//www.youtube.com/embed/scuxovLtYuA" id="fitvid290741"></iframe>
-                        </div>
-    				</div>
-    			   <h2><a href="">Lorem ipsum dolor sit amet</a></h2>
-    			</div>
-                <hr class="prl-grid-divider">
-            </div>
-            
-            <div class="content">
-                <div class="user">
-                <div class="user_avatar" style="float: left; margin-right: 10px;">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg"/ style="width: 60px;">
+                <div class="post-status-user">
+                	<textarea id="comments" placeholder="Chia sẻ videos?"></textarea>
+                	<div class="div-button">
+                		<a href="javscript::void(0);"><i class="fa fa-youtube-play"></i></a>
+                		<button>Đăng bài</button>
+                		<div class="status-post">
+                			<a href="javscript::void(0);">Công khai</a>
+                			<i class="fa fa-filter fa-lg"></i>
+                			<div class="types">
+                				<a href="javscript::void(0);">Riêng tư</a>
+                			</div>
+                		</div>
+                	</div>
+                	<div class="clr"></div>
                 </div>
-                <div class="user_name" style="float: left;">
-                    <a style="font-weight: bold">Tiến Minh</a><br />
-                    <a style="color: #bbb; font-weight: normal ">Fan: Chelsea FC</a>
-                    <p style="color: #bbb; font-weight: normal ">Cập nhật 1h trước</p>
-                </div>
-                </div>	
-                <div class="clearfix"></div>
-    			<div class="prl-entry-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus luctus est vestibulum luctus</p>
-    				<div class="space-bot">
-    				    <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;">
-                            <iframe src="//www.youtube.com/embed/scuxovLtYuA" id="fitvid290741"></iframe>
+                <div class="content" >
+                    <div class="post-status">
+                        <div class="user">
+                            <div class="user_avatar">
+                                <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/_small/1.jpg">
+                            </div>
+                            <div class="user_name" style="float: left;">
+                                <a class="p-username-show">Tiến Minh</a><br />
+                                <a class="p-show">Fan: Chelsea FC</a>
+                                <p class="p-show">Cập nhật 1h trước</p>
+                            </div>
+                            <a href="javscript::void(0);" class="icon edit-post-status"></a>
+                            <div class="activity-post">
+                                <a href="">Chỉnh sửa</a>
+                                <a href="">Xóa</a>
+                                <a href="">Riêng tư</a>
+                            </div>
+                        </div>  
+                        <div class="clr"></div>
+                        <div class="content-post">
+                            <div class="prl-entry-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus luctus est vestibulum luctus akjsit amet, consectetur adipiscing elit. In luctus luctus est vestibulum luctus akjsit amet, consectetur adipiscing elit. In luctus luctus est vestibulum luctus akj</p>
+                                <iframe src="//www.youtube.com/embed/scuxovLtYuA" id="fitvid290741"></iframe>
+                            </div>
                         </div>
-    				</div>
-    			   <h2><a href="">Lorem ipsum dolor sit amet</a></h2>
-    			</div>
-                <hr class="prl-grid-divider">
-            </div>
-            
-		</div>	
+                    </div>
+                    <div class="user-activity post-user-activity">
+                        <a href="">Thích</a>
+                        <a href="">Bình luận</a>
+                        <a href="">Chia sẻ</a>
+                    </div>
+                     <div class="many-like">
+                        <a class="">Tiến Minh</a>
+                        <p> và </p>
+                        <a href="">100 người khác </a>
+                        <p>thích điều này</p>
+                    </div>
+                    <?php $this->widget('Users.components.View_All_Comment_Status'); ?>
+                </div>
+        </div>	
 		<?php $this->widget('Videos.components.Left_Sidebar');?>
 	   </div>
    </article>    		   		  

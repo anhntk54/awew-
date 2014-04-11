@@ -103,9 +103,11 @@
                         // alert(window.z);
                         var w = $('#image'+window.z).width(), h = $('#image'+window.z).height();
                         if (w>h){
-                            alert('w>h'); $('#image'+window.z).css('height', '130px');
+                            //alert('w>h'); 
+                            $('#image'+window.z).css('height', '130px');
                         } else {
-                            alert('h>w'); $('#image'+window.z).css('width', '130px');
+                            //alert('h>w'); 
+                            $('#image'+window.z).css('width', '130px');
                         };
                         window.z = window.z + 1;
                     },500);".                    
