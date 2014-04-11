@@ -7,7 +7,7 @@
  * @property string $username
  * @property string $email
  * @property string $password
- * @property string $fullName
+ * @property string $displayName
  * @property integer $roles
  * @property string $lastAccessTime
  * @property string $lastIPAccess
@@ -48,12 +48,12 @@ class Users extends CActiveRecord
 			array('username, password', 'required'),
 			array('isBlock, createBy, phone', 'numerical', 'integerOnly'=>true),
 			array('username', 'length', 'max'=>50),
-			array('email, password, fullName', 'length', 'max'=>255),
+			array('email, password, displayName', 'length', 'max'=>255),
 			array('lastIPAccess', 'length', 'max'=>20),
 			array('avatar', 'length', 'max'=>500),
 			array('lastAccessTime, createDate', 'safe'),
 			// dang ky
-			array('username,month,day,year,gender, confirmPassword, password,fullName, email', 'required', 'message'=>'{attribute} không được để trống', 'on'=>'register'),
+			array('username,month,day,year,gender, confirmPassword, password,displayName, email', 'required', 'message'=>'{attribute} không được để trống', 'on'=>'register'),
 			// array('email', 'email', 'message'=>'{attribute} không dúng định dạng', 'on'=>'register'),
 			array('password,confirmPassword', 'length', 'min'=>6,'on'=>'register'),
 	    	array('username, email', 'unique', 'message'=>'{attribute} đã được sử dụng', 'on'=>'register'),
@@ -68,7 +68,7 @@ class Users extends CActiveRecord
 			array('confirmPassword', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('username, email, password, fullName, roles, lastAccessTime, lastIPAccess, isBlock, createDate, createBy, avatar, id, phone', 'safe', 'on'=>'search'),
+			array('username, email, password, displayName, roles, lastAccessTime, lastIPAccess, isBlock, createDate, createBy, avatar, id, phone', 'safe', 'on'=>'search'),
 		);
 	}
 	public static function getMonthtoYear($m)
@@ -146,7 +146,7 @@ class Users extends CActiveRecord
 			'username' => 'Username',
 			'email' => 'Email',
 			'password' => 'Password',
-			'fullName' => 'Full Name',
+			'displayName' => 'Full Name',
 			'roles' => 'Roles',
 			'lastAccessTime' => 'Last Access Time',
 			'lastIPAccess' => 'Last Ipaccess',
@@ -168,7 +168,7 @@ class Users extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('fullName',$this->fullName,true);
+		$criteria->compare('displayName',$this->displayName,true);
 		$criteria->compare('roles',$this->roles);
 		$criteria->compare('lastAccessTime',$this->lastAccessTime,true);
 		$criteria->compare('lastIPAccess',$this->lastIPAccess,true);

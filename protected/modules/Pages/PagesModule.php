@@ -1,6 +1,6 @@
 <?php
 
-class StatusModule extends CWebModule
+class PagesModule extends CWebModule
 {
 	public function init()
 	{

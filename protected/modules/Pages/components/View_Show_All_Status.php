@@ -5,7 +5,7 @@ class View_Show_All_Status extends CWidget{
     	$criteria=new CDbCriteria;
     	$criteria->condition = "type ='".$this->type."' and user_id =".Yii::app()->user->id;
     	$criteria->order ='id desc';
-    	$model = Status::model()->findAll($criteria);
+    	$model = Pages::model()->findAll($criteria);
         $this->render('view_show_all_status',array('model'=>$model));
     }
 }

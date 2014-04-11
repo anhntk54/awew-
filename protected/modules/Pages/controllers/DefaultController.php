@@ -8,7 +8,7 @@ class DefaultController extends Controller
 			if (isset($_POST['c']) && isset($_POST['t'])) {
 				$c = $_POST['c'];
 				$t = $_POST['t'];
-				$model = new Status;
+				$model = new Pages;
 				$model->description = $c;
 				$model->user_id = Yii::app()->user->id;
 				$model->create_date= date('Y-m-d H:i:s');

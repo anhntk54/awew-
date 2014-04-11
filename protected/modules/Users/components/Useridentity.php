@@ -26,7 +26,7 @@ class UserIdentity extends CUserIdentity
         		$this->errorCode=self::ERROR_USERNAME_INVALID;
         	}else {
                 $user->updateByPk($user->id, array("lastAccessTime"=>new CDbExpression('NOW()')));
-                $this->setState('name', $user->fullName);
+                $this->setState('name', $user->displayName);
                 $this->_id=$user->id;
                 // $auth=Yii::app()->authManager;
                 // if(!$auth->isAssigned($user->roles,$this->_id))

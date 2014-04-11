@@ -44,7 +44,6 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `content` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_date` timestamp NOT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 CREATE TABLE IF NOT EXISTS `pages_image` (
@@ -52,7 +51,6 @@ CREATE TABLE IF NOT EXISTS `pages_image` (
   `page_id` int(11) NOT NULL,
   `image` int(11) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_date` timestamp NOT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 CREATE TABLE IF NOT EXISTS `pages_videos` (
@@ -62,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `pages_videos` (
   `youtube_tile` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `youtube_link` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_date` timestamp NOT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+ALTER TABLE `pages_image` ADD `update_date` TIMESTAMP NULL DEFAULT NULL ;
+ALTER TABLE `pages_videos` ADD `update_date` TIMESTAMP NULL DEFAULT NULL ;
