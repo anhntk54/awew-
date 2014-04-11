@@ -3,9 +3,8 @@
 	<article id="article-single"> 
 	<div class="prl-grid">	
     	<div class="view-show-post prl-span-9 prl-span-flip posts-users" id="content_tube" >
-    		<?php $this->widget('Users.components.View_Post_Status'); ?>
-            <?php $this->widget('Users.components.View_Show_Status'); ?>
-            <?php $this->widget('Users.components.View_Show_Status'); ?>
+    		<?php $this->widget('Pages.components.View_Post_Status'); ?>
+            <?php $this->widget('Pages.components.View_Show_All_Status'); ?>
 	   </div>
 	   <?php $this->widget('Users.components.View_Left_Sidebar'); ?>
     </div>
