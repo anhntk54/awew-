@@ -821,3 +821,12 @@ Stack trace:
 #28 {main}
 REQUEST_URI=/giaingoaihang/index.php?r=Users/default/view&id=1
 ---
+2014/04/11 13:38:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 C:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Users/default/view&id=1
+---
