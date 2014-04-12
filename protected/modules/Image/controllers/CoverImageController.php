@@ -56,7 +56,11 @@ class CoverImageController extends Controller
 			$id = $_POST['id'];
 			$name = $_POST['name'];
 			$nameTable = $_POST['nameTable'];
-			$model = Event::model()->findByPk($id);
+			if ($nameTable == 'E') {
+				$model = Event::model()->findByPk($id);
+			}elseif($nameTable == 'U'){
+				$model = Users::model()->findByPk($id);
+			}
 			if ($model != null) {
 				checkdirectory(DATE_COVER_IMAGE);
 				$pathTemp = Yii::app()->basePath .'/../'.TEMP_IMAGE;
