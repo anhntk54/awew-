@@ -51,8 +51,8 @@ function CoverImage (data) {
 		    jQuery(data.title).hide();
 		    statusUpimage = 1;
 		    height = jQuery(data.nameImg).width() * a.height / a.width;
-		    console.log(height);
-		    if (height >= maxHeight) {
+		    console.log(height,maxHeight);
+		    if (height <= maxHeight) {
 		    	height = maxHeight;
 		    };
 		    jQuery(data.nameDiv).css('height',height);

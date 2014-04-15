@@ -20,20 +20,25 @@
 			</div>	
 			<div class="img-avatat">
 				<img class="avatar" src="./images/users/avatar/avatar.png">
-				<button class="save-avatar prl-button prl-button-primary">Thay đổi ảnh đại diện</button>
+				<button class="save-avatar prl-button prl-button-primary" id="change-avatars">Thay đổi ảnh đại diện</button>
 				<span class="name-user">Nhữ Tuấn Anh</span>
 			</div>		
 		</article>
 	</div><!-- #slider -->	
 </div>
-<input type="file" name="filesToUpload[]" id="filesToUpload" />
+<input type="file" name="filesToUpload[]" class="input-file" id="filesToUpload" />
+<input type="file" name="filesToUpload[]" class="input-file" id="filesToUploadAvatar" />
 <style type="text/css">
-#filesToUpload{
+.input-file{
 	display: none;
 }
 </style>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/coverImage.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/avatar.js"></script>
 <script type="text/javascript">
+	jQuery('#change-avatars').click(function() {
+		jQuery('#filesToUploadAvatar').click();
+	})
 	jQuery(document).ready(function(e) {
 		var dataEvent = {
 			fileUpload:'filesToUpload',
