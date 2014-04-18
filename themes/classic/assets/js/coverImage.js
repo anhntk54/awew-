@@ -3,6 +3,7 @@ function CoverImage (data) {
 	var dataImage = null;
 	var t = this;
 	var maxHeight = 385,minHeight = 0;
+	var hImg = '120%';
 	var _startY = 0;
 	var _offsetY = 0;
 	var _dragElement;			// needs to be passed from OnMouseDown to OnMouseMove
@@ -18,8 +19,12 @@ function CoverImage (data) {
 		};
 		return minHeight;
 	}
-	// console.log('aks');
-	jQuery(data.nameDiv).css('height',t.getMinHeight());
+	var hImage = t.getMinHeight();
+	if (hImage <= maxHeight ) {
+		hImage = maxHeight;
+		jQuery(data.nameImg).css('height',hImg);
+	};
+	jQuery(data.nameDiv).css('height',hImage);
 	this.TypeFile = function(){
 	    var fup = document.getElementById(data.fileUpload);
 	    var fileName = fup.value;
@@ -52,7 +57,11 @@ function CoverImage (data) {
 		    statusUpimage = 1;
 		    height = jQuery(data.nameImg).width() * a.height / a.width;
 		    console.log(height,maxHeight);
-		    if (height <= maxHeight) {
+		    if (height <= minHeight) {
+		    	height = minHeight;
+		    	jQuery(data.nameImg).css('height',hImg);
+		    };
+		    if (height >= maxHeight) {
 		    	height = maxHeight;
 		    };
 		    jQuery(data.nameDiv).css('height',height);
