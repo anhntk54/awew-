@@ -1,10 +1,8 @@
-<h1>Đăng ký tài khoản người dùng</h1>
 
+<section id="main" class="prl-span-9">
 <div id="primary-left">   
-	
-
 <div class="form">
-
+	<h1>Đăng ký tài khoản người dùng</h1>
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'users-form',
 		'enableAjaxValidation'=>true,
@@ -14,9 +12,9 @@
 	)); ?>
 		<?php echo $form->errorSummary($model); ?>
 		<div class="row">
-			<?php echo $form->labelEx($model,'fullName'); ?>
-			<?php echo $form->textField($model,'fullName',array('size'=>60,'maxlength'=>255)); ?>
-			<?php echo $form->error($model,'fullName'); ?>
+			<?php echo $form->labelEx($model,'displayName'); ?>
+			<?php echo $form->textField($model,'displayName',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->error($model,'displayName'); ?>
 		</div>
 
 		<div class="row">
@@ -65,7 +63,7 @@
 		jQuery('.rowradio input[type="radio"').removeAttr('checked');
 	});
 </script>
-
+</section>
 
 
 

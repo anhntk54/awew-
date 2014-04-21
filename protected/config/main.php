@@ -25,7 +25,10 @@ return array(
 		'Articles',
 		'Users',
 		'Event',
+		'Image',
+		'Pages',
         'Videos',
+        'Popup',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',

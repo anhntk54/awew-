@@ -66,7 +66,7 @@ class Event extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'image'=> array(self::HAS_ONE,'EventImage','event_id','on'=>'status = 1'),
+			'coveImage'=> array(self::HAS_ONE,'CoverImage','table_id','on'=>'status = 1 and table_name ="E"'),
 		);
 	}
 

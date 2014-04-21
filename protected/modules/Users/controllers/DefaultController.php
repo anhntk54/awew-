@@ -100,18 +100,16 @@ class DefaultController extends Controller
 		{
 			$model->attributes=$_POST['Users'];
 			$model->roles = "member";
-            $model->createDate = date('Y-m-d H:i:s');
+            $model->create_date = date('Y-m-d H:i:s');
 			$model->createBy= 0;
 			$model->isBlock = 0;
 			$model->birth_day = $model->year.'-'.$model->month.'-'.$model->day;
 			$a = explode('@', $model->email);
 			$u = '';
-			echo var_dump($a);
 			for ($i=0; $i < count($a) - 1; $i++) { 
 				$u .= $a[$i];
 			}
 			$model->username = $u;
-			echo $u.'111';
 			if($model->save()){
 				$model->password = CPasswordHelper::hashPassword($model->password);
 				$model->save(false);

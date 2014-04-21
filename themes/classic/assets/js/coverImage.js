@@ -1,8 +1,9 @@
-function EventView (data) {
+function CoverImage (data) {
 	var statusUpimage = 0;
 	var dataImage = null;
 	var t = this;
 	var maxHeight = 385,minHeight = 0;
+	var hImg = '120%';
 	var _startY = 0;
 	var _offsetY = 0;
 	var _dragElement;			// needs to be passed from OnMouseDown to OnMouseMove
@@ -18,8 +19,12 @@ function EventView (data) {
 		};
 		return minHeight;
 	}
-	// console.log('aks');
-	jQuery(data.nameDiv).css('height',t.getMinHeight());
+	var hImage = t.getMinHeight();
+	if (hImage <= maxHeight ) {
+		hImage = maxHeight;
+		jQuery(data.nameImg).css('height',hImg);
+	};
+	jQuery(data.nameDiv).css('height',hImage);
 	this.TypeFile = function(){
 	    var fup = document.getElementById(data.fileUpload);
 	    var fileName = fup.value;
@@ -51,7 +56,11 @@ function EventView (data) {
 		    jQuery(data.title).hide();
 		    statusUpimage = 1;
 		    height = jQuery(data.nameImg).width() * a.height / a.width;
-		    console.log(height);
+		    console.log(height,maxHeight);
+		    if (height <= minHeight) {
+		    	height = minHeight;
+		    	jQuery(data.nameImg).css('height',hImg);
+		    };
 		    if (height >= maxHeight) {
 		    	height = maxHeight;
 		    };
@@ -209,7 +218,7 @@ function EventView (data) {
 				jQuery.ajax({
 				  url: data.urlSaveImg,
 				  type: 'POST',
-				  data: {name:dataImage.name,style:style,id:data.idEvent},
+				  data: {name:dataImage.name,style:style,id:data.idEvent,nameTable:data.nameTable},
 				  success: function(da) {
 				  	console.log(data);
 				    jQuery(data.nameImg).attr('src',da.linkI);

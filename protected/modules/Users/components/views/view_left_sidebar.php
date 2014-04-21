@@ -5,29 +5,13 @@
 		<i class="fa fa-eye"></i> 123
 	</div>
 	<hr class="prl-article-divider">
-    <p class="rating-head">Editor review</p>
+    <p class="rating-head user-prl">Thông tin cá nhân</p>
+    <p class="rating-head if-user">Quê quán: Hải dương</p>
+    <p class="rating-head if-user">Nghề nghiệp: Lập trình viên</p>
     <p class="prl-post-rating ">
         <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
     </p>
     <p>Excellent: 10/10</p>
-    <strong>Design</strong>
-    <div class="prl-progress prl-progress-mini">
-        <div class="prl-progress-bar" style="width: 40%;"></div>
-    </div>
-    
-    <strong>Touch screen</strong>
-    <div class="prl-progress prl-progress-mini">
-        <div class="prl-progress-bar" style="width: 70%;"></div>
-    </div>
-    <strong>Battery</strong>
-    <div class="prl-progress prl-progress-mini">
-        <div class="prl-progress-bar" style="width: 40%;"></div>
-    </div>
-    
-    <strong>Applications</strong>
-    <div class="prl-progress prl-progress-mini">
-        <div class="prl-progress-bar" style="width: 70%;"></div>
-    </div>
     <hr class="prl-article-divider">
     <p class="rating-head">User rating: 3.76 (440)</p>
     <p class="prl-post-rating prl-user-rating">

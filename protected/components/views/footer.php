@@ -1,3 +1,4 @@
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/global.js"></script>
 <footer id="footer" role="contentinfo">
 			<div class="footer-widget">
 				<div class="prl-container">
