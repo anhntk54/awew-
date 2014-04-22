@@ -15,8 +15,8 @@ define('IMAGE_EVENT','/images/event/');
 define('AVATAR_USER','/images/users/avatar/');
 define('TEMP_IMAGE','/images/temp_image/');
 $_date = date("Y-m-d");
-define('DATE_EVENT','images/event/'.$_date);
-define('DATE_EVENT_PATH','/images/event/'.$_date.'/');
+define('DATE_COVER_IMAGE','images/cover/'.$_date);
+define('DATE_COVER_IMAGE_PATH','/images/cover/'.$_date.'/');
 
 require_once($yii);
 require_once($globals);

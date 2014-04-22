@@ -31,7 +31,7 @@
 		var content = jQuery('#input-comments').val().replace(/\n/g, '<br />');
 		if (content != '') {
 			jQuery.ajax({
-				url:'<?php echo Yii::app()->createUrl("/Status/default/create") ?>',
+				url:'<?php echo Yii::app()->createUrl("/Pages/default/create") ?>',
 				data:{c:content,t:'<?php echo $this->type; ?>'},
 				type:'POST',
 				success:function (data) {

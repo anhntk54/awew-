@@ -1,29 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "event".
+ * This is the model class for table "cover_image".
  *
- * The followings are the available columns in table 'event':
+ * The followings are the available columns in table 'cover_image':
  * @property integer $id
- * @property string $title
- * @property string $content
- * @property string $sub_title
- * @property string $sub_content
- * @property integer $location_id
+ * @property integer $table_id
+ * @property string $table_name
+ * @property string $image
+ * @property string $alt
+ * @property string $path
+ * @property string $style
  * @property integer $status
- * @property string $end_date
- * @property string $begin_date
  */
-class Event extends CActiveRecord
+class CoverImage extends CActiveRecord
 {
-	public $nameLocation;
-	public $addressLocation;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'event';
+		return 'cover_image';
 	}
 
 	/**
@@ -34,30 +31,16 @@ class Event extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content,nameLocation, end_date, begin_date', 'required'),
-			array('location_id, status', 'numerical', 'integerOnly'=>true),
-			array('title, sub_title', 'length', 'max'=>70),
-			array('sub_content', 'length', 'max'=>140),
-			array('begin_date,end_date', 'checkTime'),
+			array('table_id, table_name, image, alt, path, style, status', 'required'),
+			array('table_id, status', 'numerical', 'integerOnly'=>true),
+			array('table_name', 'length', 'max'=>11),
+			array('image, alt, path, style', 'length', 'max'=>300),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, content, sub_title, sub_content, location_id, status, end_date, begin_date', 'safe', 'on'=>'search'),
+			array('id, table_id, table_name, image, alt, path, style, status', 'safe', 'on'=>'search'),
 		);
 	}
-	public function checkTime($attributes,$params)
-	{
-		if (strtotime($this->end_date) < strtotime(date("Y-m-d H:i:s"))) {
-			$this->addError('end_date', "Thời gian cuối bé hơn thời gian hiện tại");
-			return false;
-		}
-		if (strtotime($this->end_date) >= strtotime($this->begin_date)) {
-			return true;
-		}else{
-			$this->addError('end_date', "Thời gian cuối nhở hơn thời gian đầu");
-			return false;
-		}
-		return true;
-	}
+
 	/**
 	 * @return array relational rules.
 	 */
@@ -66,7 +49,6 @@ class Event extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'coveImage'=> array(self::HAS_ONE,'CoverImage','table_id','on'=>'status = 1 and table_name ="E"'),
 		);
 	}
 
@@ -77,14 +59,13 @@ class Event extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'content' => 'Content',
-			'sub_title' => 'Sub Title',
-			'sub_content' => 'Sub Content',
-			'location_id' => 'Location',
+			'table_id' => 'Table',
+			'table_name' => 'Table Name',
+			'image' => 'Image',
+			'alt' => 'Alt',
+			'path' => 'Path',
+			'style' => 'Style',
 			'status' => 'Status',
-			'end_date' => 'End Date',
-			'begin_date' => 'Begin Date',
 		);
 	}
 
@@ -107,14 +88,13 @@ class Event extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('content',$this->content,true);
-		$criteria->compare('sub_title',$this->sub_title,true);
-		$criteria->compare('sub_content',$this->sub_content,true);
-		$criteria->compare('location_id',$this->location_id);
+		$criteria->compare('table_id',$this->table_id);
+		$criteria->compare('table_name',$this->table_name,true);
+		$criteria->compare('image',$this->image,true);
+		$criteria->compare('alt',$this->alt,true);
+		$criteria->compare('path',$this->path,true);
+		$criteria->compare('style',$this->style,true);
 		$criteria->compare('status',$this->status);
-		$criteria->compare('end_date',$this->end_date,true);
-		$criteria->compare('begin_date',$this->begin_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -125,7 +105,7 @@ class Event extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Event the static model class
+	 * @return CoverImage the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

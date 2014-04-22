@@ -1,12 +1,8 @@
 
 <section id="main" class="prl-span-9">
-<h1>Đăng ký tài khoản người dùng</h1>
-
 <div id="primary-left">   
-	
-
 <div class="form">
-
+	<h1>Đăng ký tài khoản người dùng</h1>
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'users-form',
 		'enableAjaxValidation'=>true,

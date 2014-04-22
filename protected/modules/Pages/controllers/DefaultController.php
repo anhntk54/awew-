@@ -9,7 +9,7 @@ class DefaultController extends Controller
 				$c = $_POST['c'];
 				$t = $_POST['t'];
 				$model = new Pages;
-				$model->description = $c;
+				$model->content = $c;
 				$model->user_id = Yii::app()->user->id;
 				$model->create_date= date('Y-m-d H:i:s');
 				$model->type = $t;
