@@ -228,6 +228,7 @@ display: block;
 /*view thumbai user*/
 .avatar{
 	position: absolute;
+	height: 166px;
 	bottom: 14px;
 	width: 21% !important;
 	left: 3%;
