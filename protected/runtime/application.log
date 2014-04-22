@@ -997,3 +997,64 @@ Stack trace:
 REQUEST_URI=/giaingoaihang/index.php?r=Users/default/view&id=1
 >>>>>>> 571a6e61e3e8e57cc68668c57e5b52ca4c218690
 ---
+2014/04/22 13:05:55 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (23)
+2014/04/22 13:07:08 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (23)
+2014/04/22 13:07:41 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (23)
+2014/04/22 13:07:45 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (53)
+in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (23)
+2014/04/22 13:07:47 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php (60)
+in C:\xampp\htdocs\BongDa\giaingoaihang\index.php (23)
+2014/04/22 13:08:11 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'giaingoaihang.cover_image' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `cover_image`.
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\views\view_user_thumbai.php (4)
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\View_User_Thumbai.php (5)
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\views\default\view.php (2)
+2014/04/22 13:08:11 [error] [exception.CDbException] exception 'CDbException' with message 'The table "cover_image" for active record class "CoverImage" cannot be found in the database.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(CoverImage))
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveFinder.php(383): CActiveRecord->getTableSchema()
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveFinder.php(278): CJoinElement->__construct(Object(CActiveFinder), Object(CHasOneRelation), Object(CJoinElement), 1)
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), 'coveImage')
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Users), 'coveImage')
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(280): CActiveRecord->getActiveFinder('coveImage')
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('coveImage')
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\views\view_user_thumbai.php(4): CActiveRecord->__get('coveImage')
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\View_User_Thumbai.php(5): CWidget->render('view_user_thumb...', Array)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_User_Thumbai->init()
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Users.component...', Array)
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\views\default\view.php(2): CBaseController->widget('Users.component...', Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php(85): CController->render('view', Array)
+#21 [internal function]: DefaultController->actionView('1')
+#22 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#23 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#24 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#25 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#26 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#27 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#28 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#29 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#30 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#31 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#32 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#33 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/v...')
+#34 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#35 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#36 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php
+---
