@@ -1058,3 +1058,450 @@ Stack trace:
 REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
 HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php
 ---
+2014/04/22 13:10:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'giaingoaihang.cover_image' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `cover_image`.
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\views\view_user_thumbai.php (4)
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\View_User_Thumbai.php (5)
+in C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\views\default\view.php (2)
+2014/04/22 13:10:29 [error] [exception.CDbException] exception 'CDbException' with message 'The table "cover_image" for active record class "CoverImage" cannot be found in the database.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(CoverImage))
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveFinder.php(383): CActiveRecord->getTableSchema()
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveFinder.php(278): CJoinElement->__construct(Object(CActiveFinder), Object(CHasOneRelation), Object(CJoinElement), 1)
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), 'coveImage')
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Users), 'coveImage')
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(280): CActiveRecord->getActiveFinder('coveImage')
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(143): CActiveRecord->getRelated('coveImage')
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\views\view_user_thumbai.php(4): CActiveRecord->__get('coveImage')
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\components\View_User_Thumbai.php(5): CWidget->render('view_user_thumb...', Array)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_User_Thumbai->init()
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Users.component...', Array)
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\views\default\view.php(2): CBaseController->widget('Users.component...', Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php(85): CController->render('view', Array)
+#21 [internal function]: DefaultController->actionView('1')
+#22 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#23 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#24 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#25 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#26 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#27 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#28 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#29 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#30 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#31 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#32 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#33 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/v...')
+#34 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#35 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#36 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:12 [error] [exception.CException] exception 'CException' with message 'Alias "Status.models.*" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(226): YiiBase::import('Status.models.*')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\PagesModule.php(14): CModule->setImport(Array)
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(90): PagesModule->init()
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php(206): CModule->__construct('Pages', NULL, Array)
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(282): YiiBase::createComponent('Pages.PagesModu...', 'Pages', NULL, Array)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(337): CModule->getModule('Pages')
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(276): CWebApplication->createController('Pages/default/c...')
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#10 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:29 [error] [exception.CException] exception 'CException' with message 'Alias "Status.models.*" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(226): YiiBase::import('Status.models.*')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\PagesModule.php(14): CModule->setImport(Array)
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(90): PagesModule->init()
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php(206): CModule->__construct('Pages', NULL, Array)
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(282): YiiBase::createComponent('Pages.PagesModu...', 'Pages', NULL, Array)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(337): CModule->getModule('Pages')
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(276): CWebApplication->createController('Pages/default/c...')
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#10 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:35 [error] [exception.CException] exception 'CException' with message 'Alias "Status.models.*" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(226): YiiBase::import('Status.models.*')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\PagesModule.php(14): CModule->setImport(Array)
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(90): PagesModule->init()
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php(206): CModule->__construct('Pages', NULL, Array)
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(282): YiiBase::createComponent('Pages.PagesModu...', 'Pages', NULL, Array)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(337): CModule->getModule('Pages')
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(276): CWebApplication->createController('Pages/default/c...')
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#10 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:49 [error] [exception.CException] exception 'CException' with message 'Alias "Status.models.*" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(226): YiiBase::import('Status.models.*')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\PagesModule.php(14): CModule->setImport(Array)
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(90): PagesModule->init()
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php(206): CModule->__construct('Pages', NULL, Array)
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CModule.php(282): YiiBase::createComponent('Pages.PagesModu...', 'Pages', NULL, Array)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(337): CModule->getModule('Pages')
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(276): CWebApplication->createController('Pages/default/c...')
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#10 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:16:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:26:09 [error] [exception.CException] exception 'CException' with message 'Property "Users.fullName" is not defined.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(145): CComponent->__get('fullName')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\models\Users.php(204): CActiveRecord->__get('fullName')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(8): Users::getName('1')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\views\default\create.php(2): CBaseController->widget('Pages.component...', Array)
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\controllers\DefaultController.php(17): CController->renderPartial('create', Array)
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionCreate()
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#22 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:26:09 [error] [exception.CException] exception 'CException' with message 'Property "Users.fullName" is not defined.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(145): CComponent->__get('fullName')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\models\Users.php(204): CActiveRecord->__get('fullName')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(8): Users::getName('1')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\views\default\create.php(2): CBaseController->widget('Pages.component...', Array)
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\controllers\DefaultController.php(17): CController->renderPartial('create', Array)
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionCreate()
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#22 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/22 13:26:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loout".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(270): CController->missingAction('loout')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('loout')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/l...')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/loout
+---
+2014/04/22 13:26:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logut".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(270): CController->missingAction('logut')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('logut')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/l...')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/logut
+---
+2014/04/22 13:27:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logouy".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(270): CController->missingAction('logouy')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('logouy')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/l...')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/logouy
+---
+2014/04/22 13:28:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#5 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=site/login
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/create
+---
+2014/04/22 13:29:37 [error] [exception.CException] exception 'CException' with message 'Property "Users.fullName" is not defined.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(145): CComponent->__get('fullName')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\models\Users.php(204): CActiveRecord->__get('fullName')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(8): Users::getName('2')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\views\default\create.php(2): CBaseController->widget('Pages.component...', Array)
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\controllers\DefaultController.php(17): CController->renderPartial('create', Array)
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionCreate()
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#22 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=2
+---
+2014/04/22 13:29:37 [error] [exception.CException] exception 'CException' with message 'Property "Users.fullName" is not defined.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(145): CComponent->__get('fullName')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\models\Users.php(204): CActiveRecord->__get('fullName')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(8): Users::getName('2')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\views\default\create.php(2): CBaseController->widget('Pages.component...', Array)
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\controllers\DefaultController.php(17): CController->renderPartial('create', Array)
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionCreate()
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#22 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=2
+---
+2014/04/22 13:29:50 [error] [exception.CException] exception 'CException' with message 'Property "Users.fullName" is not defined.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(145): CComponent->__get('fullName')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\models\Users.php(204): CActiveRecord->__get('fullName')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(8): Users::getName('2')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\views\default\create.php(2): CBaseController->widget('Pages.component...', Array)
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\controllers\DefaultController.php(17): CController->renderPartial('create', Array)
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionCreate()
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#22 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=2
+---
+2014/04/22 13:29:50 [error] [exception.CException] exception 'CException' with message 'Property "Users.fullName" is not defined.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(145): CComponent->__get('fullName')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\models\Users.php(204): CActiveRecord->__get('fullName')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(8): Users::getName('2')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\views\default\create.php(2): CBaseController->widget('Pages.component...', Array)
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\controllers\DefaultController.php(17): CController->renderPartial('create', Array)
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(49): DefaultController->actionCreate()
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#22 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Pages/default/create
+HTTP_REFERER=http://localhost/bongda/giaingoaihang/index.php?r=Users/default/view&id=2
+---
+2014/04/22 13:31:50 [error] [exception.CException] exception 'CException' with message 'Property "Pages.description" is not defined.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\db\ar\CActiveRecord.php(145): CComponent->__get('description')
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(22): CActiveRecord->__get('description')
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_all_status.php(4): CBaseController->widget('Pages.component...', Array)
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_All_Status.php(9): CWidget->render('view_show_all_s...', Array)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_All_Status->init()
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\views\default\view.php(7): CBaseController->widget('Pages.component...')
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php(85): CController->render('view', Array)
+#21 [internal function]: DefaultController->actionView('2')
+#22 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#23 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#24 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#25 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#26 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#27 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#28 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#29 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#30 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#31 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#32 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#33 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/v...')
+#34 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#35 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#36 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/view&id=2
+---
+2014/04/22 13:32:51 [error] [exception.CException] exception 'CException' with message 'Alias "Status.components.View_All_Comment_Status" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\BongDa\giaingoaihang\framework\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWidgetFactory.php(146): YiiBase::import('Status.componen...', true)
+#1 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(View_Show_Status), 'Status.componen...', Array)
+#2 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Status.componen...', Array)
+#3 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_status.php(38): CBaseController->widget('Status.componen...')
+#4 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#6 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#7 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_Status.php(5): CWidget->render('view_show_statu...', Array)
+#8 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_Status->init()
+#9 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#10 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\views\view_show_all_status.php(4): CBaseController->widget('Pages.component...', Array)
+#11 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(130): require('C:\xampp\htdocs...')
+#12 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, false)
+#13 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\xampp\htdocs...', Array, false)
+#14 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Pages\components\View_Show_All_Status.php(9): CWidget->render('view_show_all_s...', Array)
+#15 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(147): View_Show_All_Status->init()
+#16 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(172): CBaseController->createWidget('Pages.component...', Array)
+#17 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\views\default\view.php(7): CBaseController->widget('Pages.component...')
+#18 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#19 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#20 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#21 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#22 C:\xampp\htdocs\BongDa\giaingoaihang\protected\modules\Users\controllers\DefaultController.php(85): CController->render('view', Array)
+#23 [internal function]: DefaultController->actionView('2')
+#24 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#25 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#26 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#27 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#28 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#29 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#30 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#31 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#32 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(291): CFilterChain->run()
+#33 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#34 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(282): CController->run('view')
+#35 C:\xampp\htdocs\BongDa\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Users/default/v...')
+#36 C:\xampp\htdocs\BongDa\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#37 C:\xampp\htdocs\BongDa\giaingoaihang\index.php(23): CApplication->run()
+#38 {main}
+REQUEST_URI=/bongda/giaingoaihang/index.php?r=Users/default/view&id=2
+---

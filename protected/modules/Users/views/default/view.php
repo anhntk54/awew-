@@ -18,11 +18,24 @@
         t.css('display','inline');
         t.parent().find('.activity-post').slideToggle();
     })
-    jQuery('.edit-post-status').click(function (e) {
+    
+    /**Edit một post**/
+    /*jQuery('.edit-post-status').click(function (e) {
         t = jQuery(this);
         statusShowEditPost = 1;
         t.parent().find('.activity-post').slideToggle();
-    })
+    })*/
+    
+    function edit_post(t){
+        //t = jQuery(this);
+        //console.log("a");
+        statusShowEditPost = 1;
+        console.log(statusShowEditPost);
+        t.parent().find('.activity-post').slideToggle();
+        //console.log("minh tien");
+        //console.log("bien t:",t);
+    }
+    
     jQuery('body').click(function(e) {
         if (statusShowEditPost == 0) {
             jQuery('.activity-post').hide();

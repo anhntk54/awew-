@@ -201,7 +201,7 @@ class Users extends CActiveRecord
         if($model===null){
 			throw new CHttpException(404,'The requested page does not exist.');
         }else{
-            echo '<a class="p-username-show">'.$model->fullName.'</a>';
+            echo '<a class="p-username-show">'.$model->displayName.'</a>';
         }   
     }
     public static function getAvatar($id){

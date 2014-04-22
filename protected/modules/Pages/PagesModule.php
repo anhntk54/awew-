@@ -9,8 +9,8 @@ class PagesModule extends CWebModule
 
 		// import the module-level models and components
 		$this->setImport(array(
-			'Status.models.*',
-			'Status.components.*',
+			'Pages.models.*',
+			'Pages.components.*',
 		));
 	}
 
