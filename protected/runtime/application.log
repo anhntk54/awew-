@@ -84,3 +84,36 @@ Stack trace:
 #10 {main}
 REQUEST_URI=/giaingoaihang/index.php?r=Pages/default/create
 ---
+2014/04/27 11:21:26 [error] [exception.CException] exception 'CException' with message 'Alias "Status.models.*" is invalid. Make sure it points to an existing directory or file.' in E:\xampp\htdocs\giaingoaihang\framework\YiiBase.php:347
+Stack trace:
+#0 E:\xampp\htdocs\giaingoaihang\framework\base\CModule.php(226): YiiBase::import('Status.models.*')
+#1 E:\xampp\htdocs\giaingoaihang\protected\modules\Pages\PagesModule.php(14): CModule->setImport(Array)
+#2 E:\xampp\htdocs\giaingoaihang\framework\base\CModule.php(90): PagesModule->init()
+#3 E:\xampp\htdocs\giaingoaihang\framework\YiiBase.php(206): CModule->__construct('Pages', NULL, Array)
+#4 E:\xampp\htdocs\giaingoaihang\framework\base\CModule.php(282): YiiBase::createComponent('Pages.PagesModu...', 'Pages', NULL, Array)
+#5 E:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(337): CModule->getModule('Pages')
+#6 E:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(276): CWebApplication->createController('Pages/default/c...')
+#7 E:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Pages/default/c...')
+#8 E:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#10 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Pages/default/create
+---
+2014/04/27 11:21:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in E:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 E:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Users/default/view&id=1
+---
+2014/04/27 11:21:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Status/default/create".' in E:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\giaingoaihang\framework\web\CWebApplication.php(141): CWebApplication->runController('Status/default/...')
+#1 E:\xampp\htdocs\giaingoaihang\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\giaingoaihang\index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/giaingoaihang/index.php?r=Status/default/create
+HTTP_REFERER=http://localhost/giaingoaihang/index.php?r=Users/default/view&id=1
+---
