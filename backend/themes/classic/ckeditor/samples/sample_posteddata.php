@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php /* <body><pre>
 
 -------------------------------------------------------------------------------------------
@@ -14,3 +15,21 @@
 -------------------------------------------------------------------------------------------
 
 </pre><div style="display:none"></body> */ include "assets/posteddata.php"; ?>
+=======
+<?php /* <body><pre>
+
+-------------------------------------------------------------------------------------------
+  CKEditor - Posted Data
+
+  We are sorry, but your Web server does not support the PHP language used in this script.
+
+  Please note that CKEditor can be used with any other server-side language than just PHP.
+  To save the content created with CKEditor you need to read the POST data on the server
+  side and write it to a file or the database.
+
+  Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+  For licensing, see LICENSE.md or <a href="http://ckeditor.com/license">http://ckeditor.com/license</a>
+-------------------------------------------------------------------------------------------
+
+</pre><div style="display:none"></body> */ include "assets/posteddata.php"; ?>
+>>>>>>> 402c32a9249f3b941fa3a3a2066f3aa6277c3ec3

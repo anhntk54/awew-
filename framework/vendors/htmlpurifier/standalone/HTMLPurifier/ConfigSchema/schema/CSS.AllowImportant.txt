@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CSS.AllowImportant
 TYPE: bool
 DEFAULT: false
@@ -6,3 +7,13 @@ VERSION: 3.1.0
 This parameter determines whether or not !important cascade modifiers should
 be allowed in user CSS. If false, !important will stripped.
 --# vim: et sw=4 sts=4
+=======
+CSS.AllowImportant
+TYPE: bool
+DEFAULT: false
+VERSION: 3.1.0
+--DESCRIPTION--
+This parameter determines whether or not !important cascade modifiers should
+be allowed in user CSS. If false, !important will stripped.
+--# vim: et sw=4 sts=4
+>>>>>>> 402c32a9249f3b941fa3a3a2066f3aa6277c3ec3

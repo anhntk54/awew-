@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # $Id: TODO,v 1.1 2007/06/03 02:35:28 ssttoo Exp $
 
 Major issues to solve (but I currently have no idea how) :
@@ -10,3 +11,17 @@ Major issues to solve (but I currently have no idea how) :
 
 # vim: set autoindent tabstop=4 shiftwidth=4 softtabstop=4 tw=78: */
 
+=======
+# $Id: TODO,v 1.1 2007/06/03 02:35:28 ssttoo Exp $
+
+Major issues to solve (but I currently have no idea how) :
+
+- speedup highlighting process
+
+- switching between highlighters depending on context, for example :
+  PHP code -> HTML -> (JavaScript|CSS)
+
+
+# vim: set autoindent tabstop=4 shiftwidth=4 softtabstop=4 tw=78: */
+
+>>>>>>> 402c32a9249f3b941fa3a3a2066f3aa6277c3ec3
